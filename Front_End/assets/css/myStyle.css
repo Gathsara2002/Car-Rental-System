@@ -1,7 +1,43 @@
+/*home section*/
 section#home > div:nth-child(1) {
     width: 100%;
     height: 750px;
     background-image: url("../img/bg_1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*About us section*/
+section#aboutUs > section > div:nth-child(1) {
+    height: 750px;
+    background-color: white;
+}
+
+section#aboutUs > section > div:nth-child(2) {
+    height: 750px;
+    background-color: #0be881;
+}
+
+section#aboutUs > section > div:nth-child(3) {
+    position: absolute;
+    right: 150px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    background-color: black;
+}
+
+section#aboutUs > section > div:nth-child(4) {
+    position: absolute;
+    left: 150px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    background-image: url("../img/about.jpg");
     background-size: cover;
     background-position: center;
 }
