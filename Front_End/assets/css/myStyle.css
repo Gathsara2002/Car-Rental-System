@@ -1,6 +1,6 @@
-section#home > div {
+section#home > div:nth-child(1) {
     width: 100%;
-    height: 800px;
+    height: 750px;
     background-image: url("../img/bg_1.jpg");
     background-size: cover;
     background-position: center;
