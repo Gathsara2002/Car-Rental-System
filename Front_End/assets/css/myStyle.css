@@ -1,5 +1,14 @@
 /*header*/
+section#header > header > a {
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+}
 
+section#header > header > a > span {
+    color: #0be881;
+}
 
 
 /*home section*/
@@ -85,7 +94,7 @@ section#services > div {
 
 /*cars section*/
 
-.car-img{
+.car-img {
     height: 200px;
     background-image: url("../img/bmwi8.png");
     background-size: cover;
