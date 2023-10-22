@@ -112,7 +112,7 @@ section#aboutUs {
     padding-top: 85px;
 }
 
-.first-topic {
+.first-header {
     font-family: "Poppins", Arial, sans-serif;
     font-size: 13px;
     color: black;
@@ -125,7 +125,7 @@ section#aboutUs {
     text-align: center;
 }
 
-.second-topic{
+.second-header {
     font-family: "Poppins", Arial, sans-serif;
     font-size: 40px;
     color: #1B9CFC;
