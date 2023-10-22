@@ -1,9 +1,17 @@
 /*header*/
+section#header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 1;
+    height: 80px;
+}
+
 section#header > header > a {
     font-family: "Poppins", Arial, sans-serif;
     font-weight: 800;
     font-size: 24px;
     text-transform: uppercase;
+    margin-left: 60px;
 }
 
 section#header > header > a > span {
@@ -65,12 +73,16 @@ section#header > header > ul > li :hover {
     transition: all 0.475s;
 }
 
-section#header > header > div>button:nth-child(1){
+section#header > header > div{
+    margin-right: 60px;
+}
+
+section#header > header > div > button:nth-child(1) {
     width: 120.91px;
 }
 
 
-    /*home section*/
+/*home section*/
 section#home > div:nth-child(1) {
     width: 100%;
     height: 750px;
