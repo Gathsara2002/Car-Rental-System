@@ -108,6 +108,35 @@ section#home > div:nth-child(2) > p {
 }
 
 /*About us section*/
+section#aboutUs {
+    padding-top: 85px;
+}
+
+.first-topic {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 13px;
+    color: black;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+}
+
+.second-topic{
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 40px;
+    color: #1B9CFC;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+}
+
 section#aboutUs > section > div:nth-child(1) {
     height: 750px;
     background-color: white;
