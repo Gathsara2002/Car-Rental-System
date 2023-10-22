@@ -155,7 +155,22 @@ section#aboutUs > section > div:nth-child(3) {
     margin: auto;
     height: 600px;
     width: 600px;
-    background-color: black;
+    background-color: transparent;
+    color: white;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+section#aboutUs > section > div:nth-child(3) > ul > li {
+    list-style: none;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+section#aboutUs > section > div:nth-child(3) > ul > li > i {
+    color: red;
 }
 
 section#aboutUs > section > div:nth-child(4) {
