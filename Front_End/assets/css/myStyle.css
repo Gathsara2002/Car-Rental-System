@@ -10,6 +10,17 @@ section#header > header > a > span {
     color: #0be881;
 }
 
+section#header > header > ul {
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: #999999;
+}
+
+section#header > header > ul > li:nth-child(1) > a {
+    color: #0be881;
+}
+
 
 /*home section*/
 section#home > div:nth-child(1) {
