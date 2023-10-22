@@ -107,7 +107,7 @@ section#home > div:nth-child(2) > p {
     font-weight: 400;
 }
 
-/*About us section*/
+/*About us section ====================================================================================*/
 section#aboutUs {
     padding-top: 85px;
 }
@@ -171,7 +171,7 @@ section#aboutUs > section > div:nth-child(4) {
     background-position: center;
 }
 
-/*service section*/
+/*service section ===================================================================================*/
 section#services > section > div#wedding > div {
     height: 150px;
     background-image: url("../img/icon4.png");
@@ -208,7 +208,7 @@ section#services > div {
     background-position: center;
 }
 
-/*cars section*/
+/*cars section =======================================================================================*/
 
 .car-img {
     height: 200px;
