@@ -7,7 +7,7 @@ section#header > header > a {
 }
 
 section#header > header > a > span {
-    color: #0be881;
+    color: #01d28e;
 }
 
 section#header > header > ul {
@@ -18,7 +18,11 @@ section#header > header > ul {
 }
 
 section#header > header > ul > li:nth-child(1) > a {
-    color: #0be881;
+    color: #01d28e;
+}
+
+section#header > header > ul > li :hover {
+    color: #01d28e;
 }
 
 
@@ -39,7 +43,7 @@ section#aboutUs > section > div:nth-child(1) {
 
 section#aboutUs > section > div:nth-child(2) {
     height: 750px;
-    background-color: #0be881;
+    background-color: #01d28e;
 }
 
 section#aboutUs > section > div:nth-child(3) {
