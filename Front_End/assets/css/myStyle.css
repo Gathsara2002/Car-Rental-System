@@ -73,7 +73,7 @@ section#header > header > ul > li :hover {
     transition: all 0.475s;
 }
 
-section#header > header > div{
+section#header > header > div {
     margin-right: 60px;
 }
 
@@ -89,6 +89,22 @@ section#home > div:nth-child(1) {
     background-image: url("../img/bg_1.jpg");
     background-size: cover;
     background-position: center;
+}
+
+section#home > div:nth-child(2) {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 44px;
+    color: #fff;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+section#home > div:nth-child(2) > p {
+    margin-top: 75px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 /*About us section*/
