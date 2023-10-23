@@ -195,8 +195,15 @@ section#services {
     width: 120px;
     height: 120px;
     background-color: #1089ff;
-    margin-left: 25px;
+    margin-left: 48px;
     margin-top: 10px;
+    border: 1px solid transparent;
+}
+
+.img-services:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    border: 1px solid #2c3e50;
 }
 
 .icon-services {
@@ -205,7 +212,6 @@ section#services {
     background-size: cover;
     background-position: center;
 }
-
 
 section#services > section > div#wedding > div > div {
     background-image: url("../img/icon/icons-wedding-car.png");
@@ -221,6 +227,15 @@ section#services > section > div#airport > div > div {
 
 section#services > section > div#tour > div > div {
     background-image: url("../img/icon/icon-road.png");
+}
+
+.heading-service{
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
 }
 
 section#services > div {
