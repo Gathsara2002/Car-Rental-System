@@ -202,25 +202,25 @@ section#services {
 .icon-services {
     width: 70px;
     height: 70px;
-    background-image: url("../img/icon/icons-wedding-car.png");
     background-size: cover;
     background-position: center;
 }
 
 
-section#services > section > div#wedding > div {
+section#services > section > div#wedding > div > div {
+    background-image: url("../img/icon/icons-wedding-car.png");
 }
 
-section#services > section > div#city > div {
-
+section#services > section > div#city > div > div {
+    background-image: url("../img/icon/icon-taxi.png");
 }
 
-section#services > section > div#airport > div {
-
+section#services > section > div#airport > div > div {
+    background-image: url("../img/icon/icon-airport.png");
 }
 
-section#services > section > div#tour > div {
-
+section#services > section > div#tour > div > div {
+    background-image: url("../img/icon/icon-road.png");
 }
 
 section#services > div {
