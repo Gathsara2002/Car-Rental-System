@@ -304,3 +304,60 @@ section#cars {
     background-position: center;
 }
 
+/*first row of cars */
+section#cars > section#first > div:nth-child(1) > div:nth-child(1) {
+    background-image: url("../img/cars/display/PERODUA-Bezza-1.png");
+}
+
+section#cars > section#first > div:nth-child(2) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Suzuki-Alto-800-2.png");
+}
+
+section#cars > section#first > div:nth-child(3) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Suzuki-Alto-K10 -1.png");
+}
+
+/*second row of cars*/
+section#cars > section#second > div:nth-child(1) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Perodua-Bezza-Prime-Sedan-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section#cars > section#second > div:nth-child(2) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Suzuki-Celerio-1.png");
+}
+
+section#cars > section#second > div:nth-child(3) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Toyota-Allion-NZT-260-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*third row of cars*/
+section#cars > section#third > div:nth-child(1) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Toyota-Axio-NKR-165-1.png");
+}
+
+section#cars > section#third > div:nth-child(2) > div:nth-child(1) {
+    background-image: url("../img/cars/display/toyota-premior.jpg");
+}
+
+section#cars > section#third > div:nth-child(3) > div:nth-child(1) {
+    background-image: url("../img/cars/display/Toyota-Prius-C-Aqua-4.png");
+}
+
+/*fourth row of cars*/
+section#cars > section#fourth > div:nth-child(1) > div:nth-child(1) {
+    background-image: url("../img/cars/display/mercedes-benz-glc-suv.jpeg");
+}
+
+section#cars > section#fourth > div:nth-child(2) > div:nth-child(1) {
+    background-image: url("../img/cars/display/merces-sedan.jpg");
+}
+
+section#cars > section#fourth > div:nth-child(3) > div:nth-child(1) {
+    background-image: url("../img/cars/display/bmw-i8-roadster.jpg");
+}
+
+
