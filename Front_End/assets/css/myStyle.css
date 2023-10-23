@@ -512,3 +512,50 @@ section#contact input {
 .btn:hover::before {
     transform: translateX(0);
 }
+
+/*footer ===========================================================*/
+footer {
+    margin-top: 85px;
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    padding-bottom: 50px;
+}
+
+.footer-text-heading {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+hr {
+    color: white;
+}
+
+footer > div > div > div > div {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+}
+
+footer > div > div > div:nth-child(1) > div {
+    left: 70px;
+    background-image: url("../img/icon/icon-location.png");
+}
+
+footer > div > div > div:nth-child(2) > div {
+    left: 565px;
+    background-image: url("../img/icon/icon-phone.png");
+}
+
+footer > div > div > div:nth-child(3) > div {
+    right: 430px;
+    background-image: url("../img/icon/icon-clock.png");
+}
