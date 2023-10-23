@@ -461,6 +461,54 @@ section#contact {
     padding-bottom: 20px;
 }
 
+section#contact input {
+    height: 50px;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+}
 
+.btn {
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+    margin: 1rem auto;
+    padding: 0.7rem 2rem;
+    border-radius: 30em;
+    border-style: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: transparent;
+    box-shadow: 1px 1px 12px #000000;
+}
 
+.btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1089ff;
+    transform: translateX(-101%);
+    transition: all .3s ease;
+    z-index: -1;
+}
 
+.btn:hover {
+    color: white;
+    transition: all .3s ease;
+    box-shadow: 1px 1px 12px #1089ff;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
