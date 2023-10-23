@@ -199,6 +199,15 @@ section#services {
     margin-top: 10px;
 }
 
+.icon-services {
+    width: 70px;
+    height: 70px;
+    background-image: url("../img/icon/icons-wedding-car.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
 section#services > section > div#wedding > div {
 }
 
