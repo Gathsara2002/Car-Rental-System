@@ -293,6 +293,9 @@ section#services > button > a {
 
 
 /*cars section =======================================================================================*/
+section#cars {
+    padding-top: 85px;
+}
 
 .car-img {
     height: 200px;
