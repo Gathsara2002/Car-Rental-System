@@ -306,6 +306,34 @@ nav .profile-details i {
     text-align: center;
 }
 
+.button-delete {
+    --bg: #e74c3c;
+    --text-color: #fff;
+    position: relative;
+    left: 20px;
+    width: 200px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #c0392b 0 7px 2px, #000 0 8px 5px;
+}
+
+.button-delete:hover {
+    opacity: 1;
+}
+
+.button-delete:active {
+    top: 4px;
+    box-shadow: #c0392b 0 3px 2px, #000 0 3px 5px;
+}
+
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
