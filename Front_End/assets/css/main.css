@@ -51,6 +51,8 @@ section#header > header > ul > li :hover {
 }
 
 .button-content {
+    text-decoration: none;
+    color: white;
     position: relative;
     z-index: 1;
 }
