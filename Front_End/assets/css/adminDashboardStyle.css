@@ -32,6 +32,7 @@
 
 .sidebar .nav-links {
     margin-top: 10px;
+    padding-left: 0;
 }
 
 .sidebar .nav-links li {
