@@ -307,7 +307,7 @@ nav .profile-details i {
     text-align: center;
 }
 
-th{
+th {
     width: 120px;
 }
 
@@ -417,6 +417,14 @@ form .form-control {
 .control-error {
     color: #ce1212;
     font-size: 1em;
+}
+
+/*driver section ========================================================*/
+.driver-form-holder {
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
 }
 
 
