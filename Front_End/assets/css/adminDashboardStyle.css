@@ -1,6 +1,7 @@
 /* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+/*nav bar section =========================================================================================*/
 * {
     margin: 0;
     padding: 0;
@@ -289,6 +290,7 @@ nav .profile-details i {
     font-weight: 500;
 }
 
+/*manage customer section ===========================================================================*/
 .table-holder {
     height: 400px;
     border-radius: 10px;
@@ -306,6 +308,7 @@ nav .profile-details i {
     text-align: center;
 }
 
+/*CRUD Buttons=========================================================================================*/
 .button-delete {
     --bg: #e74c3c;
     --text-color: #fff;
@@ -334,8 +337,33 @@ nav .profile-details i {
     box-shadow: #c0392b 0 3px 2px, #000 0 3px 5px;
 }
 
+/*manage car section=======================================================================================*/
+.car-form-holder {
+    height: 540px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+}
 
-/* Responsive Media Query */
+.form-label {
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: #0A2558;
+}
+
+form .form-control {
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.control-error {
+    color: #ce1212;
+    font-size: 1em;
+}
+
+
+/* Responsive Media Query =====================================================================================*/
 @media (max-width: 1240px) {
     .sidebar {
         width: 60px;
