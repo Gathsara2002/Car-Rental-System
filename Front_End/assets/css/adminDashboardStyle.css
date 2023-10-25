@@ -81,7 +81,6 @@
 
 .home-section {
     position: relative;
-    background: #f6f9ff;
     min-height: 100vh;
     width: calc(100% - 240px);
     left: 240px;
@@ -306,6 +305,10 @@ nav .profile-details i {
     vertical-align: middle !important;
     background-color: #81ecec;
     text-align: center;
+}
+
+th{
+    width: 120px;
 }
 
 /*CRUD Buttons=========================================================================================*/
