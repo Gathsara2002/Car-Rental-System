@@ -309,6 +309,60 @@ nav .profile-details i {
 }
 
 /*CRUD Buttons=========================================================================================*/
+.button-add {
+    --text-color: #fff;
+    position: relative;
+    left: 180px;
+    width: 200px;
+    border: none;
+    background: #32ff7e;
+    color: var(--text-color);
+    padding: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #32ff7e 0 7px 2px, #000 0 8px 5px;
+}
+
+.button-add:hover {
+    opacity: 1;
+}
+
+.button-add:active {
+    top: 4px;
+    box-shadow: #32ff7e 0 3px 2px, #000 0 3px 5px;
+}
+
+.button-update {
+    --text-color: #fff;
+    position: relative;
+    left: 100px;
+    width: 200px;
+    border: none;
+    background: #FFC312;
+    color: var(--text-color);
+    padding: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #FFC312 0 7px 2px, #000 0 8px 5px;
+}
+
+.button-update:hover {
+    opacity: 1;
+}
+
+.button-update:active {
+    top: 4px;
+    box-shadow: #FFC312 0 3px 2px, #000 0 3px 5px;
+}
+
 .button-delete {
     --bg: #e74c3c;
     --text-color: #fff;
