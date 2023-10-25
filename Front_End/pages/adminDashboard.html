@@ -188,20 +188,16 @@
                 <div class="col-11 p-5 bg-white rounded-3 mb-5" style="border: 1px solid green">
                     <div class="table-holder ps-1 pe-1" style="border: 1px solid deeppink">
                         <form class="row" action="car" id="carForm" method="post">
+
                             <section id="sec1Car" class="col-md-4 mt-3">
                                 <div class="mb-sm-0">
                                     <label class="form-label" for="car_Id">Car Id</label>
                                     <input class="form-control" id="car_Id" type="text" readonly name="car_Id"
-                                           placeholder="CRI-001">
+                                           placeholder="COO-001">
                                 </div>
                                 <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="name">Brand</label>
                                     <input class="form-control" id="name" type="text" name="name" placeholder="Brand">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="brand">Model</label>
-                                    <input class="form-control" id="brand" type="text" name="brand" placeholder="Model">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
@@ -211,35 +207,6 @@
                                         <option value="LUXURY">LUXURY</option>
                                         <option value="PREMIUM">PREMIUM</option>
                                     </select>
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="front_View">Front View</label>
-                                    <input class="form-control" id="front_View" type="file" name="front_View">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="back_View">Back View</label>
-                                    <input class="form-control" id="back_View" type="file" name="back_View">
-                                    <span class="control-error"></span>
-                                </div>
-                            </section>
-
-                            <section id="sec2Car" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
-                                    <label class="form-label" for="side_View">Side View</label>
-                                    <input class="form-control" id="side_View" type="file" name="side_View">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="interior">Interior</label>
-                                    <input class="form-control" id="interior" type="file" name="interior">
-                                    <span class="control-error"></span>
-                                </div>
-                                <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
-                                    <input class="form-control" id="number_Of_Passengers" type="text"
-                                           name="number_Of_Passengers" placeholder="No Of Passengers">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
@@ -258,21 +225,50 @@
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
+                                    <input class="form-control" id="number_Of_Passengers" type="text"
+                                           name="number_Of_Passengers" placeholder="No Of Passengers">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Car" class="col-md-4 mt-3">
+                                <di class="mb-sm-0 ">
+                                    <label class="form-label" for="front_View">Front View</label>
+                                    <input class="form-control" id="front_View" type="file" name="front_View">
+                                    <span class="control-error"></span>
+                                </di>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="back_View">Back View</label>
+                                    <input class="form-control" id="back_View" type="file" name="back_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="side_View">Side View</label>
+                                    <input class="form-control" id="side_View" type="file" name="side_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="interior">Interior</label>
+                                    <input class="form-control" id="interior" type="file" name="interior">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="daily_Rate">Daily Rate</label>
                                     <input class="form-control" id="daily_Rate" type="text" name="daily_Rate"
                                            placeholder="Daily Rate">
+                                    <span class="control-error"></span>
                                 </div>
-                                <span class="control-error"></span>
-                            </section>
-
-                            <section id="sec3Car" class="col-md-4 mt-3">
-                                <div class="mb-sm-0">
+                                <div class="mb-sm-0 mt-3">
                                     <label class="form-label" for="monthly_Rate">Monthly Rate</label>
                                     <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate"
                                            placeholder="Monthly Rate">
                                     <span class="control-error"></span>
                                 </div>
-                                <div class="mb-sm-0 mt-3">
+                            </section>
+
+                            <section id="sec3Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
                                     <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
                                     <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM"
                                            placeholder="Price Extra KM">
@@ -296,26 +292,16 @@
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3">
-                                    <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
-                                        Type</label>
-                                    <select class="form-control" id="vehicleAvailabilityType"
-                                            name="vehicleAvailabilityType">
+                                    <label class="form-label" for="vehicleAvailability">Vehicle Availability</label>
+                                    <select class="form-control" id="vehicleAvailability"
+                                            name="vehicleAvailability">
                                         <option value="AVAILABLE">AVAILABLE</option>
-                                        <option value="MAINTAIN">MAINTAIN</option>
                                         <option value="UNDER_MAINTAIN">UNDER_MAINTAIN</option>
                                     </select>
                                     <span class="control-error"></span>
                                 </div>
-
-                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
-                                    <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
-                                            formaction="driverForm">Save
-                                    </button>
-                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
-                                    </button>
-                                    <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
-                                </div>
                             </section>
+
                         </form>
                     </div>
                 </div>

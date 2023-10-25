@@ -301,7 +301,7 @@ nav .profile-details i {
 }
 
 .table-head {
-    vertical-align: bottom;
+    vertical-align: middle !important;
     background-color: #81ecec;
     text-align: center;
 }
