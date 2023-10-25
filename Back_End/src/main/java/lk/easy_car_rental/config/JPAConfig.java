@@ -1,6 +1,7 @@
 package lk.easy_car_rental.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -10,7 +11,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  **/
 
 @Configuration
-@EnableJpaRepositories(basePackages = {})
+@EnableJpaRepositories(basePackages = {"lk.easy_car_rental.repo"})
 @EnableTransactionManagement
+@PropertySource("classpath:properties.properties")
 public class JPAConfig {
+    public JPAConfig() {
+        System.out.println("JPAConfig Instantiated");
+    }
 }
