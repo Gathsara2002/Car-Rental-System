@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
  **/
 
 @Configuration
-@Import({})
+@Import({JPAConfig.class})
 @ComponentScan(basePackages = {})
 public class WebRootConfig {
     public WebRootConfig() {
