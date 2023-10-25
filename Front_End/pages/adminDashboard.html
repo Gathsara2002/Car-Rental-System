@@ -89,63 +89,265 @@
     </nav>
 
     <!--main content-->
-   <!-- <main class="home-content" id="dashboard">
-        <div class="overview-boxes">
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Order</div>
-                    <div class="number">40,876</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from yesterday</span>
-                    </div>
-                </div>
-                <i class='bx bx-cart-alt cart'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Sales</div>
-                    <div class="number">38,876</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from yesterday</span>
-                    </div>
-                </div>
-                <i class='bx bxs-cart-add cart two'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Profit</div>
-                    <div class="number">$12,876</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from yesterday</span>
-                    </div>
-                </div>
-                <i class='bx bx-cart cart three'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Return</div>
-                    <div class="number">11,086</div>
-                    <div class="indicator">
-                        <i class='bx bx-down-arrow-alt down'></i>
-                        <span class="text">Down From Today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-cart-download cart four'></i>
-            </div>
-        </div>
-    </main>-->
+    <!-- <main class="home-content" id="dashboard">
+         <div class="overview-boxes">
+             <div class="box">
+                 <div class="right-side">
+                     <div class="box-topic">Total Order</div>
+                     <div class="number">40,876</div>
+                     <div class="indicator">
+                         <i class='bx bx-up-arrow-alt'></i>
+                         <span class="text">Up from yesterday</span>
+                     </div>
+                 </div>
+                 <i class='bx bx-cart-alt cart'></i>
+             </div>
+             <div class="box">
+                 <div class="right-side">
+                     <div class="box-topic">Total Sales</div>
+                     <div class="number">38,876</div>
+                     <div class="indicator">
+                         <i class='bx bx-up-arrow-alt'></i>
+                         <span class="text">Up from yesterday</span>
+                     </div>
+                 </div>
+                 <i class='bx bxs-cart-add cart two'></i>
+             </div>
+             <div class="box">
+                 <div class="right-side">
+                     <div class="box-topic">Total Profit</div>
+                     <div class="number">$12,876</div>
+                     <div class="indicator">
+                         <i class='bx bx-up-arrow-alt'></i>
+                         <span class="text">Up from yesterday</span>
+                     </div>
+                 </div>
+                 <i class='bx bx-cart cart three'></i>
+             </div>
+             <div class="box">
+                 <div class="right-side">
+                     <div class="box-topic">Total Return</div>
+                     <div class="number">11,086</div>
+                     <div class="indicator">
+                         <i class='bx bx-down-arrow-alt down'></i>
+                         <span class="text">Down From Today</span>
+                     </div>
+                 </div>
+                 <i class='bx bxs-cart-download cart four'></i>
+             </div>
+         </div>
+     </main>-->
 
     <!--customer content-->
-    <main class="home-content" id="manageCustomer">
-        <div class="container">
-            <div class="row justify-content-center" style="">
+    <!-- <main class="home-content" id="manageCustomer">
+         <div class="container" style="border: 1px solid black">
+             <div class="row justify-content-center" style="border: 1px solid red">
+
+                 &lt;!&ndash;table&ndash;&gt;
+                 <div class="col-11 p-5 bg-white rounded-3 mb-5">
+                     <div class="table-holder ps-1 pe-1">
+                         <table class="table table-bordered border-black custom-table table-hover">
+                             <thead class="table-head">
+                             <tr>
+                                 <th scope="col">Customer ID</th>
+                                 <th scope="col">Full Name</th>
+                                 <th scope="col">Address</th>
+                                 <th scope="col">Contact</th>
+                                 <th scope="col">Email</th>
+                                 <th scope="col">NIC No</th>
+                                 <th scope="col">License No</th>
+                                 <th scope="col">Username</th>
+                                 <th scope="col">Password</th>
+                             </tr>
+                             </thead>
+                             <tbody id="tblCustomer">
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+
+                 &lt;!&ndash;buttons&ndash;&gt;
+                 <div class="row justify-content-end">
+                     <div class="col-3">
+                         <button class="button-delete">
+                             Delete
+                         </button>
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+     </main>-->
+
+    <!--car section-->
+    <main class="home-content" id="manageCars">
+        <div class="container" style="border: 1px solid black">
+            <div class="row justify-content-center" style="border: 1px solid red">
 
                 <!--table-->
-                <div class="col-11 p-5 bg-white rounded-3 mb-5">
-                    <div class="table-holder ps-1 pe-1">
+                <div class="col-11 p-5 bg-white rounded-3 mb-5" style="border: 1px solid green">
+                    <div class="table-holder ps-1 pe-1" style="border: 1px solid deeppink">
+                        <form class="row" action="car" id="carForm" method="post">
+                            <section id="sec1Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="car_Id">Car Id</label>
+                                    <input class="form-control" id="car_Id" type="text" readonly name="car_Id"
+                                           placeholder="CRI-001">
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="name">Brand</label>
+                                    <input class="form-control" id="name" type="text" name="name" placeholder="Brand">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="brand">Model</label>
+                                    <input class="form-control" id="brand" type="text" name="brand" placeholder="Model">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="type">Type</label>
+                                    <select class="form-control" id="type" name="type">
+                                        <option value="GENERAL">GENERAL</option>
+                                        <option value="LUXURY">LUXURY</option>
+                                        <option value="PREMIUM">PREMIUM</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="front_View">Front View</label>
+                                    <input class="form-control" id="front_View" type="file" name="front_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="back_View">Back View</label>
+                                    <input class="form-control" id="back_View" type="file" name="back_View">
+                                    <span class="control-error"></span>
+                                </div>
+                            </section>
+
+                            <section id="sec2Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="side_View">Side View</label>
+                                    <input class="form-control" id="side_View" type="file" name="side_View">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="interior">Interior</label>
+                                    <input class="form-control" id="interior" type="file" name="interior">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="number_Of_Passengers">Number Of Passengers</label>
+                                    <input class="form-control" id="number_Of_Passengers" type="text"
+                                           name="number_Of_Passengers" placeholder="No Of Passengers">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="transmission_Type">Transmission Type</label>
+                                    <select class="form-control" id="transmission_Type" name="transmission_Type">
+                                        <option value="AUTO">AUTO</option>
+                                        <option value="MANUAL">MANUAL</option>
+                                    </select>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="fuel_Type">Fuel Type</label>
+                                    <select class="form-control" id="fuel_Type" name="fuel_Type">
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="PETROL">PETROL</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="daily_Rate">Daily Rate</label>
+                                    <input class="form-control" id="daily_Rate" type="text" name="daily_Rate"
+                                           placeholder="Daily Rate">
+                                </div>
+                                <span class="control-error"></span>
+                            </section>
+
+                            <section id="sec3Car" class="col-md-4 mt-3">
+                                <div class="mb-sm-0">
+                                    <label class="form-label" for="monthly_Rate">Monthly Rate</label>
+                                    <input class="form-control" id="monthly_Rate" type="text" name="monthly_Rate"
+                                           placeholder="Monthly Rate">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="price_Extra_KM">Price Extra KM</label>
+                                    <input class="form-control" id="price_Extra_KM" type="text" name="price_Extra_KM"
+                                           placeholder="Price Extra KM">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="registration_Number">Registration Number</label>
+                                    <input class="form-control" id="registration_Number" type="text"
+                                           name="registration_Number" placeholder="Register Number">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="free_Mileage">Free Mileage</label>
+                                    <input class="form-control" id="free_Mileage" type="text" name="free_Mileage"
+                                           placeholder="Free Mileage">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="color">Color</label>
+                                    <input class="form-control" id="color" type="text" name="color" placeholder="Color">
+                                    <span class="control-error"></span>
+                                </div>
+                                <div class="mb-sm-0 mt-3">
+                                    <label class="form-label" for="vehicleAvailabilityType">Vehicle Availability
+                                        Type</label>
+                                    <select class="form-control" id="vehicleAvailabilityType"
+                                            name="vehicleAvailabilityType">
+                                        <option value="AVAILABLE">AVAILABLE</option>
+                                        <option value="MAINTAIN">MAINTAIN</option>
+                                        <option value="UNDER_MAINTAIN">UNDER_MAINTAIN</option>
+                                    </select>
+                                    <span class="control-error"></span>
+                                </div>
+
+                                <div class="mt-4 mb-3 d-grid gap-2 d-sm-flex justify-content-md-center">
+                                    <button class="btn btn-success me-md-1" id="btnSaveCar" type="button"
+                                            formaction="driverForm">Save
+                                    </button>
+                                    <button type="button" class="btn btn-warning me-md-1" id="btnUpdateCar">Update
+                                    </button>
+                                    <button type="button" class="btn btn-danger" id="btnDeleteCar">Delete</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+
+                <!--buttons-->
+                <div class="row justify-content-end">
+                    <div class="col-3">
+                        <button class="button-delete">
+                            Delete
+                        </button>
+                    </div>
+
+                    <div class="col-3">
+                        <button class="button-delete">
+                            Delete
+                        </button>
+                    </div>
+
+                    <div class="col-3">
+                        <button class="button-delete">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center mt-5" style="border: 1px solid red">
+
+                <!--table-->
+                <div class="col-11 p-5 bg-white rounded-3 mb-5" style="border: 1px solid green">
+                    <div class="table-holder ps-1 pe-1" style="border: 1px solid deeppink">
                         <table class="table table-bordered border-black custom-table table-hover">
                             <thead class="table-head">
                             <tr>
@@ -160,18 +362,9 @@
                                 <th scope="col">Password</th>
                             </tr>
                             </thead>
-                            <tbody id="tblCustomer">
+                            <tbody id="tblCar">
                             </tbody>
                         </table>
-                    </div>
-                </div>
-
-                <!--buttons-->
-                <div class="row justify-content-end">
-                    <div class="col-3">
-                        <button class="button-delete">
-                            Delete
-                        </button>
                     </div>
                 </div>
 
