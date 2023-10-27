@@ -3,6 +3,7 @@ package lk.easy_car_rental.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @author : Gathsara
@@ -12,5 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 public class LoginDTO {
 }
