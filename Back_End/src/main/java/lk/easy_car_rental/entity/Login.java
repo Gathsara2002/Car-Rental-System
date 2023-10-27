@@ -13,10 +13,10 @@ import javax.persistence.Id;
  * created : 10/27/2023 -- 7:43 PM
  **/
 
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @ToString
 public class Login {
     @Id
