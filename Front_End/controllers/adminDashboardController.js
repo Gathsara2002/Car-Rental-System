@@ -23,3 +23,5 @@ function initUi() {
     clearDashboard();
     $("#dashboard").css('display', 'block');
 }
+
+/*change ui when button clicked*/
