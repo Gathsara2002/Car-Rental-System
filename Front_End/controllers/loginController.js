@@ -12,12 +12,22 @@ $("#btnLogin").click(function () {
     let isUserChecked = checkUser();
     if (isUserChecked) {
         console.log("user is reg");
+
+        /*navigate to dashboard*/
+        if (role === "ADMIN") {
+            window.location.href='../pages/adminDashboard.html';
+
+        } else if (role === "REGISTERED_USER") {
+
+        } else if (role === "DRIVER") {
+
+        }
+
     } else {
         console.log("user is not reg");
     }
 
     clearAll();
-
 });
 
 
