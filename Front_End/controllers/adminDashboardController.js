@@ -1,3 +1,5 @@
+initUi();
+
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -10,3 +12,14 @@ sidebarBtn.onclick = function () {
 }
 
 /*startup view*/
+function clearDashboard() {
+    $("#dashboard").css('display', 'none');
+    $("#manageCustomer").css('display', 'none');
+    $("#manageDriver").css('display', 'none');
+    $("#manageCars").css('display', 'none');
+}
+
+function initUi() {
+    clearDashboard();
+    $("#dashboard").css('display', 'block');
+}
