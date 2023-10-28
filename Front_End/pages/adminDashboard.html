@@ -201,11 +201,11 @@
     </main>
 
     <!--customer content-->
-    <!-- <main class="home-content" id="manageCustomer">
+     <main class="home-content" id="manageCustomer">
          <div class="container">
              <div class="row justify-content-center">
 
-                 &lt;!&ndash;table&ndash;&gt;
+                 <!--table-->
                  <div class="col-11 p-5 bg-white rounded-3 mb-5">
                      <div class="table-holder ps-1 pe-1 overflow-auto">
                          <table class="table table-bordered border-black custom-table table-hover">
@@ -228,7 +228,7 @@
                      </div>
                  </div>
 
-                 &lt;!&ndash;buttons&ndash;&gt;
+                 <!--buttons-->
                  <div class="row justify-content-end">
                      <div class="col-3">
                          <button class="button-delete">
@@ -239,14 +239,14 @@
 
              </div>
          </div>
-     </main>-->
+     </main>
 
     <!--driver section-->
-    <!--<main class="home-content" id="manageDriver">
+    <main class="home-content" id="manageDriver">
         <div class="container">
             <div class="row justify-content-center">
 
-                &lt;!&ndash;form&ndash;&gt;
+                <!--form-->
                 <div class="col-11 p-5 bg-white rounded-3 mb-4">
                     <div class="driver-form-holder ps-1 pe-1">
                         <form class="row justify-content-around" id="driverForm"
@@ -319,7 +319,7 @@
                     </div>
                 </div>
 
-                &lt;!&ndash;buttons&ndash;&gt;
+                <!--buttons-->
                 <div class="row justify-content-end">
                     <div class="col-3">
                         <button class="button-add">Add</button>
@@ -337,7 +337,7 @@
             </div>
 
             <div class="row justify-content-center mt-5">
-                &lt;!&ndash;table&ndash;&gt;
+                <!--table-->
                 <div class="col-11 p-5 bg-white rounded-3 mb-5">
                     <div class="table-holder ps-1 pe-1 overflow-auto">
                         <table class="table  custom-table table-bordered border-black table-hover">
@@ -362,14 +362,14 @@
 
             </div>
         </div>
-    </main>-->
+    </main>
 
     <!--car section-->
-    <!--<main class="home-content" id="manageCars">
+    <main class="home-content" id="manageCars">
         <div class="container">
             <div class="row justify-content-center">
 
-                &lt;!&ndash;form&ndash;&gt;
+                <!--form-->
                 <div class="col-11 p-5 bg-white rounded-3 mb-5">
                     <div class="car-form-holder ps-1 pe-1">
                         <form class="row" action="car" id="carForm" method="post">
@@ -491,7 +491,7 @@
                     </div>
                 </div>
 
-                &lt;!&ndash;buttons&ndash;&gt;
+                <!--buttons-->
                 <div class="row justify-content-end">
                     <div class="col-3">
                         <button class="button-add">Add</button>
@@ -509,7 +509,7 @@
             </div>
 
             <div class="row justify-content-center mt-5">
-                &lt;!&ndash;table&ndash;&gt;
+                <!--table-->
                 <div class="col-11 p-5 bg-white rounded-3 mb-5">
                     <div class="table-holder ps-1 pe-1 overflow-auto">
                         <table class="table  custom-table table-bordered border-black table-hover">
@@ -542,21 +542,10 @@
 
             </div>
         </div>
-    </main>-->
+    </main>
 
 </section>
 
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function () {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else
-            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-</script>
-
+<script src="../controllers/adminDashboardController.js"></script>
 </body>
 </html>
