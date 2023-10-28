@@ -25,3 +25,21 @@ function initUi() {
 }
 
 /*change ui when button clicked*/
+$("#btn-dashboard").click(function () {
+    initUi();
+});
+
+$("#btn-customer").click(function () {
+    clearDashboard();
+    $("#manageCustomer").css('display', 'block');
+});
+
+$("#btn-car").click(function () {
+    clearDashboard();
+    $("#manageCars").css('display', 'block');
+});
+
+$("#btn-driver").click(function () {
+    clearDashboard();
+    $("#manageDriver").css('display', 'block');
+});
