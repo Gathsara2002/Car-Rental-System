@@ -20,8 +20,8 @@ import javax.persistence.Id;
 @ToString
 public class Login {
     @Id
-    String userId;
-    String userName;
-    String passWord;
-    String role;
+    private String userId;
+    private String userName;
+    private String passWord;
+    private String role;
 }

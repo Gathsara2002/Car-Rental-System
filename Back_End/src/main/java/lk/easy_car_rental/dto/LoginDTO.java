@@ -15,8 +15,8 @@ import lombok.ToString;
 @Data
 @ToString
 public class LoginDTO {
-    String userId;
-    String userName;
-    String passWord;
-    String role;
+    private String userId;
+    private String userName;
+    private String passWord;
+    private String role;
 }
