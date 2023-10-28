@@ -1,5 +1,6 @@
 package lk.easy_car_rental.repo;
 
+import lk.easy_car_rental.entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
