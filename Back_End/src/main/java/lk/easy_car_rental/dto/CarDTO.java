@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author : Gathsara
@@ -21,10 +22,10 @@ public class CarDTO {
     private String transmissionType;
     private String fuelType;
     private int noOfPassengers;
-    private String frontView;
-    private String backView;
-    private String sideView;
-    private String interior;
+    private MultipartFile frontView;
+    private MultipartFile backView;
+    private MultipartFile sideView;
+    private MultipartFile interior;
     private double dailyRate;
     private double monthlyRate;
     private double extraKmPrice;

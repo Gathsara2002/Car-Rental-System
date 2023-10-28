@@ -15,4 +15,11 @@ import lombok.ToString;
 @Data
 @ToString
 public class DriverDTO {
+    private String dId;
+    private String name;
+    private String contact;
+    private String address;
+    private String licenseNo;
+    private String availability;
+    private LoginDTO loginDTO;
 }
