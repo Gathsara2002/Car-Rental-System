@@ -47,5 +47,4 @@ public class CustomerController {
     public ResponseUtil findCustomer(String cusId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findCustomer(cusId));
     }
-
 }

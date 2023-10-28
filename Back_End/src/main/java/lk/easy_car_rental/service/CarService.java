@@ -14,7 +14,7 @@ public interface CarService {
 
     void deleteCar(String id);
 
-    List<CarDTO> getAllCar();
+    List<CarDTO> getAllCars();
 
     CarDTO findCar(String id);
 
