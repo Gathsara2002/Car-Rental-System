@@ -25,4 +25,5 @@ public class CustomerDTO {
     private String license;
     private MultipartFile nic_Img;
     private MultipartFile license_Img;
+    private LoginDTO loginDTO;
 }
