@@ -1,10 +1,14 @@
 package lk.easy_car_rental.controller;
 
 import lk.easy_car_rental.dto.CustomerDTO;
+import lk.easy_car_rental.dto.LoginDTO;
 import lk.easy_car_rental.service.CustomerService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.transaction.Transactional;
 
 
 /**
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
+@Transactional
 @RequestMapping("/customer")
 public class CustomerController {
 
@@ -25,10 +30,15 @@ public class CustomerController {
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllCustomer());
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseUtil addCustomer(CustomerDTO dto) {
-        service.addCustomer(dto);
-        return new ResponseUtil("Ok", "Successfully Added", dto);
+    public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customer, @ModelAttribute LoginDTO dto) {
+        System.out.println("request eka ava");
+        customer.setLoginDTO(dto);
+        System.out.println(dto.toString());
+        System.out.println(customer.toString());
+        service.addCustomer(customer);
+        return new ResponseUtil("Ok", "Successfully Added", customer);
     }
 
     @DeleteMapping(params = {"cusId"})

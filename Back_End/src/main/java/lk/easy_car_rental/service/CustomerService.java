@@ -1,7 +1,6 @@
 package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.CustomerDTO;
-import lk.easy_car_rental.dto.LoginDTO;
 
 import java.util.List;
 
