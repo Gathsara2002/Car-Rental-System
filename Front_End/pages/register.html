@@ -9,35 +9,36 @@
 <body>
 <div class="d-flex container align-items-center position-absolute hero">
 
-    <form action="" class="form-control pb-4">
+    <form class="form-control pb-4" id="customerRegForm">
 
         <div class="container text-center">
 
             <div class="row row-cols-2">
 
                 <div class="col">
-                    <label class="form-label" for="user_Id" style="right: 275px">User ID</label>
-                    <input class="form-control" id="user_Id" name="user_Id" placeholder="U00-001" readonly=""
+                    <label class="form-label" for="userId" style="right: 275px">User ID</label>
+                    <input class="form-control" id="userId" name="userId" placeholder="U00-001" readonly
+                           value="UOO-001"
                            type="text">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
-                    <label class="form-label" for="cus_Id" style="right: 260px">Customer ID</label>
-                    <input class="form-control" id="cus_Id" name="cus_Id" placeholder="C00-001" readonly=""
+                    <label class="form-label" for="cusId" style="right: 260px">Customer ID</label>
+                    <input class="form-control" id="cusId" name="cusId" placeholder="C00-001" readonly value="COO-001"
                            type="text">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
-                    <label class="form-label" for="fullName" style="right: 265px">Full Name</label>
-                    <input class="form-control" id="fullName" name="fullName" placeholder="First Name" type="text">
+                    <label class="form-label" for="name" style="right: 265px">Full Name</label>
+                    <input class="form-control" id="name" name="name" placeholder="First Name" type="text">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
                     <label class="form-label" for="contact_No" style="right: 245px">Contact Number</label>
-                    <input class="form-control" id="contact_No" name="contact_No" placeholder="Contact Number"
+                    <input class="form-control" id="contact_No" name="contact" placeholder="Contact Number"
                            type="text">
                     <span class="control-error"></span>
                 </div>
@@ -61,15 +62,16 @@
                 </div>
 
                 <div class="col">
-                    <label class="form-label" for="license_No" style="right: 265px">License No</label>
-                    <input class="form-control" id="license_No" name="license_No" placeholder="License No"
+                    <label class="form-label" for="license" style="right: 265px">License No</label>
+                    <input class="form-control" id="license" name="license" placeholder="License No"
                            type="text">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
-                    <label class="form-label" for="role_Type" style="right: 265px">Role Type</label>
-                    <input class="form-control" id="role_Type" name="role_Type" type="text" readonly=""
+                    <label class="form-label" for="role" style="right: 265px">Role Type</label>
+                    <input class="form-control" id="role" name="role" type="text" readonly
+                           value="REGISTERED_USER"
                            placeholder="Registered User">
                     <span class="control-error"></span>
                 </div>
@@ -87,20 +89,20 @@
                 </div>
 
                 <div class="col">
-                    <label class="form-label" for="user_Name" style="right: 263px">User Name</label>
-                    <input class="form-control" id="user_Name" name="user_Name" placeholder="User Name" type="text">
+                    <label class="form-label" for="userName" style="right: 263px">User Name</label>
+                    <input class="form-control" id="userName" name="userName" placeholder="User Name" type="text">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
                     <label class="form-label" for="password" style="right: 267px">Password</label>
-                    <input class="form-control" id="password" name="password" placeholder="Enter Password"
+                    <input class="form-control" id="password" name="passWord" placeholder="Enter Password"
                            type="password">
                     <span class="control-error"></span>
                 </div>
 
                 <div class="col">
-                    <button id="btnCusRegister">REGISTER</button>
+                    <button id="btnCusRegister" type="button">REGISTER</button>
                 </div>
 
             </div>
@@ -110,10 +112,11 @@
 
 </div>
 
-</body>
-
+<script src="../controllers/baseUrl.js"></script>
 <script src="../assets/js/bootstrap.js"></script>
 <script src="../assets/js/jquery-3.7.0.min.js"></script>
 <script src="../controllers/customerController.js"></script>
+
+</body>
 
 </html>
