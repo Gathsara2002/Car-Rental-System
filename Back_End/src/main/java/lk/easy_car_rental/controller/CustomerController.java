@@ -6,7 +6,6 @@ import lk.easy_car_rental.service.CustomerService;
 import lk.easy_car_rental.service.LoginService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -61,7 +60,7 @@ public class CustomerController {
     }
 
     @PutMapping
-    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto, @RequestBody LoginDTO loginDto) {
+    public ResponseUtil updateCustomer(CustomerDTO dto, LoginDTO loginDto) {
 
         /*update from user*/
         loginService.updateUser(loginDto);

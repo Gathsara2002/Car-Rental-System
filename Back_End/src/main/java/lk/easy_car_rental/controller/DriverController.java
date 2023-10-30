@@ -1,6 +1,5 @@
 package lk.easy_car_rental.controller;
 
-import lk.easy_car_rental.dto.CarDTO;
 import lk.easy_car_rental.dto.DriverDTO;
 import lk.easy_car_rental.service.DriverService;
 import lk.easy_car_rental.util.ResponseUtil;

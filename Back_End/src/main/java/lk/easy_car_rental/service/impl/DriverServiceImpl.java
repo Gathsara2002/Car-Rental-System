@@ -2,7 +2,6 @@ package lk.easy_car_rental.service.impl;
 
 import lk.easy_car_rental.dto.CarDTO;
 import lk.easy_car_rental.dto.DriverDTO;
-import lk.easy_car_rental.entity.Car;
 import lk.easy_car_rental.entity.Driver;
 import lk.easy_car_rental.repo.DriverRepo;
 import lk.easy_car_rental.service.DriverService;
@@ -31,8 +30,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void addDriver(DriverDTO dto) {
-        if (repo.existsById(dto.getDId())) {
-            throw new RuntimeException(dto.getDId() + " is already available, please insert a new ID");
+        if (repo.existsById(dto.getUserId())) {
+            throw new RuntimeException(dto.getUserId() + " is already available, please insert a new ID");
         }
 
         Driver map = mapper.map(dto, Driver.class);
@@ -65,8 +64,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void updateDriver(DriverDTO dto) {
-        if (!repo.existsById(dto.getDId())) {
-            throw new RuntimeException(dto.getDId() + " Driver is not available, please check the ID before update.!");
+        if (!repo.existsById(dto.getUserId())) {
+            throw new RuntimeException(dto.getUserId() + " Driver is not available, please check the ID before update.!");
         }
         Driver map = mapper.map(dto, Driver.class);
         repo.save(map);
