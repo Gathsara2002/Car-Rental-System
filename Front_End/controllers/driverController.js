@@ -1,3 +1,6 @@
+getAllDrivers();
+bindTrEvents();
+
 /*save driver*/
 function saveDriver() {
     let formData = $("#driverForm").serialize();
@@ -72,4 +75,19 @@ function bindTrEvents() {
         $("#user_Name").val(userName);
         $("#password").val(password);
     })
+}
+
+/*delete driver*/
+function deleteDriver(id) {
+    $.ajax({
+        url: BaseUrl + 'driver?dId=' + id,
+        method: 'delete',
+        success: function (resp) {
+            alert(resp.message);
+            getAllCustomers();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
 }
