@@ -1,5 +1,4 @@
 /*Register Customer*/
-
 $("#btnCusRegister").click(function () {
 
     let formData = new FormData($("#customerRegForm")[0]);
@@ -11,11 +10,28 @@ $("#btnCusRegister").click(function () {
         data: formData,
         contentType: false,
         processData: false,
+        async: false,
         success: function (resp) {
-            //alert(resp.message);
+            alert(resp.responseJSON.message);
         },
         error: function (error) {
-            // alert(error.message);
+            alert(error.message);
         }
     });
 });
+
+
+/*delete customer*/
+function deleteCustomer(id) {
+    $.ajax({
+        url: BaseUrl + 'customer?cusId=' + id,
+        method: 'delete',
+        success: function (resp) {
+            alert(resp.message);
+            getAllCustomers();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+}
