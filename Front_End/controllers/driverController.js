@@ -95,7 +95,7 @@ function deleteDriver(id) {
 /*updated driver*/
 function updatedDriver() {
 
-   let driver;
+    let driver;
 
     $.ajax({
         url: BaseUrl + "driver",
@@ -108,4 +108,20 @@ function updatedDriver() {
             alert(error.message);
         }
     });
+}
+
+function searchDriver(id) {
+    $.ajax({
+        url: BaseUrl + 'driver?dId' + id,
+        dataType: "json",
+        async: false,
+        success: function (response) {
+            let driver = response.data;
+            return driver
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+    return null;
 }
