@@ -21,3 +21,23 @@ function clearCustomerInputFields() {
     $("#name,#address,#contact_No,#nic,#license,#email").css("border", "1px solid #ced4da");
     $("#name").focus();
 }
+
+/*check validation while typing*/
+$("#name,#address,#contact_No,#nic,#license,#email").keyup(function () {
+    checkValidity();
+});
+
+/*method to check validation*/
+function checkValidity() {
+    let errCount = 0;
+    for (let validation of c_vArray) {
+        if (checkCustomer(validation.regEx, validation.field)) {
+            inputCusSuccess(validation.field, "");
+        } else {
+            errCount += 1;
+            inputCusError(validation.field, validation.error);
+        }
+    }
+    setCusBtnState(errCount);
+
+}
