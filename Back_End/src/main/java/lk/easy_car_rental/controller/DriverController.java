@@ -26,6 +26,7 @@ public class DriverController {
 
     @GetMapping
     public ResponseUtil getAllDrivers() {
+        System.out.println(service.getAllDrivers());
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllDrivers());
     }
 
@@ -39,7 +40,7 @@ public class DriverController {
 
         //save driver to db
         dto.setLoginDTO(loginDTO);
-        System.out.println(dto.toString());
+
         service.addDriver(dto);
 
         return new ResponseUtil("Ok", "Successfully Added", dto);
@@ -52,8 +53,14 @@ public class DriverController {
     }
 
     @PutMapping
-    public ResponseUtil updateDriver(@RequestBody DriverDTO dto) {
+    public ResponseUtil updateDriver(@RequestBody DriverDTO dto, @RequestBody LoginDTO loinDTo) {
+
+        //update user first
+        loginService.updateUser(loinDTo);
+
+        //then driver
         service.updateDriver(dto);
+
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }
 
