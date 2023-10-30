@@ -51,12 +51,20 @@ public class CustomerController {
 
     @DeleteMapping(params = {"cusId"})
     public ResponseUtil deleteCustomer(String cusId) {
+
+        /*delete from user first*/
+        loginService.deleteUser(cusId);
+
+        /*delete from customer*/
         service.deleteCustomer(cusId);
+
         return new ResponseUtil("Ok", "Successfully Deleted", cusId);
     }
 
     @PutMapping
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto) {
+
+        /*update from user*/
         service.updateCustomer(dto);
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }
