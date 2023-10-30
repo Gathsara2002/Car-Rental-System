@@ -3,6 +3,7 @@ package lk.easy_car_rental.controller;
 import lk.easy_car_rental.dto.CustomerDTO;
 import lk.easy_car_rental.dto.LoginDTO;
 import lk.easy_car_rental.service.CustomerService;
+import lk.easy_car_rental.service.LoginService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,9 @@ public class CustomerController {
     @Autowired
     CustomerService service;
 
+    @Autowired
+    LoginService loginService;
+
     @GetMapping
     public ResponseUtil getAllCustomers() {
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllCustomer());
@@ -33,9 +37,15 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customer, @ModelAttribute LoginDTO dto) {
-        System.out.println("request eka ava");
+
+        /*save to system user*/
+        loginService.addUser(dto);
+
         customer.setLoginDTO(dto);
-        service.addCustomer(customer,dto);
+
+        /*register customer*/
+        service.addCustomer(customer, dto);
+
         return new ResponseUtil("Ok", "Successfully Added", customer);
     }
 
