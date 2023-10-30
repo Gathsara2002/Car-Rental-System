@@ -53,6 +53,30 @@ function inputCusSuccess(textField, error) {
         defaultCusText(textField, "");
     } else {
         textField.css('border', '2px solid green');
-        textField.parent().children('small').text(error);
+        textField.parent().children('span').text(error);
     }
+}
+
+/*if value wrong*/
+function inputCusError(textField, error) {
+    if (textField.val().length <= 0) {
+        defaultCusText(textField, "");
+    } else {
+        textField.css('border', '2px solid red');
+        textField.parent().children('span').text(error);
+    }
+}
+
+/*set button status*/
+function setCusBtnState(val) {
+    if (val > 0) {
+        $("#btnSaveCustomer").attr('disabled', true);
+    } else {
+        $("#btnSaveCustomer").attr('disabled', false);
+    }
+}
+
+function defaultCusText(textField, error) {
+    textField.css("border", "1px solid #ced4da");
+    textField.parent().children('span').text(error);
 }
