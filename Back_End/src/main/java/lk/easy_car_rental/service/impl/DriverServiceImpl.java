@@ -1,16 +1,17 @@
 package lk.easy_car_rental.service.impl;
 
-import lk.easy_car_rental.dto.CarDTO;
 import lk.easy_car_rental.dto.DriverDTO;
+import lk.easy_car_rental.dto.LoginDTO;
 import lk.easy_car_rental.entity.Driver;
+import lk.easy_car_rental.entity.Login;
 import lk.easy_car_rental.repo.DriverRepo;
 import lk.easy_car_rental.service.DriverService;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +36,6 @@ public class DriverServiceImpl implements DriverService {
         }
 
         Driver map = mapper.map(dto, Driver.class);
-        System.out.println(map);
         repo.save(map);
     }
 
@@ -50,8 +50,22 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public List<DriverDTO> getAllDrivers() {
         List<Driver> all = repo.findAll();
-        return mapper.map(all, new TypeToken<List<DriverDTO>>() {
-        }.getType());
+        List<DriverDTO> list = new ArrayList<>();
+        for (Driver driver : all) {
+            String userId = driver.getUserId();
+            String address = driver.getAddress();
+            String contact = driver.getContact();
+            Login login = driver.getLogin();
+            String licenseNo = driver.getLicenseNo();
+            String name = driver.getName();
+            String availability = driver.getAvailability();
+
+            DriverDTO driverDTO = new DriverDTO(userId, name, contact, address, licenseNo, availability,
+                    new LoginDTO(login.getUserId(), login.getUserName(), login.getPassWord(), login.getRole()));
+
+            list.add(driverDTO);
+        }
+        return list;
     }
 
     @Override

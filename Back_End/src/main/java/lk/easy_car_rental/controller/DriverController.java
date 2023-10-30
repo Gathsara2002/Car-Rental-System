@@ -8,6 +8,9 @@ import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.List;
+
 /**
  * @author : Gathsara
  * created : 10/28/2023 -- 8:48 PM
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/driver")
 @CrossOrigin
+@Transactional
 public class DriverController {
 
     @Autowired
@@ -26,14 +30,13 @@ public class DriverController {
 
     @GetMapping
     public ResponseUtil getAllDrivers() {
-        System.out.println(service.getAllDrivers());
+        List<DriverDTO> allDrivers = service.getAllDrivers();
+        System.out.println(allDrivers);
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllDrivers());
     }
 
     @PostMapping
     public ResponseUtil addDriver(DriverDTO dto, LoginDTO loginDTO) {
-
-        System.out.println(loginDTO.toString());
 
         //save driver as user
         loginService.addUser(loginDTO);
@@ -52,15 +55,11 @@ public class DriverController {
         return new ResponseUtil("Ok", "Successfully Deleted", dId);
     }
 
-    @PutMapping
-    public ResponseUtil updateDriver(@RequestBody DriverDTO dto, @RequestBody LoginDTO loinDTo) {
-
-        //update user first
-        loginService.updateUser(loinDTo);
-
-        //then driver
+    @PostMapping(path = "/update")
+    public ResponseUtil updateDriver(DriverDTO dto,LoginDTO loginDTO) {
+        dto.setLoginDTO(loginDTO);
+        System.out.println(dto.toString());
         service.updateDriver(dto);
-
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }
 
