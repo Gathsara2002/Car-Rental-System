@@ -35,8 +35,6 @@ public class CustomerController {
     public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customer, @ModelAttribute LoginDTO dto) {
         System.out.println("request eka ava");
         customer.setLoginDTO(dto);
-        System.out.println(dto.toString());
-        System.out.println(customer.toString());
         service.addCustomer(customer,dto);
         return new ResponseUtil("Ok", "Successfully Added", customer);
     }

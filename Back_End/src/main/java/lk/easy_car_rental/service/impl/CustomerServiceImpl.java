@@ -45,8 +45,9 @@ public class CustomerServiceImpl implements CustomerService {
         try {
 
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/Upload");
+            File uploadsDir = new File(projectPath + "/Uploads");
             System.out.println(projectPath);
+
             uploadsDir.mkdir();
 
             dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
@@ -60,6 +61,7 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException(e);
         }
 
+        System.out.println(regUser);
         customerRepo.save(regUser);
     }
 
