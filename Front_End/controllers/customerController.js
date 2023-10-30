@@ -1,3 +1,4 @@
+getAllCustomers();
 bindTrEvents();
 
 /*to store values temporary*/
@@ -69,4 +70,35 @@ function bindTrEvents() {
         let id = $(this).children().eq(0).text();
         cusId = id;
     })
+}
+
+/*getAllCustomer*/
+function getAllCustomers() {
+
+    $("#tblCustomer").empty();
+
+    $.ajax({
+        url: BaseUrl + 'customer',
+        dataType: "json",
+        success: function (response) {
+            let customers = response.data;
+            for (let i in customers) {
+                let cus = customers[i];
+                let id = cus.id;
+                let name = cus.name;
+                let address = cus.address;
+                let contact = cus.contact;
+                let email = cus.email;
+                let nic = cus.nic;
+                let license = cus.license;
+                let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${contact}</td><td>${email}</td>
+                            <td>${nic}</td><td>${license}</td></tr>`;
+                $("#tblCustomer").append(row);
+            }
+            bindTrEvents();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
 }
