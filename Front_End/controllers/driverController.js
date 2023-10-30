@@ -4,15 +4,13 @@ bindTrEvents();
 /*save driver*/
 function saveDriver() {
     let formData = $("#driverForm").serialize();
-
+    console.log(formData);
     $.ajax({
-        url: BaseUrl + "diver",
+        url: BaseUrl + "driver",
         method: "post",
         data: formData,
-        contentType: false,
-        processData: false,
         success: function (resp) {
-            alert(resp.responseJSON.message);
+            alert(resp.message);
         },
         error: function (error) {
             alert(error.message);
