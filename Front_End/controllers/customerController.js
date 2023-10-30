@@ -1,3 +1,8 @@
+bindTrEvents();
+
+/*to store values temporary*/
+let cusId;
+
 /*Register Customer*/
 $("#btnCusRegister").click(function () {
 
@@ -22,9 +27,9 @@ $("#btnCusRegister").click(function () {
 
 
 /*delete customer*/
-function deleteCustomer(id) {
+function deleteCustomer() {
     $.ajax({
-        url: BaseUrl + 'customer?cusId=' + id,
+        url: BaseUrl + 'customer?cusId=' + cusId,
         method: 'delete',
         success: function (resp) {
             alert(resp.message);
@@ -39,11 +44,13 @@ function deleteCustomer(id) {
 /*updated customer*/
 function updatedCustomer() {
 
-   let customer;
+    let formData = new FormData($("#customerRegForm")[0]);
+    console.log(formData);
+
     $.ajax({
         url: BaseUrl + "customer",
         method: 'put',
-        data: JSON.stringify(customer),
+        data: formData,
         contentType: false,
         processData: false,
         async: false,
@@ -54,4 +61,12 @@ function updatedCustomer() {
             alert(error.message);
         }
     });
+}
+
+/*bind event to table*/
+function bindTrEvents() {
+    $('#tblCustomer>tr').click(function () {
+        let id = $(this).children().eq(0).text();
+        cusId = id;
+    })
 }
