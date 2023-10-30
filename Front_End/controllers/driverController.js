@@ -140,3 +140,12 @@ $("#btnAddDriver").click(function () {
     saveDriver();
     getAllDrivers();
 });
+
+/*DELETE button event*/
+$("#btnDeleteDriver").click(function () {
+    let id = $("#user_Id").val();
+    deleteDriver(id);
+    getAllDrivers();
+});
+
+
