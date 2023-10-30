@@ -254,19 +254,19 @@
                             <section id="sec1Driver" class="col-md-4 mt-3">
                                 <div class="mb-sm-0 col-md-11">
                                     <label class="form-label" for="user_Id">Driver Id</label>
-                                    <input class="form-control" id="user_Id" readonly type="text" name="user_Id"
-                                           placeholder="DRI-001">
+                                    <input class="form-control" id="user_Id" readonly type="text" name="userId"
+                                           placeholder="DRI-001" value="DRI-001">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label class="form-label" for="fullName">Full Name</label>
-                                    <input class="form-control" id="fullName" type="text" name="fullName"
+                                    <input class="form-control" id="fullName" type="text" name="name"
                                            placeholder="Full Name">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label class="form-label" for="contact_No">Contact Number</label>
-                                    <input class="form-control" id="contact_No" type="text" name="contact_No"
+                                    <input class="form-control" id="contact_No" type="text" name="contact"
                                            placeholder="Contact Number">
                                     <span class="control-error"></span>
                                 </div>
@@ -280,13 +280,13 @@
                                 </div>
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label class="form-label" for="license_No">License No</label>
-                                    <input class="form-control" id="license_No" type="text" name="license_No"
+                                    <input class="form-control" id="license_No" type="text" name="licenseNo"
                                            placeholder="Driving License">
                                     <span class="control-error"></span>
                                 </div>
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label class="form-label" for="driverAvailability">Availability</label>
-                                    <select class="form-control" id="driverAvailability" name="driverAvailability">
+                                    <select class="form-control" id="driverAvailability" name="availability">
                                         <option value="AVAILABLE">AVAILABLE</option>
                                     </select>
                                     <span class="control-error"></span>
@@ -295,7 +295,7 @@
                             <section id="sec3Driver" class="col-md-4 mt-3">
                                 <div class="mb-sm-0 col-md-11">
                                     <label for="role_Type" class="form-label">Role type</label>
-                                    <select class="form-control" id="role_Type" name="role_Type">
+                                    <select class="form-control" id="role_Type" name="role">
                                         <option value="DRIVER">DRIVER</option>
                                     </select>
                                     <span class="control-error"></span>
@@ -303,14 +303,14 @@
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label for="user_Name" class="form-label">User Name</label>
                                     <div class="input-group has-validation">
-                                        <input class="form-control" id="user_Name" type="text" name="user_Name"
+                                        <input class="form-control" id="user_Name" type="text" name="userName"
                                                placeholder="User Name">
                                         <span class="control-error"></span>
                                     </div>
                                 </div>
                                 <div class="mb-sm-0 mt-3 col-md-11">
                                     <label class="form-label" for="password">Password</label>
-                                    <input class="form-control" id="password" type="password" name="password"
+                                    <input class="form-control" id="password" type="password" name="passWord"
                                            placeholder="Enter Password">
                                     <span class="control-error"></span>
                                 </div>
@@ -349,7 +349,6 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">License No</th>
                                 <th scope="col">Availability</th>
-                                <th scope="col">Role</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Password</th>
                             </tr>
