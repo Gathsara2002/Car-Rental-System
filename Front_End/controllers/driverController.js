@@ -49,3 +49,27 @@ function getAllDrivers() {
         }
     });
 }
+
+/*bind event to table*/
+function bindTrEvents() {
+    $('#tblDriver>tr').click(function () {
+        let id = $(this).children().eq(0).text();
+        let name = $(this).children().eq(1).text();
+        let contact = $(this).children().eq(2).text();
+        let address = $(this).children().eq(3).text();
+        let license = $(this).children().eq(4).text();
+        let availability = $(this).children().eq(5).text();
+        let userName = $(this).children().eq(6).text();
+        let password = $(this).children().eq(7).text();
+
+        //set values to text field
+        $("#user_Id").val(id);
+        $("#fullName").val(name);
+        $("#contact_No").val(contact);
+        $("#address").val(address);
+        $("#license_No").val(license);
+        $("#driverAvailability").val(availability);
+        $("#user_Name").val(userName);
+        $("#password").val(password);
+    })
+}
