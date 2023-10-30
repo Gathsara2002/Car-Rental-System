@@ -35,6 +35,7 @@ public class DriverServiceImpl implements DriverService {
         }
 
         Driver map = mapper.map(dto, Driver.class);
+        System.out.println(map);
         repo.save(map);
     }
 

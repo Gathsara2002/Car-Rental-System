@@ -32,13 +32,14 @@ public class DriverController {
     @PostMapping
     public ResponseUtil addDriver(DriverDTO dto, LoginDTO loginDTO) {
 
-        System.out.println(dto.toString());
         System.out.println(loginDTO.toString());
 
         //save driver as user
         loginService.addUser(loginDTO);
 
         //save driver to db
+        dto.setLoginDTO(loginDTO);
+        System.out.println(dto.toString());
         service.addDriver(dto);
 
         return new ResponseUtil("Ok", "Successfully Added", dto);

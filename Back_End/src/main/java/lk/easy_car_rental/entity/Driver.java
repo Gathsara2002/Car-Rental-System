@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * @author : Gathsara
@@ -22,7 +19,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class Driver {
     @Id
-    private String dId;
+    @Column(name = "dId")
+    private String userId;
     private String name;
     private String contact;
     private String address;
