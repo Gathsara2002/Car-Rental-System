@@ -11,6 +11,7 @@ function saveDriver() {
         data: formData,
         success: function (resp) {
             alert(resp.message);
+            getAllDrivers();
         },
         error: function (error) {
             alert(error.message);
@@ -26,18 +27,21 @@ function getAllDrivers() {
     $.ajax({
         url: BaseUrl + 'driver',
         dataType: "json",
+        method: "get",
         success: function (response) {
+            console.log(response);
             let drivers = response.data;
+            console.log(drivers);
             for (let i in drivers) {
                 let dr = drivers[i];
                 let id = dr.userId;
                 let name = dr.name;
                 let address = dr.address;
                 let contact = dr.contact;
-                let license = dr.license;
+                let license = dr.licenseNo;
                 let availability = dr.availability;
-                let userName = dr.userName;
-                let passWord = dr.passWord;
+                let userName = dr.loginDTO.userName;
+                let passWord = dr.loginDTO.passWord;
                 let row = `<tr><td>${id}</td><td>${name}</td><td>${contact}</td><td>${address}</td><td>${license}</td>
                             <td>${availability}</td><td>${userName}</td><td>${passWord}</td></tr>`;
 
@@ -91,24 +95,58 @@ function deleteDriver(id) {
 }
 
 /*updated driver*/
-function updatedDriver(id) {
+function updatedDriver() {
+    /*let id = $("#user_Id").val();
+    let name = $("#fullName").val();
+    let address = $("#address").val();
+    let contact = $("#contact_No").val();
+    let license = $("#license_No").val();
+    let availability = $("#driverAvailability").val();
+    let uName = $("#user_Name").val();
+    let pass = $("#password").val();
+    let role = $("#role_Type").val();
 
-    let driver = searchDriver(id);
-    driver.name = $("#fullName").val();
-    driver.address = $("#address").val();
-    driver.contact = $("#contact_No").val();
-    driver.licenseNo = $("#license_No").val();
-    driver.availability = $("#driverAvailability").val();
-    driver.userName = $("#user_Name").val();
-    driver.passWord = $("#password").val();
+    let driver = {
+        userId: id,
+        name: name,
+        contact: contact,
+        address: address,
+        licenseNo: license,
+        availability: availability,
+        loginDT0: {
+            userId: "DRI-001",
+            userName: uName,
+            passWord: pass,
+            role: role
+        }
+    };
+
+
+    console.log(driver)
 
     $.ajax({
         url: BaseUrl + "driver",
         method: 'put',
-        contentType: "application/json",
+        dataType: "json",
         data: JSON.stringify(driver),
+        contentType: "application/json",
         success: function (resp) {
-            alert(resp.responseJSON.message);
+            alert(resp.message);
+            getAllDrivers();
+        },
+        error: function (error) {
+            alert(error.message);
+        }
+    });*/
+    let formData = $("#driverForm").serialize();
+    console.log(formData);
+    $.ajax({
+        url: BaseUrl + "driver/update",
+        method: "post",
+        data: formData,
+        success: function (resp) {
+            alert(resp.message);
+            getAllDrivers();
         },
         error: function (error) {
             alert(error.message);
@@ -118,26 +156,26 @@ function updatedDriver(id) {
 
 /*search driver*/
 function searchDriver(id) {
+    let driver;
+
     $.ajax({
         url: BaseUrl + 'driver?dId' + id,
         dataType: "json",
         async: false,
         success: function (response) {
-            let driver = response.data;
-            return driver
+            driver = response.data
         },
         error: function (error) {
             alert(error.responseJSON.message);
         }
     });
-    return null;
+    return driver;
 }
 
 /*add button event*/
 $("#btnAddDriver").click(function () {
     saveDriver();
     clearInputFields();
-    getAllDrivers();
 });
 
 /*DELETE button event*/
@@ -145,14 +183,12 @@ $("#btnDeleteDriver").click(function () {
     let id = $("#user_Id").val();
     deleteDriver(id);
     clearInputFields();
-    getAllDrivers();
 });
 
+//update driver
 $("#btnUpdateDriver").click(function () {
-    let id = $("#user_Id").val();
-    updatedDriver(id);
+    updatedDriver();
     clearInputFields();
-    getAllDrivers();
 });
 
 /*clear input fields*/
