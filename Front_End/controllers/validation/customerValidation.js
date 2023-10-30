@@ -14,3 +14,10 @@ c_vArray.push({field: $("#contact_No"), regEx: CUS_TEL_REGEX, error: 'Contact Pa
 c_vArray.push({field: $("#nic"), regEx: CUS_NIC_REGEX, error: 'NIC Pattern Is Wrong.'});
 c_vArray.push({field: $("#license"), regEx: CUS_LICENSE_REGEX, error: 'License Pattern Is Wrong.'});
 c_vArray.push({field: $("#email"), regEx: CUS_EMAIL_REGEX, error: 'Email Pattern Is Wrong.'});
+
+//clear input field values
+function clearCustomerInputFields() {
+    $("#name,#address,#contact_No,#nic,#license,#email").val("");
+    $("#name,#address,#contact_No,#nic,#license,#email").css("border", "1px solid #ced4da");
+    $("#name").focus();
+}
