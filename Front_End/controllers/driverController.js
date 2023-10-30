@@ -93,13 +93,21 @@ function deleteDriver(id) {
 }
 
 /*updated driver*/
-function updatedDriver() {
+function updatedDriver(id) {
 
-    let driver;
+    let driver = searchDriver(id);
+    driver.name = $("#fullName").val();
+    driver.address = $("#address").val();
+    driver.contact = $("#contact_No").val();
+    driver.licenseNo = $("#license_No").val();
+    driver.availability = $("#driverAvailability").val();
+    driver.userName = $("#user_Name").val();
+    driver.passWord = $("#password").val();
 
     $.ajax({
         url: BaseUrl + "driver",
         method: 'put',
+        contentType: "application/json",
         data: JSON.stringify(driver),
         success: function (resp) {
             alert(resp.responseJSON.message);
