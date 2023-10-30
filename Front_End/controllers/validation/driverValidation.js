@@ -1,9 +1,12 @@
 //regex
-const CUS_NAME_REGEX = /^[A-Za-z ]{4,}$/;
-const CUS_TEL_REGEX = /^[0-9]{2,}$/;
-const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
-const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const regExNIC = /^([0-9]{12}|[0-9V]{10})$/;
-const regExDrivingNIC = /^[A-Z0-9-]+$/;
-const regExUserName = /^[A-z0-9/ ]{4,30}$/;
-const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+const DRI_NAME_REGEX = /^[A-Za-z ]{4,}$/;
+const DRI_TEL_REGEX = /^[0-9]{2,}$/;
+const DRI_ADDRESS_REGEX = /^[A-Za-z0-9 ]{5,}$/;
+const DRI_LICENSE_REGEX = /^[A-Z0-9-]+$/;
+
+//add validations and text fields to the array
+let c_vArray = [];
+c_vArray.push({field: $("#fullName"), regEx: CUS_NAME_REGEX, error: 'Name Pattern Is Wrong : A-z'});
+c_vArray.push({field: $("#address"), regEx: CUS_ADDRESS_REGEX, error: 'Address Pattern Is Wrong. : A-z'});
+c_vArray.push({field: $("#contact_No"), regEx: CUS_TEL_REGEX, error: 'Contact Pattern Is Wrong.'});
+c_vArray.push({field: $("#license_No"), regEx: CUS_LICENSE_REGEX, error: 'License Pattern Is Wrong.'});

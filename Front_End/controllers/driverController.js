@@ -197,7 +197,6 @@ function clearInputFields() {
     $("#contact_No").val("");
     $("#address").val("");
     $("#license_No").val("");
-    $("#driverAvailability").val("");
     $("#user_Name").val("");
     $("#password").val("");
 }
