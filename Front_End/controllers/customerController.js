@@ -35,3 +35,23 @@ function deleteCustomer(id) {
         }
     });
 }
+
+/*updated customer*/
+function updatedCustomer() {
+
+   let customer;
+    $.ajax({
+        url: BaseUrl + "customer",
+        method: 'put',
+        data: JSON.stringify(customer),
+        contentType: false,
+        processData: false,
+        async: false,
+        success: function (resp) {
+            alert(resp.responseJSON.message);
+        },
+        error: function (error) {
+            alert(error.message);
+        }
+    });
+}
