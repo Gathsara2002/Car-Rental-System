@@ -15,7 +15,7 @@ $("#btnLogin").click(function () {
 
         /*navigate to dashboard*/
         if (role === "ADMIN") {
-            window.location.href='../pages/adminDashboard.html';
+            window.location.href = '../pages/adminDashboard.html';
 
         } else if (role === "REGISTERED_USER") {
 
