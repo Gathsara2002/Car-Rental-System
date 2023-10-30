@@ -91,3 +91,21 @@ function deleteDriver(id) {
         }
     });
 }
+
+/*updated driver*/
+function updatedDriver() {
+
+   let driver;
+
+    $.ajax({
+        url: BaseUrl + "driver",
+        method: 'put',
+        data: JSON.stringify(driver),
+        success: function (resp) {
+            alert(resp.responseJSON.message);
+        },
+        error: function (error) {
+            alert(error.message);
+        }
+    });
+}
