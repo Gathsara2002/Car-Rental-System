@@ -1,6 +1,7 @@
 package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.CustomerDTO;
+import lk.easy_car_rental.dto.LoginDTO;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  **/
 public interface CustomerService {
 
-    void addCustomer(CustomerDTO dto);
+    void addCustomer(CustomerDTO dto, LoginDTO loginDTO);
 
     void deleteCustomer(String id);
 

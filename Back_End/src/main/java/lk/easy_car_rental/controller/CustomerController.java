@@ -37,7 +37,7 @@ public class CustomerController {
         customer.setLoginDTO(dto);
         System.out.println(dto.toString());
         System.out.println(customer.toString());
-        service.addCustomer(customer);
+        service.addCustomer(customer,dto);
         return new ResponseUtil("Ok", "Successfully Added", customer);
     }
 

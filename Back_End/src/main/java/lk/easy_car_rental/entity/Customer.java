@@ -22,7 +22,7 @@ import javax.persistence.OneToOne;
 @ToString
 public class Customer {
     @Id
-    String cusId;
+    private String cusId;
     private String name;
     private String address;
     private String contact;
