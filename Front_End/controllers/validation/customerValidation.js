@@ -39,5 +39,20 @@ function checkValidity() {
         }
     }
     setCusBtnState(errCount);
+}
 
+/*check input value*/
+function checkCustomer(regEx, field) {
+    let inputValue = field.val();
+    return regEx.test(inputValue) ? true : false;
+}
+
+/*if value correct*/
+function inputCusSuccess(textField, error) {
+    if (textField.val().length <= 0) {
+        defaultCusText(textField, "");
+    } else {
+        textField.css('border', '2px solid green');
+        textField.parent().children('small').text(error);
+    }
 }
