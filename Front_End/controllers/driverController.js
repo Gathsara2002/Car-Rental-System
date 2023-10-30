@@ -138,6 +138,7 @@ function searchDriver(id) {
 /*add button event*/
 $("#btnAddDriver").click(function () {
     saveDriver();
+    clearInputFields();
     getAllDrivers();
 });
 
@@ -145,14 +146,27 @@ $("#btnAddDriver").click(function () {
 $("#btnDeleteDriver").click(function () {
     let id = $("#user_Id").val();
     deleteDriver(id);
+    clearInputFields();
     getAllDrivers();
 });
 
 $("#btnUpdateDriver").click(function () {
     let id = $("#user_Id").val();
     updatedDriver(id);
+    clearInputFields();
     getAllDrivers();
 });
+
+/*clear input fields*/
+function clearInputFields() {
+    $("#fullName").val("");
+    $("#contact_No").val("");
+    $("#address").val("");
+    $("#license_No").val("");
+    $("#driverAvailability").val("");
+    $("#user_Name").val("");
+    $("#password").val("");
+}
 
 
 
