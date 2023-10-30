@@ -68,7 +68,7 @@ public class DriverServiceImpl implements DriverService {
         if (!repo.existsById(dto.getDId())) {
             throw new RuntimeException(dto.getDId() + " Driver is not available, please check the ID before update.!");
         }
-        Driver map = mapper.map(dto.getDId(), Driver.class);
+        Driver map = mapper.map(dto, Driver.class);
         repo.save(map);
     }
 }

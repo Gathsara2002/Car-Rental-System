@@ -90,11 +90,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomer(CustomerDTO dto) {
+    public void updateCustomer(CustomerDTO dto, LoginDTO loginDTO) {
         if (!customerRepo.existsById(dto.getCusId())) {
             throw new RuntimeException(dto.getCusId() + " Customer is not available, please check the ID before update.!");
         }
-        Customer map = mapper.map(dto.getCusId(), Customer.class);
+        Customer map = mapper.map(dto, Customer.class);
         customerRepo.save(map);
     }
 }

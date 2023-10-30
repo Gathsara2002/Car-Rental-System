@@ -66,7 +66,7 @@ public class CarServiceImpl implements CarService {
         if (!repo.existsById(dto.getCarId())) {
             throw new RuntimeException(dto.getCarId() + " Car is not available, please check the ID before update.!");
         }
-        Car map = mapper.map(dto.getCarId(), Car.class);
+        Car map = mapper.map(dto, Car.class);
         repo.save(map);
     }
 }

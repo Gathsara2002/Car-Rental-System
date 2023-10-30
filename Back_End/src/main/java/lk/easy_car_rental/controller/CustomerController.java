@@ -34,7 +34,6 @@ public class CustomerController {
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllCustomer());
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customer, @ModelAttribute LoginDTO dto) {
 
@@ -62,10 +61,13 @@ public class CustomerController {
     }
 
     @PutMapping
-    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto) {
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto, @RequestBody LoginDTO loginDto) {
 
         /*update from user*/
-        service.updateCustomer(dto);
+        loginService.updateUser(loginDto);
+
+        /*update customer*/
+        service.updateCustomer(dto, loginDto);
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }
 
