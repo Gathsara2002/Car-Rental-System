@@ -118,6 +118,7 @@ function updatedDriver(id) {
     });
 }
 
+/*search driver*/
 function searchDriver(id) {
     $.ajax({
         url: BaseUrl + 'driver?dId' + id,
@@ -133,3 +134,9 @@ function searchDriver(id) {
     });
     return null;
 }
+
+/*add button event*/
+$("#btnAddDriver").click(function () {
+    saveDriver();
+    getAllDrivers();
+});
