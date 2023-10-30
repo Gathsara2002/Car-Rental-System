@@ -148,4 +148,12 @@ $("#btnDeleteDriver").click(function () {
     getAllDrivers();
 });
 
+$("#btnUpdateDriver").click(function () {
+    let id = $("#user_Id").val();
+    updatedDriver(id);
+    getAllDrivers();
+});
+
+
+
 
