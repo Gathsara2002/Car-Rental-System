@@ -31,3 +31,7 @@ $("#btn-schedule").click(function () {
     clearDashboard();
     $("#driverSchedule").css('display', 'block');
 });
+
+$("#btn-logOut").click(function () {
+    window.location.href = '../pages/login.html';
+});

@@ -32,3 +32,7 @@ $("#btn-customer").click(function () {
     clearDashboard();
     $("#manageProfile").css('display', 'block');
 });
+
+$("#btn-logOut").click(function () {
+    window.location.href = '../pages/login.html';
+});

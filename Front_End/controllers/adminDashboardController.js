@@ -55,3 +55,7 @@ $("#btn-payment").click(function () {
     clearDashboard();
     $("#managePayment").css('display', 'block');
 });
+
+$("#btn-logOut").click(function () {
+    window.location.href = '../pages/login.html';
+});
