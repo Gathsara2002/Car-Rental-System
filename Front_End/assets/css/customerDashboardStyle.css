@@ -289,3 +289,31 @@ nav .profile-details i {
     font-size: 20px;
     font-weight: 500;
 }
+
+.button-update {
+    --text-color: #fff;
+    position: relative;
+    width: 150px;
+    right: 100px;
+    border: none;
+    background: #FFC312;
+    color: var(--text-color);
+    padding: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #FFC312 0 7px 2px, #000 0 8px 5px;
+}
+
+.button-update:hover {
+    opacity: 1;
+}
+
+.button-update:active {
+    top: 4px;
+    box-shadow: #FFC312 0 3px 2px, #000 0 3px 5px;
+}
+
