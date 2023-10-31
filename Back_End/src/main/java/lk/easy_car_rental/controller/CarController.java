@@ -6,6 +6,8 @@ import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 /**
  * @author : Gathsara
  * created : 10/28/2023 -- 7:46 PM
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/car")
 @CrossOrigin
+@Transactional
 public class CarController {
 
     @Autowired

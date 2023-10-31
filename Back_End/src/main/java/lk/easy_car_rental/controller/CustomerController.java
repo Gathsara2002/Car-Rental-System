@@ -66,7 +66,7 @@ public class CustomerController {
         loginService.updateUser(loginDto);
 
         /*update customer*/
-        service.updateCustomer(dto, loginDto);
+        service.updateCustomer(dto);
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }
 

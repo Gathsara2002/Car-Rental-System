@@ -68,7 +68,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomer(CustomerDTO dto, LoginDTO loginDTO) {
+    public void updateCustomer(CustomerDTO dto) {
         if (!customerRepo.existsById(dto.getCusId())) {
             throw new RuntimeException(dto.getCusId() + " Customer is not available, please check the ID before update.!");
         }
