@@ -11,12 +11,12 @@ function saveDriver() {
         method: "post",
         data: formData,
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
             getAllDrivers();
             newDriverId();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 }
@@ -87,11 +87,11 @@ function deleteDriver(id) {
         url: BaseUrl + 'driver?dId=' + id,
         method: 'delete',
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
             getAllCustomers();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 }
@@ -147,11 +147,11 @@ function updatedDriver() {
         method: "post",
         data: formData,
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
             getAllDrivers();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 }

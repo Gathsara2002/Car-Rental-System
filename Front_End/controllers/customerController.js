@@ -20,12 +20,12 @@ $("#btnCusRegister").click(function () {
         processData: false,
         async: false,
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
             newUserId();
             newCustomerId();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 });
@@ -36,11 +36,11 @@ function deleteCustomer() {
         url: BaseUrl + 'customer?cusId=' + cusId,
         method: 'delete',
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
             getAllCustomers();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 }
@@ -59,10 +59,11 @@ function updatedCustomer() {
         processData: false,
         async: false,
         success: function (resp) {
-            alert(resp.message);
+            successAlert(resp.message);
+            getAllCustomers();
         },
         error: function (error) {
-            alert(error.message);
+            errorAlert(error.message);
         }
     });
 }
