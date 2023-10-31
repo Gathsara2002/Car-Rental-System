@@ -67,4 +67,11 @@ public class DriverController {
     public ResponseUtil findDriver(String dId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findDriver(dId));
     }
+
+
+    @GetMapping(path = "/newId")
+    public ResponseUtil generateNewCusId() {
+        return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastIndex());
+    }
+
 }

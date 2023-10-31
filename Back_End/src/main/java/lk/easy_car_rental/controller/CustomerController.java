@@ -77,7 +77,7 @@ public class CustomerController {
 
     @GetMapping(path = "/newId")
     public ResponseUtil generateNewCusId() {
-        return new ResponseUtil("Ok", "Successfully Searched", service.getLastCusId());
+        return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastCusId());
     }
 
 }
