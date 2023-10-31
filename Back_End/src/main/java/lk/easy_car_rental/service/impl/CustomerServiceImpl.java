@@ -75,4 +75,9 @@ public class CustomerServiceImpl implements CustomerService {
         Customer map = mapper.map(dto, Customer.class);
         customerRepo.save(map);
     }
+
+    @Override
+    public String getLastCusId() {
+        return customerRepo.getLastIndex();
+    }
 }
