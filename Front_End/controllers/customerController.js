@@ -40,7 +40,7 @@ function deleteCustomer() {
             getAllCustomers();
         },
         error: function (error) {
-            alert(error.responseJSON.message);
+            alert(error.message);
         }
     });
 }
@@ -59,7 +59,7 @@ function updatedCustomer() {
         processData: false,
         async: false,
         success: function (resp) {
-            alert(resp.responseJSON.message);
+            alert(resp.message);
         },
         error: function (error) {
             alert(error.message);
@@ -137,10 +137,15 @@ function newCustomerId() {
         success: function (resp) {
             let newId = resp.data;
             console.log(newId);
-            let tempId = parseInt(newId.split("-")[1]);
-            tempId = tempId + 1;
-            $("#cusId").val("COO-00" + tempId);
-            $("#cusId").attr('placeholder', "COO-00" + tempId);
+            if (newId == null) {
+                $("#cusId").val("COO-001");
+                $("#cusId").attr('placeholder', "COO-001");
+            } else {
+                let tempId = parseInt(newId.split("-")[1]);
+                tempId = tempId + 1;
+                $("#cusId").val("COO-00" + tempId);
+                $("#cusId").attr('placeholder', "COO-00" + tempId);
+            }
         },
         error: function (error) {
             console.log(error.message);
