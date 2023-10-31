@@ -1,6 +1,7 @@
 getAllCustomers();
 bindTrEvents();
 newUserId();
+newCustomerId();
 
 /*to store values temporary*/
 let cusId;
@@ -19,7 +20,9 @@ $("#btnCusRegister").click(function () {
         processData: false,
         async: false,
         success: function (resp) {
-            alert(resp.responseJSON.message);
+            alert(resp.message);
+            newUserId();
+            newCustomerId();
         },
         error: function (error) {
             alert(error.message);
@@ -117,6 +120,27 @@ function newUserId() {
             tempId = tempId + 1;
             $("#userId").val("UOO-00" + tempId);
             $("#userId").attr('placeholder', "UOO-00" + tempId);
+        },
+        error: function (error) {
+            console.log(error.message);
+        }
+    });
+}
+
+/*generate new customer id*/
+function newCustomerId() {
+    $.ajax({
+        url: BaseUrl + "/customer/newId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let newId = resp.data;
+            console.log(newId);
+            let tempId = parseInt(newId.split("-")[1]);
+            tempId = tempId + 1;
+            $("#cusId").val("COO-00" + tempId);
+            $("#cusId").attr('placeholder', "COO-00" + tempId);
         },
         error: function (error) {
             console.log(error.message);
