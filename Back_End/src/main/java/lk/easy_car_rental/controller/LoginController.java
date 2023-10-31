@@ -28,6 +28,12 @@ public class LoginController {
     @GetMapping
     public ResponseUtil getAllUsers() {
         List<LoginDTO> allUser = service.getAllUser();
-        return new ResponseUtil("Ok","Successfully Loaded",allUser);
+        return new ResponseUtil("Ok", "Successfully Loaded", allUser);
+    }
+
+    @GetMapping(path = "/newId")
+    public ResponseUtil generateNewUserId() {
+        String newUserId = service.generateNewUserId();
+        return new ResponseUtil("OK", "Successfully Id Generated", newUserId);
     }
 }
