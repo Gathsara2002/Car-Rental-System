@@ -20,4 +20,5 @@ public interface CarService {
 
     void updateCar(CarDTO dto);
 
+    String getLastCusId();
 }
