@@ -85,4 +85,9 @@ public class DriverServiceImpl implements DriverService {
         Driver map = mapper.map(dto, Driver.class);
         repo.save(map);
     }
+
+    @Override
+    public String getLastIndex() {
+        return repo.getLastIndex();
+    }
 }
