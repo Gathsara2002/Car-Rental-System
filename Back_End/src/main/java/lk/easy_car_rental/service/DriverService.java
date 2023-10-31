@@ -19,4 +19,6 @@ public interface DriverService {
     DriverDTO findDriver(String id);
 
     void updateDriver(DriverDTO dto);
+
+    String getLastIndex();
 }
