@@ -10,7 +10,7 @@ $("#btnLogin").click(function () {
     role = $("#role_Type").val();
 
     let isUserChecked = checkUser();
-    if (isUserChecked) {
+    if (!(isUserChecked === "No such user")) {
         console.log("user is reg");
 
         /*navigate to dashboard*/
@@ -18,9 +18,10 @@ $("#btnLogin").click(function () {
             window.location.href = '../pages/adminDashboard.html';
 
         } else if (role === "REGISTERED_USER") {
+            window.location.href = '../pages/customerDashboard.html';
 
         } else if (role === "DRIVER") {
-
+            window.location.href = '../pages/driverDashboard.html';
         }
 
     } else {
@@ -55,10 +56,10 @@ function checkUser() {
         let role1 = u.role;
 
         if (userName === userName1 && passWord === passWord1 && role === role1) {
-            return true;
+            return user.userId;
         }
     }
-    return false;
+    return "No such user";
 }
 
 function clearAll() {
