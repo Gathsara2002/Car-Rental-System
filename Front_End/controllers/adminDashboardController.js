@@ -18,6 +18,7 @@ function clearDashboard() {
     $("#manageDriver").css('display', 'none');
     $("#manageCars").css('display', 'none');
     $("#manageRent").css('display', 'none');
+    $("#managePayment").css('display', 'none');
 }
 
 function initUi() {
@@ -48,4 +49,9 @@ $("#btn-driver").click(function () {
 $("#btn-request").click(function () {
     clearDashboard();
     $("#manageRent").css('display', 'block');
+});
+
+$("#btn-payment").click(function () {
+    clearDashboard();
+    $("#managePayment").css('display', 'block');
 });
