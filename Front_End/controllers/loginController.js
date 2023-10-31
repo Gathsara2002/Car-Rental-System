@@ -1,6 +1,7 @@
 let userName;
 let passWord;
 let role;
+let user_Id;
 let user;
 
 $("#btnLogin").click(function () {
@@ -19,14 +20,14 @@ $("#btnLogin").click(function () {
             window.location.href = '../pages/adminDashboard.html';
 
         } else if (role === "REGISTERED_USER") {
-            window.location.href = '../pages/customerDashboard.html';
+            window.location.href = '../pages/customerDashboard.html?userId=' + user_Id;
 
         } else if (role === "DRIVER") {
-            window.location.href = '../pages/driverDashboard.html';
+            window.location.href = '../pages/driverDashboard.html?userId=' + user_Id;
         }
 
     } else {
-        console.log("user is not reg");
+        errorAlert("User is not registered");
     }
 
     clearAll();
@@ -44,7 +45,7 @@ function checkUser() {
             user = resp.data;
         },
         error: function (error) {
-            alert(error.responseJSON.message)
+            errorAlert(error.message);
         }
     });
 
@@ -57,7 +58,8 @@ function checkUser() {
         let role1 = u.role;
 
         if ((userName === userName1) && (passWord === passWord1) && (role === role1)) {
-            return true
+            user_Id = u.userId;
+            return true;
         }
     }
     return false;
