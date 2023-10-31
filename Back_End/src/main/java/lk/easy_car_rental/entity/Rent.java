@@ -22,7 +22,7 @@ import java.util.List;
 public class Rent {
 
     @Id
-    private String rId;
+    private String rentID;
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
