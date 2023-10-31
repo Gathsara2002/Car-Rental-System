@@ -65,115 +65,255 @@
     </nav>
 
     <!--main content-->
-    <main class="home-content" id="dashboard">
-        <div class="overview-boxes">
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Registered Users</div>
-                    <div class="number">66</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
+    <!--  <main class="home-content" id="dashboard">
+          <div class="overview-boxes">
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Registered Users</div>
+                      <div class="number">66</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-user-check cart'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Total Customers</div>
+                      <div class="number">50</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-user-plus cart two'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Registered Drivers</div>
+                      <div class="number">15</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bx-street-view cart three'></i>
+              </div>
+          </div>
+
+          <div class="overview-boxes">
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Total Vehicles</div>
+                      <div class="number">30</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-car cart'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Available Cars</div>
+                      <div class="number">25</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-car-garage cart two'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Maintain Vehicles</div>
+                      <div class="number">2</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-car-mechanic cart three'></i>
+              </div>
+          </div>
+
+          <div class="overview-boxes">
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Total Requests</div>
+                      <div class="number">104</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bxs-book-open cart'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Pending Requests</div>
+                      <div class="number">0</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bx-loader cart two'></i>
+              </div>
+              <div class="box">
+                  <div class="right-side">
+                      <div class="box-topic">Available Drivers</div>
+                      <div class="number">14</div>
+                      <div class="indicator">
+                          <i class='bx bx-up-arrow-alt'></i>
+                          <span class="text">Up from today</span>
+                      </div>
+                  </div>
+                  <i class='bx bx-street-view cart three'></i>
+              </div>
+          </div>
+
+      </main>-->
+
+    <!--profile content-->
+    <main class="home-content" id="manageProfile">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-11 p-5 bg-white rounded-3 mb-5">
+                    <div class="table-holder ps-1 pe-1">
+                        <div class="row mt-3">
+                            <div class="card info-card">
+                                <!-- start card-body -->
+                                <div class="card-body mt-4">
+                                    <!-- start row -->
+                                    <div class="row">
+                                        <!-- start col-->
+                                        <div class="col-xl-12">
+                                            <form id="customerDetailsForm" class="row">
+                                                <section id="sec1CustomerDetails" class="col-xl-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="cusUserID">User ID<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" readonly id="cusUserID"
+                                                               name="user_Id"
+                                                               placeholder="User ID" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="cusId">Customer ID<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="cusId" name="cusId"
+                                                               placeholder="First Name" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="cusName">Full Name<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="cusName" name="cusName"
+                                                               placeholder="Last Name" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="customerContactNo">Contact
+                                                            Number<span
+                                                                    class="text-danger"></span></label>
+                                                        <input class="form-control" id="customerContactNo"
+                                                               name="contact_No"
+                                                               placeholder="Contact No" type="text">
+                                                    </div>
+                                                </section>
+                                                <section id="sec2CustomerDetails" class="col-xl-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="customerAddress">Address<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="customerAddress" name="address"
+                                                               placeholder="Address" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="customerDriverEmail">Email<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="customerDriverEmail"
+                                                               name="email"
+                                                               placeholder="Email" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="customerNic">Nic No<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="customerNic" name="nic"
+                                                               placeholder="Nic No" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="imgNiC">NIC Image<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="imgNiC" name="nic_Img"
+                                                               placeholder="NIC NO" type="file">
+                                                    </div>
+                                                </section>
+                                                <section id="sec3CustomerDetails" class="col-xl-4">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="customerLicence">Licence No<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="customerLicence"
+                                                               name="license_No"
+                                                               placeholder="Licence No" type="text">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="imgLicence">Licence Image<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="imgLicence" name="license_Img"
+                                                               placeholder="NIC NO" type="file">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="customerUserName" class="form-label">User Name<span
+                                                                class="text-danger"></span></label>
+                                                        <div class="input-group has-validation">
+                                                            <input type="text" class="form-control"
+                                                                   id="customerUserName"
+                                                                   name="user_Name" placeholder="User Name"
+                                                                   aria-describedby="customerInputGroupPrepend"
+                                                                   required>
+                                                            <div class="invalid-feedback">
+                                                                Please choose a username.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="customerPassword" class="form-label">Password<span
+                                                                class="text-danger"></span></label>
+                                                        <div class="input-group input-group-merge">
+                                                            <input type="password" id="customerPassword" name="password"
+                                                                   class="form-control" placeholder="Password">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 d-grid gap-1 d-md-flex justify-content-md-end">
+                                                        <button type="button" class="btn btn-warning btn me-md-1"
+                                                                id="updateCustomer">
+                                                            Update
+                                                        </button>
+                                                    </div>
+                                                </section>
+                                            </form>
+                                        </div>
+                                        <!-- end col-->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <div class="card info-card">
+                                <div class=" row col-12 mb-3 m-2 p-2 d-flex">
+                                    <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                                         style="border: 2px solid black; height: 400px; " id="photoImg1"></div>
+                                    <div class=" col-md-5 col-lg-5 col-sm-5 xs-5 img-fluid m-3 p-3"
+                                         style="border: 2px solid black; height: 400px; " id="photoImg2"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <i class='bx bxs-user-check cart'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Customers</div>
-                    <div class="number">50</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-user-plus cart two'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Registered Drivers</div>
-                    <div class="number">15</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bx-street-view cart three'></i>
+
             </div>
         </div>
-
-        <div class="overview-boxes">
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Vehicles</div>
-                    <div class="number">30</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-car cart'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Available Cars</div>
-                    <div class="number">25</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-car-garage cart two'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Maintain Vehicles</div>
-                    <div class="number">2</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-car-mechanic cart three'></i>
-            </div>
-        </div>
-
-        <div class="overview-boxes">
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Total Requests</div>
-                    <div class="number">104</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bxs-book-open cart'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Pending Requests</div>
-                    <div class="number">0</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bx-loader cart two'></i>
-            </div>
-            <div class="box">
-                <div class="right-side">
-                    <div class="box-topic">Available Drivers</div>
-                    <div class="number">14</div>
-                    <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from today</span>
-                    </div>
-                </div>
-                <i class='bx bx-street-view cart three'></i>
-            </div>
-        </div>
-
     </main>
 
 </section>
