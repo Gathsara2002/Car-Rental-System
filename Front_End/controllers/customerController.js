@@ -1,5 +1,6 @@
 getAllCustomers();
 bindTrEvents();
+newUserId();
 
 /*to store values temporary*/
 let cusId;
@@ -98,6 +99,27 @@ function getAllCustomers() {
         },
         error: function (error) {
             alert(error.responseJSON.message);
+        }
+    });
+}
+
+/*generate new user id*/
+function newUserId() {
+    $.ajax({
+        url: BaseUrl + "/login/newId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let newId = resp.data;
+            console.log(newId);
+            let tempId = parseInt(newId.split("-")[1]);
+            tempId = tempId + 1;
+            $("#userId").val("UOO-00" + tempId);
+            $("#userId").attr('placeholder', "UOO-00" + tempId);
+        },
+        error: function (error) {
+            console.log(error.message);
         }
     });
 }
