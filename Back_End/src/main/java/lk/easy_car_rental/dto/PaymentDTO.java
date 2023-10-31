@@ -1,6 +1,5 @@
 package lk.easy_car_rental.dto;
 
-import lk.easy_car_rental.entity.Rent;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,5 +23,5 @@ public class PaymentDTO {
     private LocalTime time;
     private double lostDamage;
     private double total;
-    private Rent rent;
+    private RentDTO rentDTO;
 }
