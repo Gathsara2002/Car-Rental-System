@@ -42,7 +42,7 @@ public class CustomerController {
         customer.setLoginDTO(dto);
 
         /*register customer*/
-        service.addCustomer(customer, dto);
+        service.addCustomer(customer);
 
         return new ResponseUtil("Ok", "Successfully Added", customer);
     }

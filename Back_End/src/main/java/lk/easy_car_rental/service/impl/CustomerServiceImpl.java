@@ -33,36 +33,14 @@ public class CustomerServiceImpl implements CustomerService {
     ModelMapper mapper;
 
     @Override
-    public void addCustomer(CustomerDTO dto, LoginDTO loginDTO) {
-
-        Login login = new Login(loginDTO.getUserId(), loginDTO.getUserName(), loginDTO.getPassWord(), loginDTO.getRole());
-        Customer regUser = new Customer(dto.getCusId(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail(), dto.getNic(), dto.getLicense(), "", "", login);
+    public void addCustomer(CustomerDTO dto) {
 
         if (customerRepo.existsById(dto.getCusId())) {
             throw new RuntimeException(dto.getCusId() + " is already available, please insert a new ID");
         }
 
-        try {
-
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
-            File uploadsDir = new File(projectPath + "/Uploads");
-            System.out.println(projectPath);
-
-            uploadsDir.mkdir();
-
-            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
-            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
-
-            regUser.setNic_Img("Upload/" + dto.getNic_Img().getOriginalFilename());
-            regUser.setLicense_Img("Upload/" + dto.getLicense_Img().getOriginalFilename());
-
-
-        } catch (IOException | URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-
-        System.out.println(regUser);
-        customerRepo.save(regUser);
+        Customer customer = mapper.map(dto, Customer.class);
+        customerRepo.save(customer);
     }
 
     @Override
