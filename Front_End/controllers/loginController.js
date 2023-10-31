@@ -10,7 +10,8 @@ $("#btnLogin").click(function () {
     role = $("#role_Type").val();
 
     let isUserChecked = checkUser();
-    if (!(isUserChecked === "No such user")) {
+
+    if (isUserChecked) {
         console.log("user is reg");
 
         /*navigate to dashboard*/
@@ -55,11 +56,11 @@ function checkUser() {
         let userName1 = u.userName;
         let role1 = u.role;
 
-        if (userName === userName1 && passWord === passWord1 && role === role1) {
-            return user.userId;
+        if ((userName === userName1) && (passWord === passWord1) && (role === role1)) {
+            return true
         }
     }
-    return "No such user";
+    return false;
 }
 
 function clearAll() {
