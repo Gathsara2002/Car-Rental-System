@@ -229,6 +229,14 @@ function newDriverId() {
     });
 }
 
+/*get user id from url*/
+function getIdFromUrl() {
+    let currentUrl = window.location.href;
+    let split = currentUrl.split('=');
+    let id = split[1];
+    return id;
+}
+
 
 
 
