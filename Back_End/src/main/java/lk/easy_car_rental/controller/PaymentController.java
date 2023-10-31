@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
  **/
 
 @RestController
-@RequestMapping("/car")
+@RequestMapping("/payment")
 @CrossOrigin
 @Transactional
 public class PaymentController {
