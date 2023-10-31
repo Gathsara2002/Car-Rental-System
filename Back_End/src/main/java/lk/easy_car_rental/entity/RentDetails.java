@@ -34,6 +34,6 @@ public class RentDetails {
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "driverID",referencedColumnName = "userId",insertable = false,updatable = false)
+    @JoinColumn(name = "driverID",referencedColumnName = "dId",insertable = false,updatable = false)
     private Driver driver;
 }
