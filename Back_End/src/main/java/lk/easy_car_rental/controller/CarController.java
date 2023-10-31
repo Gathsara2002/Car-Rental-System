@@ -49,4 +49,9 @@ public class CarController {
     public ResponseUtil findCar(String carId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findCar(carId));
     }
+
+    @GetMapping(path = "/newId")
+    public ResponseUtil generateNewCusId() {
+        return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastCusId());
+    }
 }
