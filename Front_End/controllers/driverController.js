@@ -1,5 +1,6 @@
 getAllDrivers();
 bindTrEvents();
+newDriverId();
 
 /*save driver*/
 function saveDriver() {
@@ -12,6 +13,7 @@ function saveDriver() {
         success: function (resp) {
             alert(resp.message);
             getAllDrivers();
+            newDriverId();
         },
         error: function (error) {
             alert(error.message);
@@ -89,7 +91,7 @@ function deleteDriver(id) {
             getAllCustomers();
         },
         error: function (error) {
-            alert(error.responseJSON.message);
+            alert(error.message);
         }
     });
 }
@@ -166,7 +168,7 @@ function searchDriver(id) {
             driver = response.data
         },
         error: function (error) {
-            alert(error.responseJSON.message);
+            alert(error.message);
         }
     });
     return driver;
@@ -178,7 +180,7 @@ $("#btnAddDriver").click(function () {
     clearInputFields();
 });
 
-/*DELETE button event*/
+/*delete button event*/
 $("#btnDeleteDriver").click(function () {
     let id = $("#user_Id").val();
     deleteDriver(id);
@@ -199,6 +201,32 @@ function clearInputFields() {
     $("#license_No").val("");
     $("#user_Name").val("");
     $("#password").val("");
+}
+
+/*generate new driver id*/
+function newDriverId() {
+    $.ajax({
+        url: BaseUrl + "/driver/newId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let newId = resp.data;
+            console.log(newId);
+            if (newId == null) {
+                $("#user_Id").val("DRI-001");
+                $("#user_Id").attr('placeholder', "DRI-001");
+            } else {
+                let tempId = parseInt(newId.split("-")[1]);
+                tempId = tempId + 1;
+                $("#user_Id").val("DRI-00" + tempId);
+                $("#user_Id").attr('placeholder', "DRI-00" + tempId);
+            }
+        },
+        error: function (error) {
+            console.log(error.message);
+        }
+    });
 }
 
 
