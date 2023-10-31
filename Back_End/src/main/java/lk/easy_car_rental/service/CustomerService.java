@@ -21,4 +21,5 @@ public interface CustomerService {
 
     void updateCustomer(CustomerDTO dto);
 
+    String getLastCusId();
 }
