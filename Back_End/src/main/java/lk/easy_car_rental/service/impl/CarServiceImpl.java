@@ -69,4 +69,9 @@ public class CarServiceImpl implements CarService {
         Car map = mapper.map(dto, Car.class);
         repo.save(map);
     }
+
+    @Override
+    public String getLastCusId() {
+        return repo.getLastIndex();
+    }
 }
