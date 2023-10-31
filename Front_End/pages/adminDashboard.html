@@ -543,6 +543,113 @@
         </div>
     </main>
 
+    <!--rent content-->
+    <main class="home-content" id="manageRent">
+        <div class="container">
+
+            <!--request section-->
+            <div class="row mt-3">
+                <!-- start content-->
+                <div class="row">
+                    <!-- start col-->
+                    <div class="col-12">
+                        <!-- start card-->
+                        <div class="card info-card">
+                            <!-- start card-body -->
+                            <div class="card-body">
+                                <!-- start row -->
+                                <div class="row mt-3">
+                                    <!-- start col-->
+                                    <div class="col-xl-12">
+                                        <!-- start booking request details -->
+                                        <form id="customerRequestForm" class="row mb-3">
+                                            <section id="secResponseDetails" class="row mx-0">
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="requestRentId">Rent ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="requestRentId" readonly
+                                                           name="rent_Id"
+                                                           placeholder="Rent ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="driverId">Driver ID<span
+                                                            class="text-danger"></span></label>
+                                                    <select aria-label="Default select example" class="form-select m-1"
+                                                            id="driverId" name="driverId"
+                                                            placeholder="Driver Id"></select>
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="cusID">Customer ID<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="cusID" readonly
+                                                           name="cusId"
+                                                           placeholder="User ID" type="text">
+                                                </div>
+                                                <div class="mb-2 col-xl-3 col-sm-6">
+                                                    <label class="form-label" for="date">Request Date<span
+                                                            class="text-danger"></span></label>
+                                                    <input class="form-control mt-1" id="date" readonly
+                                                           name="date"
+                                                           placeholder="Request Date" type="text">
+                                                </div>
+
+                                            </section>
+                                        </form>
+                                        <!-- end booking request details -->
+
+                                        <!-- start button content-->
+                                        <div class="mb-3 mt-2 d-grid gap-1 d-md-flex justify-content-md-end">
+                                            <button type="button" class="btn btn-outline-info btn m-1 p-2 col-2"
+                                                    id="btnAccept">
+                                                Accept
+                                            </button>
+                                            <button type="button" class="btn btn-outline-danger btn m-1 p-2 col-2"
+                                                    id="btnReject">
+                                                Reject
+                                            </button>
+                                        </div>
+                                        <!-- end button content-->
+                                    </div>
+                                    <!-- end col-->
+                                </div>
+                                <!-- end row -->
+                            </div>
+                            <!-- end card-body -->
+                        </div>
+
+                    </div>
+                    <!-- end col-->
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <!--table-->
+                <div class="col-11 p-5 bg-white rounded-3 mb-5">
+                    <div class="table-holder ps-1 pe-1 overflow-auto">
+                        <table class="table table-bordered border-black custom-table table-hover">
+                            <thead class="table-head">
+                            <tr>
+                                <th scope="col">Rent ID</th>
+                                <th scope="col">Car ID</th>
+                                <th scope="col">Driver ID</th>
+                                <th scope="col">Pick Up Date</th>
+                                <th scope="col">Pick Up Time</th>
+                                <th scope="col">Return Date</th>
+                                <th scope="col">Request Date</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tblRent">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
 </section>
 
 <script src="../assets/js/jquery-3.7.0.min.js"></script>
