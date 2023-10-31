@@ -74,4 +74,10 @@ public class CustomerController {
     public ResponseUtil findCustomer(String cusId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findCustomer(cusId));
     }
+
+    @GetMapping(path = "/newId")
+    public ResponseUtil generateNewCusId() {
+        return new ResponseUtil("Ok", "Successfully Searched", service.getLastCusId());
+    }
+
 }
