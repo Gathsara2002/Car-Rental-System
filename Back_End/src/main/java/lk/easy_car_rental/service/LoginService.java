@@ -20,4 +20,6 @@ public interface LoginService {
     LoginDTO findUser(String id);
 
     void updateUser(LoginDTO dto);
+
+    String generateNewUserId();
 }

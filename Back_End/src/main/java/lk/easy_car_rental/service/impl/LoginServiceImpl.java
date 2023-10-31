@@ -53,4 +53,9 @@ public class LoginServiceImpl implements LoginService {
     public void updateUser(LoginDTO dto) {
 
     }
+
+    @Override
+    public String generateNewUserId() {
+        return repo.getLastIndex();
+    }
 }
