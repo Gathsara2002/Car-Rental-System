@@ -34,14 +34,15 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customer, @ModelAttribute LoginDTO dto) {
+    public ResponseUtil addCustomer(CustomerDTO customer, LoginDTO dto) {
 
         /*save to system user*/
-        loginService.addUser(dto);
+        //loginService.addUser(dto);
 
         customer.setLoginDTO(dto);
 
         /*register customer*/
+        System.out.println(customer);
         service.addCustomer(customer);
 
         return new ResponseUtil("Ok", "Successfully Added", customer);

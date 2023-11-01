@@ -39,7 +39,7 @@ public class CarController {
         return new ResponseUtil("Ok", "Successfully Deleted", carId);
     }
 
-    @PutMapping
+    @PostMapping(path = "/update")
     public ResponseUtil updateCar(@RequestBody CarDTO dto) {
         service.updateCar(dto);
         return new ResponseUtil("Ok", "Successfully Updated", dto);

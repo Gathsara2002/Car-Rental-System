@@ -30,6 +30,6 @@ public class WebAppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/Upload/**").addResourceLocations("/Uploads/");
+        registry.addResourceHandler("/upload/**").addResourceLocations("/upload/");
     }
 }

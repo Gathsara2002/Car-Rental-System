@@ -40,7 +40,8 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         Customer customer = mapper.map(dto, Customer.class);
-        customerRepo.save(customer);
+        System.out.println(customer);
+        //customerRepo.save(customer);
     }
 
     @Override
