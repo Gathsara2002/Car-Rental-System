@@ -320,18 +320,38 @@
 
     <!--rent car content-->
     <main class="home-content" id="rentCar">
-        <div class="container">
-            <div class="row justify-content-center">
 
-                <div class="col-11 p-5 bg-white rounded-3 mb-5">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <!--dropdown-->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
                 </div>
 
+                <!--search-->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
-        </div>
+        </nav>
     </main>
 
 </section>
 
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/jquery-3.7.0.min.js"></script>
 <script src="../controllers/customerDashboardController.js"></script>
 
