@@ -1,3 +1,6 @@
+getAllCars();
+bindTrEvents();
+
 /*save car*/
 function saveCar() {
     let formData = new FormData($("#carForm")[0]);
@@ -11,6 +14,8 @@ function saveCar() {
         processData: false,
         success: function (resp) {
             successAlert(resp.message);
+            getAllCars();
+            bindTrEvents();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -25,6 +30,8 @@ function deleteCar(carId) {
         method: 'delete',
         success: function (resp) {
             successAlert(resp.message);
+            getAllCars();
+            bindTrEvents();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -47,6 +54,8 @@ function updatedCar() {
         async: false,
         success: function (resp) {
             successAlert(resp.message);
+            getAllCars();
+            bindTrEvents();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -80,8 +89,8 @@ function getAllCars() {
                 let color = car.color;
                 let vehicleAvailability = car.vehicleAvailability;
                 let row = `<tr><td>${id}</td><td>${brand}</td><td>${type}</td><td>${transmissionType}</td><td>${noOfPassengers}</td>
-                            <tr><td>${dailyRate}</td><td>${monthlyRate}</td><td>${priceExtraKM}</td><td>${freeMileage}
-                            </td><td>${noOfPassengers}</td><td>${registrationNumber}</td><td>${color}</td><td>${vehicleAvailability}</td></tr>`;
+                            <td>${fuelType}</td><td>${dailyRate}</td><td>${monthlyRate}</td><td>${priceExtraKM}</td><td>${freeMileage}</td>
+                            <td>${registrationNumber}</td><td>${color}</td><td>${vehicleAvailability}</td></tr>`;
                 $("#tblCar").append(row);
             }
             bindTrEvents();
@@ -91,3 +100,49 @@ function getAllCars() {
         }
     });
 }
+
+/*bind event to table*/
+function bindTrEvents() {
+    $('#tblCar>tr').click(function () {
+        let id = $(this).children().eq(0).text();
+        let brand = $(this).children().eq(1).text();
+        let type = $(this).children().eq(2).text();
+        let transmission = $(this).children().eq(3).text();
+        let passenger = $(this).children().eq(4).text();
+        let fuel = $(this).children().eq(5).text();
+        let dailyRate = $(this).children().eq(6).text();
+        let monthlyRate = $(this).children().eq(7).text();
+        let priceExtra = $(this).children().eq(8).text();
+        let freeMileage = $(this).children().eq(9).text();
+        let regNo = $(this).children().eq(10).text();
+        let color = $(this).children().eq(11).text();
+        let avb = $(this).children().eq(12).text();
+    })
+}
+
+/*generate new car id*/
+function newCarId() {
+    $.ajax({
+        url: BaseUrl + "/car/newId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let newId = resp.data;
+            console.log(newId);
+            if (newId == null) {
+                $("#cusId").val("CAR-001");
+                $("#cusId").attr('placeholder', "CAR-001");
+            } else {
+                let tempId = parseInt(newId.split("-")[1]);
+                tempId = tempId + 1;
+                $("#cusId").val("CAR-00" + tempId);
+                $("#cusId").attr('placeholder', "CAR-00" + tempId);
+            }
+        },
+        error: function (error) {
+            console.log(error.message);
+        }
+    });
+}
+

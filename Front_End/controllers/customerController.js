@@ -29,7 +29,6 @@ $("#btnCusRegister").click(function () {
     });
 });
 
-
 /*delete customer*/
 function deleteCustomer() {
     $.ajax({
