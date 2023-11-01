@@ -197,3 +197,7 @@ function loadProfile() {
     });
 }
 
+$("#btnUpdateCustomer").click(function () {
+    updatedCustomer();
+});
+
