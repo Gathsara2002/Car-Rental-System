@@ -70,3 +70,22 @@ function clearAll() {
     $("#password").val("");
     $("#role_Type").val("Choose Role");
 }
+
+/*function search user*/
+function searchUser(id) {
+    $.ajax({
+        url: BaseUrl + "login?uId=" + id,
+        method: "get",
+        dataType: "json",
+        success: function (resp) {
+            let user = resp.data;
+            return user;
+
+        },
+        error: function (error) {
+            console.log(error.message)
+        }
+    });
+
+    return null;
+}

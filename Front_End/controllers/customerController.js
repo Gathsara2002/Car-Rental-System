@@ -2,6 +2,7 @@ getAllCustomers();
 bindTrEvents();
 newUserId();
 newCustomerId();
+loadProfile();
 
 /*to store values temporary*/
 let cusId;
@@ -175,6 +176,19 @@ function loadProfile() {
         dataType: "json",
         success: function (resp) {
             let customer = resp.data;
+            let user = searchUser(customer.loginDTO.userId);
+
+            //set values to profile
+            $("#userId").val(user.userId);
+            $("#cusId").val(customer.cusId);
+            $("#name").val(customer.name);
+            $("#contact").val(customer.contact);
+            $("#address").val(customer.address);
+            $("#email").val(customer.email);
+            $("#nic").val(customer.nic);
+            $("#license").val(customer.license);
+            $("#userName").val(user.userName);
+            $("#passWord").val(user.passWord);
 
         },
         error: function (error) {
