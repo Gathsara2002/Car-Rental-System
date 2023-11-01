@@ -26,4 +26,9 @@ public class RentServiceImpl implements RentService {
 
     @Autowired
     ModelMapper mapper;
+
+    @Override
+    public String getLastIndex() {
+        return  repo.getLastIndex();
+    }
 }
