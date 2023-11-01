@@ -69,4 +69,9 @@ public class PaymentServiceImpl implements PaymentService {
         Payment map = mapper.map(dto, Payment.class);
         repo.save(map);
     }
+
+    @Override
+    public String getLastIndex() {
+        return  repo.getLastIndex();
+    }
 }
