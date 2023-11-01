@@ -52,4 +52,10 @@ public class PaymentController {
     public ResponseUtil findPayment(String payId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findPayment(payId));
     }
+
+    @GetMapping(path = "/newId")
+    public ResponseUtil generateNewCusId() {
+        return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastIndex());
+    }
+
 }
