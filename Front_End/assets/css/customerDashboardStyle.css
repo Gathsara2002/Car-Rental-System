@@ -654,15 +654,26 @@ div#carSection > div > div:nth-child(12) > div:nth-child(2) > div.img4 {
 .rentForm {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-    margin: 85px auto auto;
+    bottom: 650px;
+    margin: auto auto;
     border: 1px solid black;
     border-radius: 5px;
     width: 400px;
     height: 570px;
+    box-shadow: -6px -5px 7px 5px #716f6f;
+    transform: scale(0.1);
+    transition: transform ease-in 0.4s;
+    visibility: hidden;
 }
+
+.open-popup{
+    bottom: 0;
+    transform: scale(1);
+    visibility: visible;
+}
+
 
 .form-label {
     font-family: Poppins, sans-serif;
