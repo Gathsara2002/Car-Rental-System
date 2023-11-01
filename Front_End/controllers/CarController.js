@@ -1,5 +1,6 @@
 getAllCars();
 bindTrEvents();
+newCarId();
 
 /*save car*/
 function saveCar() {
@@ -117,7 +118,23 @@ function bindTrEvents() {
         let regNo = $(this).children().eq(10).text();
         let color = $(this).children().eq(11).text();
         let avb = $(this).children().eq(12).text();
-    })
+
+        //set values
+        $("#car_Id").val(id);
+        $("#name").val(brand);
+        $("#type").val(type);
+        $("#transmission_Type").val(transmission);
+        $("#number_Of_Passengers").val(passenger);
+        $("#fuel_Type").val(fuel);
+        $("#daily_Rate").val(dailyRate);
+        $("#monthly_Rate").val(monthlyRate);
+        $("#price_Extra_KM").val(priceExtra);
+        $("#registration_Number").val(freeMileage);
+        $("#free_Mileage").val(regNo);
+        $("#color").val(color);
+        $("#vehicleAvailability").val(avb);
+
+    });
 }
 
 /*generate new car id*/
@@ -152,7 +169,8 @@ $("#btn-addCar").click(function () {
 });
 
 $("#btn-deleteCarCar").click(function () {
-    deleteCar();
+    let carId = $("#car_Id").val();
+    deleteCar(carId);
 });
 
 $("#btn-updateCarCar").click(function () {

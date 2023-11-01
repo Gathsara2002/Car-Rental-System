@@ -153,3 +153,7 @@ function newCustomerId() {
     });
 }
 
+$("#btnDeleteCustomer").click(function () {
+    deleteCustomer();
+});
+
