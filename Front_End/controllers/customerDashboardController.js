@@ -41,3 +41,21 @@ $("#btn-car").click(function () {
 $("#btn-logOut").click(function () {
     window.location.href = '../pages/login.html';
 });
+
+/*btn rent car action*/
+$(".rentButton").click(function () {
+    let form = document.getElementsByClassName("rentForm");
+    for (let i = 0; i < form.length; i++) {
+        form[i].classList.add("open-popup");
+        $("#carSection").css('opacity', '30%');
+        //$("#carSection").css('background', 'transparent');
+    }
+});
+
+$("#btnClose").click(function () {
+    let form = document.getElementsByClassName("rentForm");
+    for (let i = 0; i < form.length; i++) {
+        form[i].classList.remove("open-popup");
+        $("#carSection").css('opacity', '100%');
+    }
+});
