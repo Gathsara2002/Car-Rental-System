@@ -15,7 +15,7 @@ sidebarBtn.onclick = function () {
 function clearDashboard() {
     $("#dashboard").css('display', 'none');
     $("#manageProfile").css('display', 'none');
-    //$("#manageDriver").css('display', 'none');
+    $("#rentCar").css('display', 'none');
 }
 
 function initUi() {
@@ -31,6 +31,11 @@ $("#btn-dashboard").click(function () {
 $("#btn-customer").click(function () {
     clearDashboard();
     $("#manageProfile").css('display', 'block');
+});
+
+$("#btn-car").click(function () {
+    clearDashboard();
+    $("#rentCar").css('display', 'block');
 });
 
 $("#btn-logOut").click(function () {
