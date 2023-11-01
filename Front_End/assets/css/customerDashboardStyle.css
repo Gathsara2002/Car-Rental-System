@@ -667,6 +667,7 @@ div#carSection > div > div:nth-child(12) > div:nth-child(2) > div.img4 {
     transition: transform ease-out 0.4s;
     visibility: hidden;
     background-color: #dfe6e9;
+    z-index: 2;
 }
 
 .open-popup {
