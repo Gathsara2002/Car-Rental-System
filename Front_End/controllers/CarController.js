@@ -17,3 +17,17 @@ function saveCar() {
         }
     });
 }
+
+/*delete car*/
+function deleteCar(carId) {
+    $.ajax({
+        url: BaseUrl + 'car?carId=' + carId,
+        method: 'delete',
+        success: function (resp) {
+            successAlert(resp.message);
+        },
+        error: function (error) {
+            errorAlert(error.message);
+        }
+    });
+}
