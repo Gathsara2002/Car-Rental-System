@@ -321,9 +321,9 @@
     <!--rent car content-->
     <main class="home-content" id="rentCar">
 
-        <nav class="navbar bg-body-tertiary">
+       <!-- <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <!--dropdown-->
+                &lt;!&ndash;dropdown&ndash;&gt;
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -340,7 +340,7 @@
                     </ul>
                 </div>
 
-                <!--search-->
+                &lt;!&ndash;search&ndash;&gt;
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Brand (eg:Toyota)" aria-label="Search">
                     <button class="btn btn-outline-info" type="submit">Search</button>
@@ -348,7 +348,7 @@
             </div>
         </nav>
 
-        <!--All Cars-->
+        &lt;!&ndash;All Cars&ndash;&gt;
         <div id="carSection" class="container text-center position-relative" style="top: 85px">
             <div class="row row-cols-2 ms-3 me-2">
                 <div class="col position-relative mt-5" style="border: 1px solid black;">
@@ -760,44 +760,47 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <!--rent form -->
         <div class="rentForm">
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="carId" style="right: 275px">Car ID</label>
                 <input class="form-control" id="carId" name="userId" placeholder="Car ID" readonly type="text">
             </div>
 
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="rentId" style="right: 275px">Rent ID</label>
                 <input class="form-control" id="rentId" name="rentId" placeholder="ROO-001" readonly type="text">
             </div>
 
 
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="pickUpDate" style="right: 260px">Pick Up Date</label>
-                <input class="form-control" id="pickUpDate" name="pickUpDate" placeholder="MM / DD / YYYY"
-                       type="date">
+                <input class="form-control" id="pickUpDate" name="pickUpDate" type="date">
             </div>
 
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="pickUpTime" style="right: 260px">Pick Up Time</label>
                 <input class="form-control" id="pickUpTime" name="pickUpTime" type="time">
             </div>
 
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="returnUpDate" style="right: 260px">Return Up Date</label>
-                <input class="form-control" id="returnUpDate" name="returnDate" placeholder="MM / DD / YYYY"
-                       type="date">
+                <input class="form-control" id="returnUpDate" name="returnDate" type="date">
             </div>
 
-            <div class="col">
+            <div class="col m-2">
                 <label class="form-label" for="driverID" style="right: 265px">Driver ID</label>
                 <select class="form-select" id="driverID" name="driverID" type="text">
 
                 </select>
             </div>
+
+            <div class="mb-3">
+                <button class="rentNow mb-3"> Send Rent request</button>
+            </div>
+
         </div>
 
     </main>
