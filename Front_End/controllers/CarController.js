@@ -146,3 +146,16 @@ function newCarId() {
     });
 }
 
+/*button events*/
+$("#btn-addCar").click(function () {
+    saveCar();
+});
+
+$("#btn-deleteCarCar").click(function () {
+    deleteCar();
+});
+
+$("#btn-updateCarCar").click(function () {
+    updatedCar();
+});
+
