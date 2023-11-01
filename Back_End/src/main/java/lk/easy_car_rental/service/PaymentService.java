@@ -18,4 +18,6 @@ public interface PaymentService {
     PaymentDTO findPayment(String id);
 
     void updatePayment(PaymentDTO dto);
+
+    String getLastIndex();
 }
