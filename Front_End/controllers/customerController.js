@@ -18,7 +18,6 @@ $("#btnCusRegister").click(function () {
         data: formData,
         contentType: false,
         processData: false,
-        async: false,
         success: function (resp) {
             successAlert(resp.message);
             newUserId();
@@ -29,6 +28,7 @@ $("#btnCusRegister").click(function () {
         }
     });
 });
+
 
 /*delete customer*/
 function deleteCustomer() {
