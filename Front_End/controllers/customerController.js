@@ -16,6 +16,7 @@ $("#btnCusRegister").click(function () {
         url: BaseUrl + "customer",
         method: "POST",
         data: formData,
+        async: true,
         contentType: false,
         processData: false,
         success: function (resp) {
@@ -156,4 +157,29 @@ function newCustomerId() {
 $("#btnDeleteCustomer").click(function () {
     deleteCustomer();
 });
+
+/*get user id from url*/
+function getIdFromUrl() {
+    let currentUrl = window.location.href;
+    let split = currentUrl.split('=');
+    let id = split[1];
+    return id;
+}
+
+/*load profile data*/
+function loadProfile() {
+    let id = getIdFromUrl();
+    $.ajax({
+        url: BaseUrl + "customer?cusId=" + id,
+        method: "get",
+        dataType: "json",
+        success: function (resp) {
+            let customer = resp.data;
+
+        },
+        error: function (error) {
+            console.log(error.message)
+        }
+    });
+}
 
