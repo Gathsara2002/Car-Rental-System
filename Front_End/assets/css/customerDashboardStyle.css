@@ -356,24 +356,32 @@ form .form-label, .input-group-text {
     width: 25%;
     height: 170px;
     border: 1px solid green;
+    background-size: cover;
+    background-position: center;
 }
 
 .img2 {
     width: 25%;
     height: 170px;
     border: 1px solid #0a58ca;
+    background-size: cover;
+    background-position: center;
 }
 
 .img3 {
     width: 25%;
     height: 170px;
     border: 1px solid #0dcaf0;
+    background-size: cover;
+    background-position: center;
 }
 
-.img1 {
+.img4 {
     width: 25%;
     height: 170px;
     border: 1px solid sienna;
+    background-size: cover;
+    background-position: center;
 }
 
 .carDetails {
