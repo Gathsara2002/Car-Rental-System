@@ -29,6 +29,7 @@ public class CarController {
 
     @PostMapping
     public ResponseUtil addCar(CarDTO dto) {
+        System.out.println(dto);
         service.addCar(dto);
         return new ResponseUtil("Ok", "Successfully Added", dto);
     }
@@ -40,7 +41,7 @@ public class CarController {
     }
 
     @PostMapping(path = "/update")
-    public ResponseUtil updateCar(@RequestBody CarDTO dto) {
+    public ResponseUtil updateCar(CarDTO dto) {
         service.updateCar(dto);
         return new ResponseUtil("Ok", "Successfully Updated", dto);
     }

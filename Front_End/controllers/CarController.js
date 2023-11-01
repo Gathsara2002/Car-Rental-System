@@ -17,6 +17,7 @@ function saveCar() {
             successAlert(resp.message);
             getAllCars();
             bindTrEvents();
+            clearInputFields();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -33,6 +34,7 @@ function deleteCar(carId) {
             successAlert(resp.message);
             getAllCars();
             bindTrEvents();
+            clearInputFields();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -57,6 +59,7 @@ function updatedCar() {
             successAlert(resp.message);
             getAllCars();
             bindTrEvents();
+            clearInputFields();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -76,19 +79,19 @@ function getAllCars() {
             let cars = response.data;
             for (let i in cars) {
                 let car = cars[i];
-                let id = car.car_Id;
-                let brand = car.name;
+                let id = car.carId;
+                let brand = car.brand;
                 let type = car.type;
-                let transmissionType = car.transmission_Type;
-                let noOfPassengers = car.number_Of_Passengers;
-                let fuelType = car.fuel_Type;
-                let dailyRate = car.daily_Rate;
-                let monthlyRate = car.monthly_Rate;
-                let priceExtraKM = car.price_Extra_KM;
-                let freeMileage = car.free_Mileage;
-                let registrationNumber = car.registration_Number;
+                let transmissionType = car.transmissionType;
+                let noOfPassengers = car.noOfPassengers;
+                let fuelType = car.fuelType;
+                let dailyRate = car.dailyRate;
+                let monthlyRate = car.monthlyRate;
+                let priceExtraKM = car.extraKmPrice;
+                let freeMileage = car.freeMileage;
+                let registrationNumber = car.regNo;
                 let color = car.color;
-                let vehicleAvailability = car.vehicleAvailability;
+                let vehicleAvailability = car.availability;
                 let row = `<tr><td>${id}</td><td>${brand}</td><td>${type}</td><td>${transmissionType}</td><td>${noOfPassengers}</td>
                             <td>${fuelType}</td><td>${dailyRate}</td><td>${monthlyRate}</td><td>${priceExtraKM}</td><td>${freeMileage}</td>
                             <td>${registrationNumber}</td><td>${color}</td><td>${vehicleAvailability}</td></tr>`;
@@ -148,13 +151,13 @@ function newCarId() {
             let newId = resp.data;
             console.log(newId);
             if (newId == null) {
-                $("#cusId").val("CAR-001");
-                $("#cusId").attr('placeholder', "CAR-001");
+                $("#car_Id").val("CAR-001");
+                $("#car_Id").attr('placeholder', "CAR-001");
             } else {
                 let tempId = parseInt(newId.split("-")[1]);
                 tempId = tempId + 1;
-                $("#cusId").val("CAR-00" + tempId);
-                $("#cusId").attr('placeholder', "CAR-00" + tempId);
+                $("#car_Id").val("CAR-00" + tempId);
+                $("#car_Id").attr('placeholder', "CAR-00" + tempId);
             }
         },
         error: function (error) {
@@ -168,12 +171,30 @@ $("#btn-addCar").click(function () {
     saveCar();
 });
 
-$("#btn-deleteCarCar").click(function () {
+$("#btn-deleteCar").click(function () {
     let carId = $("#car_Id").val();
     deleteCar(carId);
 });
 
-$("#btn-updateCarCar").click(function () {
+$("#btn-updateCar").click(function () {
     updatedCar();
 });
+
+/*clear input fields*/
+function clearInputFields() {
+    $("#car_Id").val("");
+    $("#name").val("");
+    $("#type").val("");
+    $("#transmission_Type").val("");
+    $("#number_Of_Passengers").val("");
+    $("#fuel_Type").val("");
+    $("#daily_Rate").val("");
+    $("#monthly_Rate").val("");
+    $("#price_Extra_KM").val("");
+    $("#registration_Number").val("");
+    $("#free_Mileage").val("");
+    $("#color").val("");
+    $("#vehicleAvailability").val("");
+}
+
 
