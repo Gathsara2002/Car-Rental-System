@@ -31,6 +31,11 @@ public class LoginController {
         return new ResponseUtil("Ok", "Successfully Loaded", allUser);
     }
 
+    @GetMapping(params = {"uId"})
+    public ResponseUtil findUser(String uId) {
+        return new ResponseUtil("Ok", "Successfully Searched", service.findUser(uId));
+    }
+
     @GetMapping(path = "/newId")
     public ResponseUtil generateNewUserId() {
         String newUserId = service.generateNewUserId();
