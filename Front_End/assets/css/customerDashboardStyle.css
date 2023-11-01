@@ -395,18 +395,18 @@ form .form-label, .input-group-text {
     border: none;
     font-family: inherit;
     font-weight: 500;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: #ff4757;
 }
 
 .rentButton:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgb(255, 71, 87);
 }
 
 .rentButton:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgb(255, 71, 87);
 }
 
 .rentButton::after {
@@ -423,7 +423,7 @@ form .form-label, .input-group-text {
 }
 
 .rentButton::after {
-    background-color: #fff;
+    background-color: #ff4757;
 }
 
 .rentButton:hover::after {
