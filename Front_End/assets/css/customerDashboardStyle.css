@@ -356,32 +356,36 @@ form .form-label, .input-group-text {
     width: 25%;
     height: 170px;
     border: 1px solid green;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .img2 {
     width: 25%;
     height: 170px;
     border: 1px solid #0a58ca;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .img3 {
     width: 25%;
     height: 170px;
     border: 1px solid #0dcaf0;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .img4 {
     width: 25%;
     height: 170px;
     border: 1px solid sienna;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .carDetails {
@@ -437,6 +441,10 @@ form .form-label, .input-group-text {
 .rentButton:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
+}
+
+div#carSection > div > div:nth-child(1) > div:nth-child(2) > div.img1 {
+    background-image: url("../img/cars/display/Suzuki-Alto-800-2.png");
 }
 
 
