@@ -1,8 +1,7 @@
 getAllCustomers();
 bindTrEvents();
-newUserId();
-newCustomerId();
-loadProfile();
+//newUserId();
+//newCustomerId();
 
 /*to store values temporary*/
 let cusId;
@@ -85,7 +84,7 @@ function getAllCustomers() {
     $.ajax({
         url: BaseUrl + 'customer',
         dataType: "json",
-        method:"get",
+        method: "get",
         success: function (response) {
             let customers = response.data;
             console.log(customers);
@@ -169,19 +168,23 @@ function getIdFromUrl() {
     let currentUrl = window.location.href;
     let split = currentUrl.split('=');
     let id = split[1];
+    console.log("cus id : " + id);
     return id;
 }
 
 /*load profile data*/
 function loadProfile() {
     let id = getIdFromUrl();
-    $.ajax({
-        url: BaseUrl + "customer?cusId=" + id,
+    console.log(id);
+    let user = searchUser(id);
+    console.log(user);
+    let cusDetail = user.userId;
+   /* $.ajax({
+        url: BaseUrl + "customer" + cusDetail,
         method: "get",
         dataType: "json",
         success: function (resp) {
             let customer = resp.data;
-            let user = searchUser(customer.loginDTO.userId);
 
             //set values to profile
             $("#userId").val(user.userId);
@@ -199,7 +202,7 @@ function loadProfile() {
         error: function (error) {
             console.log(error.message)
         }
-    });
+    });*/
 }
 
 $("#btnUpdateCustomer").click(function () {

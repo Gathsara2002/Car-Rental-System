@@ -33,7 +33,6 @@ $("#btnLogin").click(function () {
     clearAll();
 });
 
-
 function checkUser() {
 
     /*get all users*/
@@ -73,19 +72,19 @@ function clearAll() {
 
 /*function search user*/
 function searchUser(id) {
+    let userData = null;
+
     $.ajax({
         url: BaseUrl + "login?uId=" + id,
         method: "get",
         dataType: "json",
         success: function (resp) {
-            let user = resp.data;
-            return user;
-
+            console.log(resp.data);
+            userData = resp.data;
+            return userData;
         },
         error: function (error) {
             console.log(error.message)
         }
     });
-
-    return null;
 }

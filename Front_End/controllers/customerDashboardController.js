@@ -31,6 +31,7 @@ $("#btn-dashboard").click(function () {
 $("#btn-customer").click(function () {
     clearDashboard();
     $("#manageProfile").css('display', 'block');
+    loadProfile();
 });
 
 $("#btn-car").click(function () {
