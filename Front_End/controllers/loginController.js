@@ -88,3 +88,29 @@ function searchUser(id) {
         }
     });
 }
+
+/*generate new user id*/
+function newUserId() {
+    $.ajax({
+        url: BaseUrl + "/login/newId",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let newId = resp.data;
+            console.log(newId);
+            if (newId == null) {
+                $("#").val("UOO-001");
+                $("#").attr('placeholder', "COO-001");
+            } else {
+                let tempId = parseInt(newId.split("-")[1]);
+                tempId = tempId + 1;
+                $("#").val("UOO-00" + tempId);
+                $("#").attr('placeholder', "UOO-00" + tempId);
+            }
+        },
+        error: function (error) {
+            console.log(error.message);
+        }
+    });
+}

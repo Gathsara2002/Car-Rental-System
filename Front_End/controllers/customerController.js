@@ -1,6 +1,5 @@
 getAllCustomers();
 bindTrEvents();
-//newUserId();
 //newCustomerId();
 
 /*to store values temporary*/
@@ -21,7 +20,6 @@ $("#btnCusRegister").click(function () {
         processData: false,
         success: function (resp) {
             successAlert(resp.message);
-            newUserId();
             newCustomerId();
         },
         error: function (error) {
@@ -112,27 +110,6 @@ function getAllCustomers() {
     });
 }
 
-/*generate new user id*/
-function newUserId() {
-    $.ajax({
-        url: BaseUrl + "/login/newId",
-        method: "GET",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (resp) {
-            let newId = resp.data;
-            console.log(newId);
-            let tempId = parseInt(newId.split("-")[1]);
-            tempId = tempId + 1;
-            $("#userId").val("UOO-00" + tempId);
-            $("#userId").attr('placeholder', "UOO-00" + tempId);
-        },
-        error: function (error) {
-            console.log(error.message);
-        }
-    });
-}
-
 /*generate new customer id*/
 function newCustomerId() {
     $.ajax({
@@ -146,11 +123,15 @@ function newCustomerId() {
             if (newId == null) {
                 $("#cusId").val("COO-001");
                 $("#cusId").attr('placeholder', "COO-001");
+                $("#userId").val("COO-001");
+                $("#userId").attr('placeholder', "COO-001");
             } else {
                 let tempId = parseInt(newId.split("-")[1]);
                 tempId = tempId + 1;
                 $("#cusId").val("COO-00" + tempId);
                 $("#cusId").attr('placeholder', "COO-00" + tempId);
+                $("#userId").val("COO-00" + tempId);
+                $("#userId").attr('placeholder', "COO-00" + tempId);
             }
         },
         error: function (error) {
@@ -176,33 +157,31 @@ function getIdFromUrl() {
 function loadProfile() {
     let id = getIdFromUrl();
     console.log(id);
-    let user = searchUser(id);
-    console.log(user);
-    let cusDetail = user.userId;
-   /* $.ajax({
-        url: BaseUrl + "customer" + cusDetail,
+    $.ajax({
+        url: BaseUrl + "customer?cusId" + id,
         method: "get",
         dataType: "json",
         success: function (resp) {
             let customer = resp.data;
+            console.log(customer);
 
             //set values to profile
-            $("#userId").val(user.userId);
-            $("#cusId").val(customer.cusId);
-            $("#name").val(customer.name);
-            $("#contact").val(customer.contact);
-            $("#address").val(customer.address);
-            $("#email").val(customer.email);
-            $("#nic").val(customer.nic);
-            $("#license").val(customer.license);
-            $("#userName").val(user.userName);
-            $("#passWord").val(user.passWord);
+            $("#userId").val(customer[0].login.userId);
+            $("#cusId").val(customer[0].cusId);
+            $("#name").val(customer[0].name);
+            $("#contact").val(customer[0].contact);
+            $("#address").val(customer[0].address);
+            $("#email").val(customer[0].email);
+            $("#nic").val(customer[0].nic);
+            $("#license").val(customer[0].license);
+            $("#userName").val(customer[0].login.userName);
+            $("#passWord").val(customer[0].login.passWord);
 
         },
         error: function (error) {
             console.log(error.message)
         }
-    });*/
+    });
 }
 
 $("#btnUpdateCustomer").click(function () {
