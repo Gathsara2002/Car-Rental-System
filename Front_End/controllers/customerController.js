@@ -87,15 +87,19 @@ function getAllCustomers() {
         dataType: "json",
         success: function (response) {
             let customers = response.data;
+            console.log(customers);
             for (let i in customers) {
                 let cus = customers[i];
-                let id = cus.id;
+                console.log(cus);
+                let id = cus.cusId;
                 let name = cus.name;
                 let address = cus.address;
                 let contact = cus.contact;
                 let email = cus.email;
                 let nic = cus.nic;
                 let license = cus.license;
+               /* let userName = cus.loginDTO.userName;
+                let passWord = cus.loginDTO.passWord;*/
                 let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${contact}</td><td>${email}</td>
                             <td>${nic}</td><td>${license}</td></tr>`;
                 $("#tblCustomer").append(row);
@@ -103,7 +107,7 @@ function getAllCustomers() {
             bindTrEvents();
         },
         error: function (error) {
-            alert(error.responseJSON.message);
+            errorAlert(error.message);
         }
     });
 }
