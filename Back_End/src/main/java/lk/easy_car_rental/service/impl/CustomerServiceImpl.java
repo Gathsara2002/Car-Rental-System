@@ -1,9 +1,7 @@
 package lk.easy_car_rental.service.impl;
 
 import lk.easy_car_rental.dto.CustomerDTO;
-import lk.easy_car_rental.dto.LoginDTO;
 import lk.easy_car_rental.entity.Customer;
-import lk.easy_car_rental.entity.Login;
 import lk.easy_car_rental.repo.CustomerRepo;
 import lk.easy_car_rental.service.CustomerService;
 import org.modelmapper.ModelMapper;
@@ -15,6 +13,7 @@ import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,8 +54,8 @@ public class CustomerServiceImpl implements CustomerService {
             dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
             /*save img path to db*/
-            customer.setNic_Img("/upload"+dto.getNic_Img().getOriginalFilename());
-            customer.setLicense_Img("/upload"+dto.getLicense_Img().getOriginalFilename());
+            customer.setNic_Img("/upload" + dto.getNic_Img().getOriginalFilename());
+            customer.setLicense_Img("/upload" + dto.getLicense_Img().getOriginalFilename());
 
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
@@ -73,19 +72,20 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<CustomerDTO> getAllCustomer() {
+    public ArrayList<CustomerDTO> getAllCustomer() {
         List<Customer> all = customerRepo.findAll();
-        return mapper.map(all, new TypeToken<List<CustomerDTO>>() {
+        System.out.println(all);
+        return mapper.map(all, new TypeToken<ArrayList<Customer>>() {
         }.getType());
     }
 
     @Override
-    public CustomerDTO findCustomer(String id) {
+    public Customer findCustomer(String id) {
         if (!customerRepo.existsById(id)) {
             throw new RuntimeException(id + " Customer is not available, please check the ID.!");
         }
         Customer customer = customerRepo.findById(id).get();
-        return mapper.map(customer, CustomerDTO.class);
+        return mapper.map(customer, Customer.class);
     }
 
     @Override
@@ -93,7 +93,28 @@ public class CustomerServiceImpl implements CustomerService {
         if (!customerRepo.existsById(dto.getCusId())) {
             throw new RuntimeException(dto.getCusId() + " Customer is not available, please check the ID before update.!");
         }
+
         Customer map = mapper.map(dto, Customer.class);
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();
+            System.out.println(projectPath);
+            File uploadsDir = new File(projectPath + "/upload");
+            uploadsDir.mkdir();
+
+            /*save images to upload directory*/
+            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
+
+            /*save img path to db*/
+            map.setNic_Img("/upload" + dto.getNic_Img().getOriginalFilename());
+            map.setLicense_Img("/upload" + dto.getLicense_Img().getOriginalFilename());
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
         customerRepo.save(map);
     }
 

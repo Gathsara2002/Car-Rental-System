@@ -64,7 +64,7 @@ public class DriverController {
     }
 
     @GetMapping(params = {"dId"})
-    public ResponseUtil findDriver(String dId) {
+    public ResponseUtil findDriver(@RequestParam String dId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findDriver(dId));
     }
 

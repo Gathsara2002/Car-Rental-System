@@ -37,26 +37,13 @@ public class CustomerController {
 
     @PostMapping
     public ResponseUtil addCustomer(CustomerDTO customer, LoginDTO dto) {
-
-        /*save to system user*/
-        //loginService.addUser(dto);
-
         customer.setLoginDTO(dto);
-
-        /*register customer*/
-        System.out.println(customer);
         service.addCustomer(customer);
-
         return new ResponseUtil("Ok", "Successfully Added", customer.getCusId());
     }
 
     @DeleteMapping(params = {"cusId"})
     public ResponseUtil deleteCustomer(String cusId) {
-
-        /*delete from user first*/
-        loginService.deleteUser(cusId);
-
-        /*delete from customer*/
         service.deleteCustomer(cusId);
 
         return new ResponseUtil("Ok", "Successfully Deleted", cusId);
@@ -64,17 +51,13 @@ public class CustomerController {
 
     @PutMapping
     public ResponseUtil updateCustomer(CustomerDTO dto, LoginDTO loginDto) {
-
-        /*update from user*/
-        loginService.updateUser(loginDto);
-
-        /*update customer*/
+        dto.setLoginDTO(loginDto);
         service.updateCustomer(dto);
         return new ResponseUtil("Ok", "Successfully Updated", dto.getCusId());
     }
 
     @GetMapping(params = {"cusId"})
-    public ResponseUtil findCustomer(String cusId) {
+    public ResponseUtil findCustomer(@RequestParam String cusId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findCustomer(cusId));
     }
 
@@ -82,5 +65,4 @@ public class CustomerController {
     public ResponseUtil generateNewCusId() {
         return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastCusId());
     }
-
 }

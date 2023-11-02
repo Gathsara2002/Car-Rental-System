@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author : Gathsara
@@ -46,7 +47,8 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public LoginDTO findUser(String id) {
-        return null;
+        Login login = repo.findById(id).get();
+        return mapper.map(login, LoginDTO.class);
     }
 
     @Override

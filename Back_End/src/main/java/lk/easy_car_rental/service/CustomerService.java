@@ -1,9 +1,9 @@
 package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.CustomerDTO;
-import lk.easy_car_rental.dto.LoginDTO;
+import lk.easy_car_rental.entity.Customer;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author : Gathsara
@@ -15,9 +15,9 @@ public interface CustomerService {
 
     void deleteCustomer(String id);
 
-    List<CustomerDTO> getAllCustomer();
+    ArrayList<CustomerDTO> getAllCustomer();
 
-    CustomerDTO findCustomer(String id);
+    Customer findCustomer(String id);
 
     void updateCustomer(CustomerDTO dto);
 

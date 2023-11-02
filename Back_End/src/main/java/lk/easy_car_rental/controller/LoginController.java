@@ -4,10 +4,7 @@ import lk.easy_car_rental.dto.LoginDTO;
 import lk.easy_car_rental.service.LoginService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,7 +29,8 @@ public class LoginController {
     }
 
     @GetMapping(params = {"uId"})
-    public ResponseUtil findUser(String uId) {
+    public ResponseUtil findUser(@RequestParam String uId) {
+        System.out.println("user - "+service.findUser(uId));
         return new ResponseUtil("Ok", "Successfully Searched", service.findUser(uId));
     }
 

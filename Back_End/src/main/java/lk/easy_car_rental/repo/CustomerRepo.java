@@ -1,5 +1,6 @@
 package lk.easy_car_rental.repo;
 
+import lk.easy_car_rental.dto.CustomerDTO;
 import lk.easy_car_rental.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

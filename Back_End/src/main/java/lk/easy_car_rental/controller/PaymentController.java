@@ -49,7 +49,7 @@ public class PaymentController {
     }
 
     @GetMapping(params = {"payId"})
-    public ResponseUtil findPayment(String payId) {
+    public ResponseUtil findPayment(@RequestParam String payId) {
         return new ResponseUtil("Ok", "Successfully Searched", service.findPayment(payId));
     }
 
