@@ -85,6 +85,7 @@ function getAllCustomers() {
     $.ajax({
         url: BaseUrl + 'customer',
         dataType: "json",
+        method:"get",
         success: function (response) {
             let customers = response.data;
             console.log(customers);
@@ -98,10 +99,10 @@ function getAllCustomers() {
                 let email = cus.email;
                 let nic = cus.nic;
                 let license = cus.license;
-               /* let userName = cus.loginDTO.userName;
-                let passWord = cus.loginDTO.passWord;*/
+                let userName = cus.login.userName;
+                let passWord = cus.login.passWord;
                 let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${contact}</td><td>${email}</td>
-                            <td>${nic}</td><td>${license}</td></tr>`;
+                            <td>${nic}</td><td>${license}</td> <td>${userName}</td><td>${passWord}</td></tr>`;
                 $("#tblCustomer").append(row);
             }
             bindTrEvents();
