@@ -45,7 +45,6 @@ public class CustomerController {
     @DeleteMapping(params = {"cusId"})
     public ResponseUtil deleteCustomer(String cusId) {
         service.deleteCustomer(cusId);
-
         return new ResponseUtil("Ok", "Successfully Deleted", cusId);
     }
 

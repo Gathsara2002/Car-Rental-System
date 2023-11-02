@@ -31,7 +31,7 @@ public class CarController {
     public ResponseUtil addCar(CarDTO dto) {
         System.out.println(dto);
         service.addCar(dto);
-        return new ResponseUtil("Ok", "Successfully Added", dto);
+        return new ResponseUtil("Ok", "Successfully Added", dto.getCarId());
     }
 
     @DeleteMapping(params = {"carId"})
@@ -43,7 +43,7 @@ public class CarController {
     @PostMapping(path = "/update")
     public ResponseUtil updateCar(CarDTO dto) {
         service.updateCar(dto);
-        return new ResponseUtil("Ok", "Successfully Updated", dto);
+        return new ResponseUtil("Ok", "Successfully Updated", dto.getCarId());
     }
 
     @GetMapping(params = {"carId"})
