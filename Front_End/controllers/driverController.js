@@ -1,5 +1,5 @@
 getAllDrivers();
-bindTrEvents();
+bindTrEventsToDriver();
 newDriverId();
 
 /*save driver*/
@@ -49,16 +49,16 @@ function getAllDrivers() {
 
                 $("#tblDriver").append(row);
             }
-            bindTrEvents();
+            bindTrEventsToDriver();
         },
         error: function (error) {
-            alert(error.responseJSON.message);
+            errorAlert(error.message);
         }
     });
 }
 
 /*bind event to table*/
-function bindTrEvents() {
+function bindTrEventsToDriver() {
     $('#tblDriver>tr').click(function () {
         let id = $(this).children().eq(0).text();
         let name = $(this).children().eq(1).text();

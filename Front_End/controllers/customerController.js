@@ -1,6 +1,6 @@
 getAllCustomers();
-bindTrEvents();
-//newCustomerId();
+bindTrEventsToCustomer();
+newCustomerId();
 
 /*to store values temporary*/
 let cusId;
@@ -59,6 +59,7 @@ function updatedCustomer() {
         success: function (resp) {
             successAlert(resp.message);
             getAllCustomers();
+            loadProfile();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -67,11 +68,13 @@ function updatedCustomer() {
 }
 
 /*bind event to table*/
-function bindTrEvents() {
+function bindTrEventsToCustomer() {
     $('#tblCustomer>tr').click(function () {
+        console.log("hi");
         let id = $(this).children().eq(0).text();
+        console.log(id);
         cusId = id;
-    })
+    });
 }
 
 /*getAllCustomer*/
@@ -102,7 +105,7 @@ function getAllCustomers() {
                             <td>${nic}</td><td>${license}</td> <td>${userName}</td><td>${passWord}</td></tr>`;
                 $("#tblCustomer").append(row);
             }
-            bindTrEvents();
+            bindTrEventsToCustomer();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -166,8 +169,8 @@ function loadProfile() {
             console.log(customer);
 
             //set values to profile
-            $("#userId").val(customer[0].login.userId);
-            $("#cusId").val(customer[0].cusId);
+            $("#userCusId").val(customer[0].login.userId);
+            $("#customerId").val(customer[0].cusId);
             $("#name").val(customer[0].name);
             $("#contact").val(customer[0].contact);
             $("#address").val(customer[0].address);
@@ -176,6 +179,18 @@ function loadProfile() {
             $("#license").val(customer[0].license);
             $("#userName").val(customer[0].login.userName);
             $("#passWord").val(customer[0].login.passWord);
+
+            //set images
+            let nicImg = customer[0].nic_Img;
+            let licenseImg = customer[0].license_Img;
+
+            $("#photoImg1").css({
+                "background": `url(${BaseUrl + nicImg})`,
+            });
+
+            $("#photoImg2").css({
+                "background": `url(${BaseUrl + licenseImg})`,
+            });
 
         },
         error: function (error) {
