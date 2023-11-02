@@ -6,6 +6,7 @@ import lk.easy_car_rental.service.CustomerService;
 import lk.easy_car_rental.service.LoginService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -28,6 +29,7 @@ public class CustomerController {
     @Autowired
     LoginService loginService;
 
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping
     public ResponseUtil getAllCustomers() {
         return new ResponseUtil("Ok", "Successfully Loaded", service.getAllCustomer());
@@ -45,7 +47,7 @@ public class CustomerController {
         System.out.println(customer);
         service.addCustomer(customer);
 
-        return new ResponseUtil("Ok", "Successfully Added", customer);
+        return new ResponseUtil("Ok", "Successfully Added", customer.getCusId());
     }
 
     @DeleteMapping(params = {"cusId"})
@@ -68,7 +70,7 @@ public class CustomerController {
 
         /*update customer*/
         service.updateCustomer(dto);
-        return new ResponseUtil("Ok", "Successfully Updated", dto);
+        return new ResponseUtil("Ok", "Successfully Updated", dto.getCusId());
     }
 
     @GetMapping(params = {"cusId"})
