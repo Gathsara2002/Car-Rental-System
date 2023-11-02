@@ -9,7 +9,7 @@ function saveCar() {
 
     $.ajax({
         url: BaseUrl + "car",
-        method: "POST",
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
@@ -54,11 +54,9 @@ function updatedCar() {
         data: formData,
         contentType: false,
         processData: false,
-        async: false,
         success: function (resp) {
             successAlert(resp.message);
             getAllCars();
-            bindTrEvents();
             clearInputFields();
         },
         error: function (error) {
@@ -97,7 +95,7 @@ function getAllCars() {
                             <td>${registrationNumber}</td><td>${color}</td><td>${vehicleAvailability}</td></tr>`;
                 $("#tblCar").append(row);
             }
-            bindTrEvents();
+            bindTrEventsToCars();
         },
         error: function (error) {
             errorAlert(error.message);
