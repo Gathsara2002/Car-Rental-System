@@ -161,36 +161,36 @@ function loadProfile() {
     let id = getIdFromUrl();
     console.log(id);
     $.ajax({
-        url: BaseUrl + "customer?cusId" + id,
+        url: BaseUrl + "customer?cusId=" + id,
         method: "get",
+        contentType: "application/json",
         dataType: "json",
         success: function (resp) {
             let customer = resp.data;
             console.log(customer);
 
             //set values to profile
-            $("#userCusId").val(customer[0].login.userId);
-            $("#customerId").val(customer[0].cusId);
-            $("#name").val(customer[0].name);
-            $("#contact").val(customer[0].contact);
-            $("#address").val(customer[0].address);
-            $("#email").val(customer[0].email);
-            $("#nic").val(customer[0].nic);
-            $("#license").val(customer[0].license);
-            $("#userName").val(customer[0].login.userName);
-            $("#passWord").val(customer[0].login.passWord);
+            $("#userCusId").val(customer.login.userId);
+            $("#customerId").val(customer.cusId);
+            $("#name").val(customer.name);
+            $("#contact").val(customer.contact);
+            $("#address").val(customer.address);
+            $("#email").val(customer.email);
+            $("#nic").val(customer.nic);
+            $("#license").val(customer.license);
+            $("#userName").val(customer.login.userName);
+            $("#passWord").val(customer.login.passWord);
 
             //set images
-            let nicImg = customer[0].nic_Img;
-            let licenseImg = customer[0].license_Img;
+            let nicImg = customer.nic_Img;
+            let licenseImg = customer.license_Img;
 
-            $("#photoImg1").css({
-                "background": `url(${BaseUrl + nicImg})`,
-            });
+            console.log(nicImg);
+            console.log(licenseImg);
+            console.log(BaseUrl + nicImg);
+            let nicUrl = BaseUrl + nicImg;
 
-            $("#photoImg2").css({
-                "background": `url(${BaseUrl + licenseImg})`,
-            });
+            $("#photoImg1").css('background', `url(${nicUrl})`);
 
         },
         error: function (error) {
