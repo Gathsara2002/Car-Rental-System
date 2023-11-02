@@ -203,3 +203,9 @@ $("#btnUpdateCustomer").click(function () {
     updatedCustomer();
 });
 
+/*set customer id*/
+function setCustomerIdVisible() {
+    let i = getIdFromUrl();
+    $(".admin_name").text(i);
+}
+

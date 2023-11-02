@@ -1,5 +1,7 @@
 initUi();
 
+let b = true;
+
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -32,6 +34,13 @@ $("#btn-customer").click(function () {
     clearDashboard();
     $("#manageProfile").css('display', 'block');
     loadProfile();
+
+    /*execute only once*/
+    if (b) {
+        setCustomerIdVisible();
+        b = false;
+    }
+
 });
 
 $("#btn-car").click(function () {
@@ -49,7 +58,6 @@ $(".rentButton").click(function () {
     for (let i = 0; i < form.length; i++) {
         form[i].classList.add("open-popup");
         $("#carSection").css('opacity', '30%');
-        //$("#carSection").css('background', 'transparent');
     }
 });
 
@@ -60,3 +68,4 @@ $("#btnClose").click(function () {
         $("#carSection").css('opacity', '100%');
     }
 });
+

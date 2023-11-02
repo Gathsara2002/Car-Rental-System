@@ -1,5 +1,7 @@
 initUi();
 
+let b = true;
+
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -30,8 +32,18 @@ $("#btn-dashboard").click(function () {
 $("#btn-schedule").click(function () {
     clearDashboard();
     $("#driverSchedule").css('display', 'block');
+    if (b) {
+        setDriverIdVisible();
+        b = false;
+    }
 });
 
 $("#btn-logOut").click(function () {
     window.location.href = '../pages/login.html';
 });
+
+
+function setDriverIdVisible() {
+    let i = getIdFromUrl();
+    $(".admin_name").text(i);
+}
