@@ -1,8 +1,9 @@
 package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.CarDTO;
+import lk.easy_car_rental.entity.Car;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author : Gathsara
@@ -14,9 +15,9 @@ public interface CarService {
 
     void deleteCar(String id);
 
-    List<CarDTO> getAllCars();
+    ArrayList<CarDTO> getAllCars();
 
-    CarDTO findCar(String id);
+    Car findCar(String id);
 
     void updateCar(CarDTO dto);
 
