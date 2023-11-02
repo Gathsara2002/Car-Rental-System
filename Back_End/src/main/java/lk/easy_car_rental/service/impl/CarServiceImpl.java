@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +38,29 @@ public class CarServiceImpl implements CarService {
         }
 
         Car map = mapper.map(dto, Car.class);
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();
+            System.out.println(projectPath);
+            File uploadsDir = new File(projectPath + "/upload");
+            uploadsDir.mkdir();
+
+            dto.getFrontView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontView().getOriginalFilename()));
+            dto.getBackView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBackView().getOriginalFilename()));
+            dto.getSideView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSideView().getOriginalFilename()));
+            dto.getInterior().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInterior().getOriginalFilename()));
+
+            map.setFrontView("upload/" + dto.getFrontView().getOriginalFilename());
+            map.setBackView("upload/" + dto.getBackView().getOriginalFilename());
+            map.setSideView("upload/" + dto.getSideView().getOriginalFilename());
+            map.setInterior("upload/" + dto.getInterior().getOriginalFilename());
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+
         repo.save(map);
     }
 
@@ -46,19 +73,19 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<CarDTO> getAllCars() {
+    public ArrayList<CarDTO> getAllCars() {
         List<Car> all = repo.findAll();
-        return mapper.map(all, new TypeToken<List<CarDTO>>() {
+        return mapper.map(all, new TypeToken<ArrayList<Car>>() {
         }.getType());
     }
 
     @Override
-    public CarDTO findCar(String id) {
+    public Car findCar(String id) {
         if (!repo.existsById(id)) {
             throw new RuntimeException(id + " Car is not available, please check the ID.!");
         }
         Car car = repo.findById(id).get();
-        return mapper.map(car, CarDTO.class);
+        return mapper.map(car, Car.class);
     }
 
     @Override
@@ -66,7 +93,31 @@ public class CarServiceImpl implements CarService {
         if (!repo.existsById(dto.getCarId())) {
             throw new RuntimeException(dto.getCarId() + " Car is not available, please check the ID before update.!");
         }
+
         Car map = mapper.map(dto, Car.class);
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();
+            System.out.println(projectPath);
+            File uploadsDir = new File(projectPath + "/upload");
+            uploadsDir.mkdir();
+
+            dto.getFrontView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getFrontView().getOriginalFilename()));
+            dto.getBackView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getBackView().getOriginalFilename()));
+            dto.getSideView().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getSideView().getOriginalFilename()));
+            dto.getInterior().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getInterior().getOriginalFilename()));
+
+            map.setFrontView("upload/" + dto.getFrontView().getOriginalFilename());
+            map.setBackView("upload/" + dto.getBackView().getOriginalFilename());
+            map.setSideView("upload/" + dto.getSideView().getOriginalFilename());
+            map.setInterior("upload/" + dto.getInterior().getOriginalFilename());
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+
         repo.save(map);
     }
 

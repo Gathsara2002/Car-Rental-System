@@ -54,8 +54,8 @@ public class CustomerServiceImpl implements CustomerService {
             dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
 
             /*save img path to db*/
-            customer.setNic_Img("/upload" + dto.getNic_Img().getOriginalFilename());
-            customer.setLicense_Img("/upload" + dto.getLicense_Img().getOriginalFilename());
+            customer.setNic_Img("upload/" + dto.getNic_Img().getOriginalFilename());
+            customer.setLicense_Img("upload/" + dto.getLicense_Img().getOriginalFilename());
 
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
