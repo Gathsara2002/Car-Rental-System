@@ -187,10 +187,15 @@ function loadProfile() {
 
             console.log(nicImg);
             console.log(licenseImg);
+
             console.log(BaseUrl + nicImg);
             let nicUrl = BaseUrl + nicImg;
 
+            console.log(BaseUrl + licenseImg);
+            let licenseUrl = BaseUrl + licenseImg;
+
             $("#photoImg1").css('background', `url(${nicUrl})`);
+            $("#photoImg2").css('background', `url(${licenseUrl})`);
 
         },
         error: function (error) {
