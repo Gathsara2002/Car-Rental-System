@@ -45,12 +45,12 @@ function deleteCar(carId) {
 /*updated car*/
 function updatedCar() {
 
-    let formData = new FormData($("#customerRegForm")[0]);
+    let formData = new FormData($("#carForm")[0]);
     console.log(formData);
 
     $.ajax({
         url: BaseUrl + "car/update",
-        method: 'put',
+        method: 'post',
         data: formData,
         contentType: false,
         processData: false,
