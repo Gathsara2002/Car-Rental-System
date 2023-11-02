@@ -46,12 +46,12 @@ function deleteCustomer() {
 /*updated customer*/
 function updatedCustomer() {
 
-    let formData = new FormData($("#customerRegForm")[0]);
+    let formData = new FormData($("#customerDetailsForm")[0]);
     console.log(formData);
 
     $.ajax({
-        url: BaseUrl + "customer",
-        method: 'put',
+        url: BaseUrl + "customer/update",
+        method: 'post',
         data: formData,
         contentType: false,
         processData: false,

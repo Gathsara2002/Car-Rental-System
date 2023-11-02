@@ -1,5 +1,5 @@
 getAllCars();
-bindTrEvents();
+bindTrEventsToCars();
 newCarId();
 
 /*save car*/
@@ -16,7 +16,7 @@ function saveCar() {
         success: function (resp) {
             successAlert(resp.message);
             getAllCars();
-            bindTrEvents();
+            bindTrEventsToCars();
             clearInputFields();
         },
         error: function (error) {
@@ -33,7 +33,7 @@ function deleteCar(carId) {
         success: function (resp) {
             successAlert(resp.message);
             getAllCars();
-            bindTrEvents();
+            bindTrEventsToCars();
             clearInputFields();
         },
         error: function (error) {
@@ -106,7 +106,7 @@ function getAllCars() {
 }
 
 /*bind event to table*/
-function bindTrEvents() {
+function bindTrEventsToCars() {
     $('#tblCar>tr').click(function () {
         let id = $(this).children().eq(0).text();
         let brand = $(this).children().eq(1).text();
