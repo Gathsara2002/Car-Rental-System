@@ -49,7 +49,7 @@ public class CustomerController {
         return new ResponseUtil("Ok", "Successfully Deleted", cusId);
     }
 
-    @PutMapping
+    @PostMapping(path = "/update")
     public ResponseUtil updateCustomer(CustomerDTO dto, LoginDTO loginDto) {
         dto.setLoginDTO(loginDto);
         service.updateCustomer(dto);
