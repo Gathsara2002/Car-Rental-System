@@ -41,7 +41,27 @@ public class CustomerServiceImpl implements CustomerService {
 
         Customer customer = mapper.map(dto, Customer.class);
         System.out.println(customer);
-        //customerRepo.save(customer);
+
+        try {
+
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();
+            System.out.println(projectPath);
+            File uploadsDir = new File(projectPath + "/upload");
+            uploadsDir.mkdir();
+
+            /*save images to upload directory*/
+            dto.getNic_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getNic_Img().getOriginalFilename()));
+            dto.getLicense_Img().transferTo(new File(uploadsDir.getAbsolutePath() + "/" + dto.getLicense_Img().getOriginalFilename()));
+
+            /*save img path to db*/
+            customer.setNic_Img("/upload"+dto.getNic_Img().getOriginalFilename());
+            customer.setLicense_Img("/upload"+dto.getLicense_Img().getOriginalFilename());
+
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+        customerRepo.save(customer);
     }
 
     @Override
