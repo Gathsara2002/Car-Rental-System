@@ -69,3 +69,16 @@ $("#btnClose").click(function () {
     }
 });
 
+/*car search controller*/
+
+function initCarUi() {
+    $("#allCars").css('display','none');
+    $("#petrolCars").css('display','none');
+    $("#dieselCars").css('display','none');
+    $("#premiumCars").css('display','none');
+    $("#luxuryCars").css('display','none');
+    $("#generalCars").css('display','none');
+    $("#autoCars").css('display','none');
+    $("#manuelCars").css('display','none');
+}
+
