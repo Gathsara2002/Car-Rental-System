@@ -56,3 +56,7 @@ function getCustomerDetail() {
         }
     });
 }
+
+$("#rentCard1 .rentButton").click(function () {
+    let val= $("#rentCard1 .carId").text();
+});
