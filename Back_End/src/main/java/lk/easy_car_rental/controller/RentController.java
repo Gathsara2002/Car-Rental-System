@@ -1,6 +1,7 @@
 package lk.easy_car_rental.controller;
 
 import lk.easy_car_rental.dto.RentDTO;
+import lk.easy_car_rental.service.RentDetailsService;
 import lk.easy_car_rental.service.RentService;
 import lk.easy_car_rental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,20 @@ import javax.transaction.Transactional;
 public class RentController {
 
     @Autowired
-    RentService service;
+    RentService service1;
+
+    @Autowired
+    RentDetailsService service2;
 
     @GetMapping(path = "/newId")
     public ResponseUtil generateNewCusId() {
-        return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastIndex());
+        return new ResponseUtil("Ok", "Successfully Id Generated", service1.getLastIndex());
     }
 
     @PostMapping
-    public ResponseUtil saveRent(@RequestBody RentDTO rentDTO){
-        return new ResponseUtil("Ok", "Successfully Added", service.());
+    public ResponseUtil saveRent(@RequestBody RentDTO rentDTO) {
+        service1.addRent(rentDTO);
+        return new ResponseUtil("Ok", "Successfully Rent Saved", null);
     }
 
 

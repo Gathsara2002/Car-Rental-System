@@ -6,11 +6,17 @@ import lk.easy_car_rental.repo.RentDetailsRepo;
 import lk.easy_car_rental.service.RentDetailsService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 /**
  * @author : Gathsara
  * created : 11/3/2023 -- 10:58 PM
  **/
+
+@Service
+@Transactional
 public class RentDetailsServiceImpl implements RentDetailsService {
 
     @Autowired

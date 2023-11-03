@@ -39,6 +39,10 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void addRent(RentDTO dto) {
+        if (repo.existsById(dto.getRentID())) {
+            throw new RuntimeException(dto.getRentID() + " is already available, please insert a new ID");
+        }
+
         Rent map = mapper.map(dto, Rent.class);
         repo.save(map);
     }
