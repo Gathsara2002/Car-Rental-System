@@ -59,4 +59,72 @@ function getCustomerDetail() {
 
 $("#rentCard1 .rentButton").click(function () {
     let val= $("#rentCard1 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard2 .rentButton").click(function () {
+    let val= $("#rentCard2 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard3 .rentButton").click(function () {
+    let val= $("#rentCard3 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard4 .rentButton").click(function () {
+    let val= $("#rentCard4 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard5 .rentButton").click(function () {
+    let val= $("#rentCard5 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard6 .rentButton").click(function () {
+    let val= $("#rentCard6 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard7 .rentButton").click(function () {
+    let val= $("#rentCard7 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard8 .rentButton").click(function () {
+    let val= $("#rentCard8 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard9 .rentButton").click(function () {
+    let val= $("#rentCard9 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard10 .rentButton").click(function () {
+    let val= $("#rentCard10 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard11 .rentButton").click(function () {
+    let val= $("#rentCard11 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
+});
+
+$("#rentCard12 .rentButton").click(function () {
+    let val= $("#rentCard12 .carId").text();
+    console.log(val);
+    $("#carId").val(val);
 });
