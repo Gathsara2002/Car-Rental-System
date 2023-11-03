@@ -104,10 +104,10 @@ function saveRent() {
 
     let customerOb = customerDetail;
     let rentId = $("#rentId").val();
-    let carId =val;
-    let pickingUpDate = $("#pickUpDate");
-    let pickingUpTime = $("#pickUpTime");
-    let returningDate = $("#returnUpDate");
+    let carId = val;
+    let pickingUpDate = $("#pickUpDate").val();
+    let pickingUpTime = $("#pickUpTime").val();
+    let returningDate = $("#returnUpDate").val();
     let date = $("#clock").text();
     let driverId = $("#driverID");
 
@@ -126,9 +126,23 @@ function saveRent() {
         customer: customerOb,
         rentDetails: rentDetailsOb
     }
-
     console.log(rentOb);
+
+    $.ajax({
+        url: BaseUrl + "rent",
+        method: "post",
+        dataType: "json",
+        data: JSON.stringify(rentOb),
+        contentType: "application/json",
+        success: function (resp) {
+            successAlert(resp.message);
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
 }
+
 
 $("#rentCard1 .rentButton").click(function () {
     val = $("#rentCard1 .carId").text();
@@ -215,7 +229,7 @@ $("#rentCard12 .rentButton").click(function () {
 });
 
 $("#btnRentReq").click(function () {
-    pushToRentArray();
+    saveRent();
 });
 
 
