@@ -17,7 +17,7 @@ sidebarBtn.onclick = function () {
 function clearDashboard() {
     $("#dashboard").css('display', 'none');
     $("#manageProfile").css('display', 'none');
-    $("#rentCar").css('display', 'hidden');
+    $("#rentCar").css('display', 'none');
 }
 
 function initUi() {
