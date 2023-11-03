@@ -5,6 +5,7 @@ loadDriverIds();
 /*store  detail*/
 let customerDetail;
 let carDetail;
+let val;
 
 
 /*set date */
@@ -98,12 +99,12 @@ function loadDriverIds() {
     });
 }
 
-/*send rent info rent array*/
-function pushToRentArray() {
+/*send rent */
+function saveRent() {
 
     let customerOb = customerDetail;
     let rentId = $("#rentId").val();
-    let carId = carDetail.carID;
+    let carId =val;
     let pickingUpDate = $("#pickUpDate");
     let pickingUpTime = $("#pickUpTime");
     let returningDate = $("#returnUpDate");
@@ -127,88 +128,87 @@ function pushToRentArray() {
     }
 
     console.log(rentOb);
-    RentArray.push(rentOb);
 }
 
 $("#rentCard1 .rentButton").click(function () {
-    let val = $("#rentCard1 .carId").text();
+    val = $("#rentCard1 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard2 .rentButton").click(function () {
-    let val = $("#rentCard2 .carId").text();
+    val = $("#rentCard2 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard3 .rentButton").click(function () {
-    let val = $("#rentCard3 .carId").text();
+    val = $("#rentCard3 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard4 .rentButton").click(function () {
-    let val = $("#rentCard4 .carId").text();
+    val = $("#rentCard4 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard5 .rentButton").click(function () {
-    let val = $("#rentCard5 .carId").text();
+    val = $("#rentCard5 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard6 .rentButton").click(function () {
-    let val = $("#rentCard6 .carId").text();
+    val = $("#rentCard6 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard7 .rentButton").click(function () {
-    let val = $("#rentCard7 .carId").text();
+    val = $("#rentCard7 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard8 .rentButton").click(function () {
-    let val = $("#rentCard8 .carId").text();
+    val = $("#rentCard8 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard9 .rentButton").click(function () {
-    let val = $("#rentCard9 .carId").text();
+    val = $("#rentCard9 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard10 .rentButton").click(function () {
-    let val = $("#rentCard10 .carId").text();
+    val = $("#rentCard10 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard11 .rentButton").click(function () {
-    let val = $("#rentCard11 .carId").text();
+    val = $("#rentCard11 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
 });
 
 $("#rentCard12 .rentButton").click(function () {
-    let val = $("#rentCard12 .carId").text();
+    val = $("#rentCard12 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
@@ -217,3 +217,5 @@ $("#rentCard12 .rentButton").click(function () {
 $("#btnRentReq").click(function () {
     pushToRentArray();
 });
+
+

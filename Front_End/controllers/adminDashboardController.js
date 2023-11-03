@@ -1,4 +1,5 @@
 initUi();
+loadDriverIds();
 
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
@@ -49,6 +50,7 @@ $("#btn-driver").click(function () {
 $("#btn-request").click(function () {
     clearDashboard();
     $("#manageRent").css('display', 'block');
+    //displayRentRequest();
 });
 
 $("#btn-payment").click(function () {
@@ -59,3 +61,33 @@ $("#btn-payment").click(function () {
 $("#btn-logOut").click(function () {
     window.location.href = '../pages/login.html';
 });
+
+function loadDriverIds() {
+    $.ajax({
+        url: BaseUrl + 'driver',
+        dataType: "json",
+        method: "get",
+        success: function (response) {
+            console.log(response);
+            let drivers = response.data;
+            console.log(drivers);
+            for (let i in drivers) {
+                let dr = drivers[i];
+                let dId = dr.userId;
+                $("#driverId").append(`<option value="${dId}"> ${dId} </option>`);
+            }
+        },
+        error: function (error) {
+            errorAlert(error.message);
+        }
+    });
+}
+
+/*set rent request to admin*/
+function displayRentRequest() {
+    let element = RentArray[0];
+    $("#requestRentId").val(element.rentID);
+    $("#driverId").val(element.rentDetails.driverID);
+    $("#cusID").val(element.customer.cusId);
+    $("#date").val(element.requestDate);
+}
