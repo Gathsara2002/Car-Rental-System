@@ -1,8 +1,9 @@
 setDate();
 generateRentId();
 
-/*store customer detail*/
+/*store  detail*/
 let customerDetail;
+let carDetail;
 
 
 /*set date */
@@ -57,74 +58,103 @@ function getCustomerDetail() {
     });
 }
 
+/*get car detail*/
+function getCarDetail(id) {
+    $.ajax({
+        url: BaseUrl + "car?carId=" + id,
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            carDetail = resp.data;
+            console.log(carDetail);
+        },
+        error: function (error) {
+            console.log(error.message)
+        }
+    });
+}
+
 $("#rentCard1 .rentButton").click(function () {
-    let val= $("#rentCard1 .carId").text();
+    let val = $("#rentCard1 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard2 .rentButton").click(function () {
-    let val= $("#rentCard2 .carId").text();
+    let val = $("#rentCard2 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard3 .rentButton").click(function () {
-    let val= $("#rentCard3 .carId").text();
+    let val = $("#rentCard3 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard4 .rentButton").click(function () {
-    let val= $("#rentCard4 .carId").text();
+    let val = $("#rentCard4 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard5 .rentButton").click(function () {
-    let val= $("#rentCard5 .carId").text();
+    let val = $("#rentCard5 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard6 .rentButton").click(function () {
-    let val= $("#rentCard6 .carId").text();
+    let val = $("#rentCard6 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard7 .rentButton").click(function () {
-    let val= $("#rentCard7 .carId").text();
+    let val = $("#rentCard7 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard8 .rentButton").click(function () {
-    let val= $("#rentCard8 .carId").text();
+    let val = $("#rentCard8 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard9 .rentButton").click(function () {
-    let val= $("#rentCard9 .carId").text();
+    let val = $("#rentCard9 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard10 .rentButton").click(function () {
-    let val= $("#rentCard10 .carId").text();
+    let val = $("#rentCard10 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard11 .rentButton").click(function () {
-    let val= $("#rentCard11 .carId").text();
+    let val = $("#rentCard11 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
 
 $("#rentCard12 .rentButton").click(function () {
-    let val= $("#rentCard12 .carId").text();
+    let val = $("#rentCard12 .carId").text();
     console.log(val);
     $("#carId").val(val);
+    getCarDetail(val);
 });
