@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class RentDTO {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
-    private LocalDate requestDate;
+    private String requestDate;
     private CustomerDTO customerDTO;
     private List<RentDetailsDTO> rentDetails;
 }

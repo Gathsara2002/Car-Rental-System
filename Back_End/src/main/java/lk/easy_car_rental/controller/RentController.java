@@ -33,6 +33,7 @@ public class RentController {
 
     @PostMapping
     public ResponseUtil saveRent(@RequestBody RentDTO rentDTO) {
+        System.out.println(rentDTO);
         service1.addRent(rentDTO);
         return new ResponseUtil("Ok", "Successfully Rent Saved", null);
     }

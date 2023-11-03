@@ -26,7 +26,7 @@ public class Rent {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private LocalDate returnDate;
-    private LocalDate requestDate;
+    private String requestDate;
 
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "cusId", referencedColumnName = "cusId", nullable = false)
