@@ -693,4 +693,8 @@ input {
     left: 106px;
 }
 
+#clock{
+    border: 1px solid black;
+}
+
 
