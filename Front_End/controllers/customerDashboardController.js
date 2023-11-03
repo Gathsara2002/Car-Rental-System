@@ -17,7 +17,7 @@ sidebarBtn.onclick = function () {
 function clearDashboard() {
     $("#dashboard").css('display', 'none');
     $("#manageProfile").css('display', 'none');
-    $("#rentCar").css('display', 'none');
+    $("#rentCar").css('display', 'hidden');
 }
 
 function initUi() {
@@ -68,17 +68,3 @@ $("#btnClose").click(function () {
         $("#carSection").css('opacity', '100%');
     }
 });
-
-/*car search controller*/
-
-function initCarUi() {
-    $("#allCars").css('display','none');
-    $("#petrolCars").css('display','none');
-    $("#dieselCars").css('display','none');
-    $("#premiumCars").css('display','none');
-    $("#luxuryCars").css('display','none');
-    $("#generalCars").css('display','none');
-    $("#autoCars").css('display','none');
-    $("#manuelCars").css('display','none');
-}
-
