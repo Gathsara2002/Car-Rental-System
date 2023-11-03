@@ -1,6 +1,10 @@
 setDate();
 generateRentId();
 
+/*store customer detail*/
+let customerDetail;
+
+
 /*set date */
 function setDate() {
     let currentDateTime = new Date();
@@ -31,6 +35,24 @@ function generateRentId() {
         },
         error: function (error) {
             console.log(error.message);
+        }
+    });
+}
+
+/*set customer id*/
+function getCustomerDetail() {
+    let id = $(".admin_name").text();
+    $.ajax({
+        url: BaseUrl + "customer?cusId=" + id,
+        method: "get",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            customerDetail = resp.data;
+            console.log(customerDetail);
+        },
+        error: function (error) {
+            console.log(error.message)
         }
     });
 }

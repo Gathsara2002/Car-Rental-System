@@ -41,6 +41,8 @@ $("#btn-customer").click(function () {
         b = false;
     }
 
+    getCustomerDetail();
+
 });
 
 $("#btn-car").click(function () {
