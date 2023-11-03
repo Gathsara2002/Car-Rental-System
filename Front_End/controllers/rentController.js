@@ -107,7 +107,7 @@ function pushToRentArray() {
     let pickingUpDate = $("#pickUpDate");
     let pickingUpTime = $("#pickUpTime");
     let returningDate = $("#returnUpDate");
-    let date = $("#clock").val();
+    let date = $("#clock").text();
     let driverId = $("#driverID");
 
     let rentDetailsOb = {
