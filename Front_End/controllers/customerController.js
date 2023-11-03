@@ -185,17 +185,18 @@ function loadProfile() {
             let nicImg = customer.nic_Img;
             let licenseImg = customer.license_Img;
 
-             console.log(nicImg);
-             console.log(licenseImg);
+            console.log(nicImg);
+            console.log(licenseImg);
 
-             console.log(BaseUrl + nicImg);
-             let nicUrl = BaseUrl + nicImg;
+            console.log(BaseUrl + nicImg);
+            let nicUrl = BaseUrl + nicImg;
 
-             console.log(BaseUrl + licenseImg);
-             let licenseUrl = BaseUrl + licenseImg;
+            console.log(BaseUrl + licenseImg);
+            let licenseUrl = BaseUrl + licenseImg;
 
 
-            $("#photoImg1").css('background', `url(${nicUrl})`);
+            $("#photoImg1").css({'background': `url(${nicUrl})`,});
+
             $("#photoImg2").css('background', `url(${licenseUrl})`);
 
         },
