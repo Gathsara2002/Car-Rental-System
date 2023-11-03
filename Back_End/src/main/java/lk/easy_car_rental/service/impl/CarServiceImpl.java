@@ -41,10 +41,9 @@ public class CarServiceImpl implements CarService {
 
         try {
 
-            //String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
-            //getParentFile().getParentFile().getAbsolutePath();
+            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();
 
-            String projectPath = "E:\\Semester_2_Final\\Car_Rental_System\\upload";
             System.out.println(projectPath);
             File uploadsDir = new File(projectPath + "/upload");
             uploadsDir.mkdir();
@@ -60,6 +59,8 @@ public class CarServiceImpl implements CarService {
             map.setInterior("upload/" + dto.getInterior().getOriginalFilename());
 
         } catch ( IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
 
