@@ -1,5 +1,6 @@
 setDate();
 generateRentId();
+loadDriverIds();
 
 /*store  detail*/
 let customerDetail;
@@ -71,6 +72,28 @@ function getCarDetail(id) {
         },
         error: function (error) {
             console.log(error.message)
+        }
+    });
+}
+
+/*load all drivers ids*/
+function loadDriverIds() {
+    $.ajax({
+        url: BaseUrl + 'driver',
+        dataType: "json",
+        method: "get",
+        success: function (response) {
+            console.log(response);
+            let drivers = response.data;
+            console.log(drivers);
+            for (let i in drivers) {
+                let dr = drivers[i];
+                let dId = dr.userId;
+                $("#driverID").append(`<option value="${dId}"> ${dId} </option>`);
+            }
+        },
+        error: function (error) {
+            errorAlert(error.message);
         }
     });
 }
