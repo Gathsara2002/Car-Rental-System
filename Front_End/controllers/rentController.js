@@ -15,7 +15,7 @@ function setDate() {
     let month = currentDateTime.getMonth() + 1; // Months are 0-based (0 = January)
     let day = currentDateTime.getDate();
 
-    $("#clock").text(month + "/" + day + "/" + year);
+    $("#clock").text(year + "-" + month + "-" + day);
 }
 
 /*set rent id*/
@@ -98,51 +98,6 @@ function loadDriverIds() {
         }
     });
 }
-
-/*send rent */
-function saveRent() {
-
-    let customerOb = customerDetail;
-    let rentId = $("#rentId").val();
-    let carId = val;
-    let pickingUpDate = $("#pickUpDate").val();
-    let pickingUpTime = $("#pickUpTime").val();
-    let returningDate = $("#returnUpDate").val();
-    let date = $("#clock").text();
-    let driverId = $("#driverID");
-
-    let rentDetailsOb = {
-        carID: carId,
-        rentID: rentId,
-        driverID: driverId
-    }
-
-    let rentOb = {
-        rentID: rentId,
-        pickUpDate: pickingUpDate,
-        pickUpTime: pickingUpTime,
-        returnDate: returningDate,
-        requestDate: date,
-        customer: customerOb,
-        rentDetails: rentDetailsOb
-    }
-    console.log(rentOb);
-
-    $.ajax({
-        url: BaseUrl + "rent",
-        method: "post",
-        dataType: "json",
-        data: JSON.stringify(rentOb),
-        contentType: "application/json",
-        success: function (resp) {
-            successAlert(resp.message);
-        },
-        error: function (error) {
-            errorAlert(JSON.parse(error.responseText).message);
-        }
-    });
-}
-
 
 $("#rentCard1 .rentButton").click(function () {
     val = $("#rentCard1 .carId").text();
@@ -228,8 +183,53 @@ $("#rentCard12 .rentButton").click(function () {
     getCarDetail(val);
 });
 
+/*send rent */
 $("#btnRentReq").click(function () {
-    saveRent();
+
+    let rentDetailsArr = [];
+
+    let customerOb = customerDetail;
+    let cusId = customerDetail.cusId;
+    let rentId = $("#rentId").val();
+    let carId = val;
+    let pickingUpDate = $("#pickUpDate").val();
+    let pickingUpTime = $("#pickUpTime").val();
+    let returningDate = $("#returnUpDate").val();
+    let date = $("#clock").text();
+    let driverId = $("#driverID").val();
+
+    let rentDetailsOb = {
+        carID: carId,
+        rentID: rentId,
+        driverID: driverId
+    }
+
+    rentDetailsArr.push(rentDetailsOb);
+
+    let rentOb = {
+        rentID: rentId,
+        pickUpDate: pickingUpDate,
+        pickUpTime: pickingUpTime,
+        returnDate: returningDate,
+        requestDate: date,
+        customerDTO: {cusId: cusId},
+        rentDetails: rentDetailsArr
+    }
+    console.log(rentOb);
+
+    $.ajax({
+        url: BaseUrl + "rent",
+        method: "post",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(rentOb),
+        success: function (resp) {
+            successAlert(resp.message);
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
 });
 
 
