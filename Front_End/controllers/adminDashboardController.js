@@ -124,7 +124,7 @@ $("#btnAccept").click(function () {
             console.log(reqs);
             let tRow;
             for (let i in reqs) {
-                let req = reqs[reqs.length-1];
+                let req = reqs[reqs.length - 1];
                 let rentID = req.rentID;
                 let driverID = $("#driverId").val();
                 let cusId = req.customer.cusId;
@@ -138,6 +138,24 @@ $("#btnAccept").click(function () {
             }
 
             $("#tblRent").append(tRow);
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+/*decline request*/
+$("#btnReject").click(function () {
+    let val = $("#requestRentId").val();
+
+    $.ajax({
+        url: BaseUrl + "rent?rentId=" + val,
+        method: "delete",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (resp) {
+            successAlert(resp.message);
         },
         error: function (error) {
             errorAlert(JSON.parse(error.responseText).message);
