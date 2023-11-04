@@ -111,3 +111,38 @@ function loadAllRents() {
     });
 }
 
+/*accept request*/
+$("#btnAccept").click(function () {
+    $("#tblRent").empty();
+    $.ajax({
+        url: BaseUrl + "rent",
+        method: "get",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (resp) {
+            let reqs = resp.data;
+            console.log(reqs);
+            let tRow;
+            for (let i in reqs) {
+                let req = reqs[reqs.length-1];
+                let rentID = req.rentID;
+                let driverID = $("#driverId").val();
+                let cusId = req.customer.cusId;
+                let date = req.requestDate;
+                let pickUpTime = req.pickUpTime;
+                let pickUpDate = req.pickUpDate;
+                let returnDate = req.returnDate;
+                tRow = `<tr><td>${rentID}</td><td>${cusId}</td><td>${driverID}</td><td>${pickUpDate}</td><td>${pickUpTime}</td>
+                            <td>${returnDate}</td><td>${date}</td></tr>`
+
+            }
+
+            $("#tblRent").append(tRow);
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
+});
+
+
