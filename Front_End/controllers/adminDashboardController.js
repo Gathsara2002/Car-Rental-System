@@ -50,7 +50,7 @@ $("#btn-driver").click(function () {
 $("#btn-request").click(function () {
     clearDashboard();
     $("#manageRent").css('display', 'block');
-    //displayRentRequest();
+    loadAllRents();
 });
 
 $("#btn-payment").click(function () {
@@ -83,11 +83,31 @@ function loadDriverIds() {
     });
 }
 
-/*set rent request to admin*/
-function displayRentRequest() {
-    let element = RentArray[0];
-    $("#requestRentId").val(element.rentID);
-    $("#driverId").val(element.rentDetails.driverID);
-    $("#cusID").val(element.customer.cusId);
-    $("#date").val(element.requestDate);
+function loadAllRents() {
+    $.ajax({
+        url: BaseUrl + "rent",
+        method: "get",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (resp) {
+            let reqs = resp.data;
+            console.log(reqs);
+            for (let i in reqs) {
+                let req = reqs[i];
+                let rentID = req.rentID;
+                let driverID = req.rentDetails.driverID;
+                let cusId = req.customer.cusId;
+                let date = req.requestDate;
+
+                $("#requestRentId").val(rentID);
+                $("#driverId").val(driverID);
+                $("#cusID").val(cusId);
+                $("#date").val(date);
+            }
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
 }
+

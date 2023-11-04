@@ -212,7 +212,7 @@ $("#btnRentReq").click(function () {
         pickUpTime: pickingUpTime,
         returnDate: returningDate,
         requestDate: date,
-        customerDTO: {cusId: cusId},
+        customer: {cusId: cusId},
         rentDetails: rentDetailsArr
     }
     console.log(rentOb);
@@ -225,11 +225,21 @@ $("#btnRentReq").click(function () {
         data: JSON.stringify(rentOb),
         success: function (resp) {
             successAlert(resp.message);
+            generateRentId();
+            closeRentForm();
         },
         error: function (error) {
             errorAlert(JSON.parse(error.responseText).message);
         }
     });
 });
+
+function closeRentForm() {
+    let form = document.getElementsByClassName("rentForm");
+    for (let i = 0; i < form.length; i++) {
+        form[i].classList.remove("open-popup");
+        $("#carSection").css('opacity', '100%');
+    }
+}
 
 
