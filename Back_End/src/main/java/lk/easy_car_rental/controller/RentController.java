@@ -38,5 +38,10 @@ public class RentController {
         return new ResponseUtil("Ok", "Successfully Rent Saved", null);
     }
 
+    @GetMapping
+    public ResponseUtil getAllRents() {
+        return new ResponseUtil("OK", "Successfully Loaded", service1.getAllRents());
+    }
+
 
 }

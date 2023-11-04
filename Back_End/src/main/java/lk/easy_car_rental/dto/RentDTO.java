@@ -25,6 +25,6 @@ public class RentDTO {
     private LocalTime pickUpTime;
     private LocalDate returnDate;
     private String requestDate;
-    private CustomerDTO customerDTO;
+    private CustomerDTO customer;
     private List<RentDetailsDTO> rentDetails;
 }
