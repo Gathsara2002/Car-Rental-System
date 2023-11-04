@@ -88,4 +88,9 @@ public class RentServiceImpl implements RentService {
         return mapper.map(all, new TypeToken<ArrayList<RentDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void deleteRent(String id) {
+
+    }
 }

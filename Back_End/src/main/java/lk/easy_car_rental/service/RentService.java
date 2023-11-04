@@ -15,4 +15,6 @@ public interface RentService {
     void addRent(RentDTO dto);
 
     ArrayList<RentDTO> getAllRents();
+
+    void deleteRent(String id);
 }
