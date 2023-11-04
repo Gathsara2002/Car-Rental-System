@@ -18,9 +18,12 @@ function saveCar() {
             getAllCars();
             bindTrEventsToCars();
             clearInputFields();
+            newCarId();
         },
         error: function (error) {
-            errorAlert(error.message);
+            errorAlert(JSON.parse(error.responseText).message);
+            clearInputFields();
+            newCarId();
         }
     });
 }
@@ -35,6 +38,7 @@ function deleteCar(carId) {
             getAllCars();
             bindTrEventsToCars();
             clearInputFields();
+            newCarId();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -50,7 +54,7 @@ function updatedCar() {
 
     $.ajax({
         url: BaseUrl + "car/update",
-        method: 'post',
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
@@ -58,9 +62,12 @@ function updatedCar() {
             successAlert(resp.message);
             getAllCars();
             clearInputFields();
+            newCarId();
         },
         error: function (error) {
             errorAlert(error.message);
+            clearInputFields();
+            newCarId();
         }
     });
 }
