@@ -150,10 +150,8 @@ $("#btnReject").click(function () {
     let val = $("#requestRentId").val();
 
     $.ajax({
-        url: BaseUrl + "rent?rentId=" + val,
+        url: BaseUrl + 'rent?rentId=' + val,
         method: "delete",
-        dataType: "json",
-        contentType: "application/json",
         success: function (resp) {
             successAlert(resp.message);
         },
