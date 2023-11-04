@@ -91,6 +91,6 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void deleteRent(String id) {
-
+        repo.deleteById(id);
     }
 }

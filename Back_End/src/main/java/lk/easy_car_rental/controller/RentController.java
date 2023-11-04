@@ -45,7 +45,7 @@ public class RentController {
 
     @DeleteMapping(params = {"rentId"})
     public ResponseUtil deleteDriver(String rId) {
-
+        service1.deleteRent(rId);
         return new ResponseUtil("Ok", "Successfully Deleted", rId);
     }
 
