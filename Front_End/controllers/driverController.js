@@ -13,6 +13,7 @@ function saveDriver() {
         success: function (resp) {
             successAlert(resp.message);
             getAllDrivers();
+            clearInputFields();
             newDriverId();
         },
         error: function (error) {
@@ -89,6 +90,8 @@ function deleteDriver(id) {
         success: function (resp) {
             successAlert(resp.message);
             getAllCustomers();
+            clearInputFields();
+            newDriverId();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -149,6 +152,8 @@ function updatedDriver() {
         success: function (resp) {
             successAlert(resp.message);
             getAllDrivers();
+            clearInputFields();
+            newDriverId();
         },
         error: function (error) {
             errorAlert(error.message);
