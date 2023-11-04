@@ -91,6 +91,28 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public void deleteRent(String id) {
+        if (!repo.existsById(id)) {
+            throw new RuntimeException(id + " Rent Request is not available, please check the ID before delete.!");
+        }
+        Rent rent = repo.findById(id).get();
+
+        /*first update car*/
+        List<RentDetails> rentDetails1 = rent.getRentDetails();
+        for (RentDetails rentDetail : rentDetails1) {
+            Car car = carRepo.findById(rentDetail.getCarID()).get();
+            car.setAvailability("AVAILABLE");
+            carRepo.save(car);
+        }
+
+        /*driver update*/
+        List<RentDetails> rentDetails2 = rent.getRentDetails();
+        for (RentDetails rentDetail : rentDetails2) {
+            Driver driver = driverRepo.findById(rentDetail.getDriverID()).get();
+            driver.setAvailability("AVAILABLE");
+            driverRepo.save(driver);
+        }
+
+        /*delete rent from table*/
         repo.deleteById(id);
     }
 }
