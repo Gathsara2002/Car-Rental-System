@@ -200,6 +200,7 @@ function loadProfile() {
 
             $("#photoImg2").css('background', `url(${customer.license_Img})`);
 
+
         },
         error: function (error) {
             console.log(error.message)
