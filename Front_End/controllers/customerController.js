@@ -182,23 +182,22 @@ function loadProfile() {
             $("#passWord").val(customer.login.passWord);
 
             //set images
-            // let nicImg = customer.nic_Img;
-            //let licenseImg = customer.license_Img;
 
             console.log(customer.nic_Img);
             console.log(customer.license_Img);
 
-            /*console.log(BaseUrl + nicImg);
-            let nicUrl = BaseUrl + nicImg;
-
-            console.log(BaseUrl + licenseImg);
-            let licenseUrl = BaseUrl + licenseImg;*/
+            console.log(`url("../${customer.nic_Img}")`);
 
 
-            // $("#photoImg1").css({'background': `url(${nicImg})`,});
-            $("#photoImg1").append(`<img src="${customer.nic_Img}" alt="">`);
+            $("#photoImg1").css({
+                'background': `url("../${customer.nic_Img}")`, 'background-size': "contain",
+                ' background-position': "center", 'background-repeat': " no-repeat ", 'border': "1px solid black"
+            });
 
-            $("#photoImg2").css('background', `url(${customer.license_Img})`);
+            $("#photoImg2").css({
+                'background': `url("../${customer.license_Img}")`, 'background-size': "contain",
+                ' background-position': "center", 'background-repeat': " no-repeat ", 'border': "1px solid black"
+            });
 
 
         },
