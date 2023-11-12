@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,9 +40,10 @@ public class CarServiceImpl implements CarService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
-                    getParentFile().getParentFile().getAbsolutePath();
+            /*String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();*/
 
+            String projectPath = "E:\\Semester_2_Final\\Car_Rental_System\\upload";
             System.out.println(projectPath);
             File uploadsDir = new File(projectPath + "/upload");
             uploadsDir.mkdir();
@@ -58,9 +58,7 @@ public class CarServiceImpl implements CarService {
             map.setSideView("upload/" + dto.getSideView().getOriginalFilename());
             map.setInterior("upload/" + dto.getInterior().getOriginalFilename());
 
-        } catch ( IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -101,8 +99,10 @@ public class CarServiceImpl implements CarService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
-                    getParentFile().getParentFile().getAbsolutePath();
+           /* String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();*/
+
+            String projectPath = "E:\\Semester_2_Final\\Car_Rental_System\\upload";
             System.out.println(projectPath);
             File uploadsDir = new File(projectPath + "/upload");
             uploadsDir.mkdir();
@@ -117,7 +117,7 @@ public class CarServiceImpl implements CarService {
             map.setSideView("upload/" + dto.getSideView().getOriginalFilename());
             map.setInterior("upload/" + dto.getInterior().getOriginalFilename());
 
-        } catch (URISyntaxException | IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
