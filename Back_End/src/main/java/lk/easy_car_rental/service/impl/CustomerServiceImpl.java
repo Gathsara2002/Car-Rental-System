@@ -43,8 +43,10 @@ public class CustomerServiceImpl implements CustomerService {
 
         try {
 
-            String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
-                    getParentFile().getParentFile().getAbsolutePath();
+            /*String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).
+                    getParentFile().getParentFile().getAbsolutePath();*/
+
+            String projectPath = "E:\\Semester_2_Final\\Car_Rental_System\\upload";
             System.out.println(projectPath);
             File uploadsDir = new File(projectPath + "/upload");
             uploadsDir.mkdir();
@@ -60,7 +62,7 @@ public class CustomerServiceImpl implements CustomerService {
             customer.setNic_Img("upload/" + dto.getNic_Img().getOriginalFilename());
             customer.setLicense_Img("upload/" + dto.getLicense_Img().getOriginalFilename());
 
-        } catch (URISyntaxException | IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         customerRepo.save(customer);
