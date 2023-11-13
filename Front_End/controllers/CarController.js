@@ -19,6 +19,7 @@ function saveCar() {
             bindTrEventsToCars();
             clearInputFields();
             newCarId();
+            loadAllCars();
         },
         error: function (error) {
             errorAlert(JSON.parse(error.responseText).message);
@@ -39,6 +40,7 @@ function deleteCar(carId) {
             bindTrEventsToCars();
             clearInputFields();
             newCarId();
+            loadAllCars();
         },
         error: function (error) {
             errorAlert(error.message);
@@ -63,6 +65,7 @@ function updatedCar() {
             getAllCars();
             clearInputFields();
             newCarId();
+            loadAllCars();
         },
         error: function (error) {
             errorAlert(error.message);
