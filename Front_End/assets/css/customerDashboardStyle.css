@@ -436,7 +436,7 @@ form .form-label, .input-group-text {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
-
+/*
 div#carSection > div > div:nth-child(1) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/suzuki-alto-front.jpg");
 }
@@ -453,7 +453,7 @@ div#carSection > div > div:nth-child(1) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/suzuki-alto-intreior.jpg");
 }
 
-/*---------------------------------------------------------------------------------*/
+!*---------------------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(2) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/suzuki-alto-front.jpg");
@@ -471,7 +471,7 @@ div#carSection > div > div:nth-child(2) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/suzuki-alto-intreior.jpg");
 }
 
-/*---------------------------------------------------------------------------------*/
+!*---------------------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(3) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Suzuki Celerio.jpg");
@@ -489,7 +489,7 @@ div#carSection > div > div:nth-child(3) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Suzuki Celerio.jpg");
 }
 
-/*---------------------------------------------------------------------------------*/
+!*---------------------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(4) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Perodua (Daihatsu) Axia.jpg");
@@ -507,7 +507,7 @@ div#carSection > div > div:nth-child(4) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Perodua (Daihatsu) Axia.jpg");
 }
 
-/*---------------------------------------------------------------------------------*/
+!*---------------------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(5) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Toyota Prius C.jpg");
@@ -525,7 +525,7 @@ div#carSection > div > div:nth-child(5) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Toyota Prius C.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(6) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Toyota Corolla Axio.jpg");
@@ -543,7 +543,7 @@ div#carSection > div > div:nth-child(6) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Toyota Corolla Axio.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(7) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Toyota Allion.jpg");
@@ -561,7 +561,7 @@ div#carSection > div > div:nth-child(7) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/allion.jpg");
 }
 
-/*---------------------------------------------------------------------------------*/
+!*---------------------------------------------------------------------------------*!
 div#carSection > div > div:nth-child(8) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Perodua Bezza Prime Sedan.jpg");
 }
@@ -578,7 +578,7 @@ div#carSection > div > div:nth-child(8) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Perodua Bezza Prime Sedan.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(9) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Toyota Axio.jpg");
@@ -596,7 +596,7 @@ div#carSection > div > div:nth-child(9) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Toyota Axio.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(10) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Toyota Premio.jpg");
@@ -614,7 +614,7 @@ div#carSection > div > div:nth-child(10) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Toyota Premio.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(11) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/Mercedes.jpg");
@@ -632,7 +632,7 @@ div#carSection > div > div:nth-child(11) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/Mercedes.jpg");
 }
 
-/*---------------------------------------------------------------------*/
+!*---------------------------------------------------------------------*!
 
 div#carSection > div > div:nth-child(12) > div:nth-child(2) > div.img1 {
     background-image: url("../img/cars/front/i8.jpg");
@@ -648,7 +648,7 @@ div#carSection > div > div:nth-child(12) > div:nth-child(2) > div.img3 {
 
 div#carSection > div > div:nth-child(12) > div:nth-child(2) > div.img4 {
     background-image: url("../img/cars/intieor/i8.jpg");
-}
+}*/
 
 /*rent form*/
 .rentForm {

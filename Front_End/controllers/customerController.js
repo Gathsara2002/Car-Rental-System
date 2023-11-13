@@ -217,4 +217,36 @@ function setCustomerIdVisible() {
     $(".admin_name").text(i);
 }
 
+/*load cars to customer dashboard*/
+function loadAllCars() {
+
+    $.ajax({
+        url: BaseUrl + 'car',
+        dataType: "json",
+        success: function (response) {
+            let cars = response.data;
+            for (let i in cars) {
+                let car = cars[i];
+                let id = car.carId;
+                let brand = car.brand;
+                let type = car.type;
+                let transmissionType = car.transmissionType;
+                let noOfPassengers = car.noOfPassengers;
+                let fuelType = car.fuelType;
+                let dailyRate = car.dailyRate;
+                let monthlyRate = car.monthlyRate;
+                let priceExtraKM = car.extraKmPrice;
+                let freeMileage = car.freeMileage;
+                let registrationNumber = car.regNo;
+                let color = car.color;
+                let vehicleAvailability = car.availability;
+            }
+        },
+        error: function (error) {
+            errorAlert(error.message);
+        }
+    });
+
+}
+
 
