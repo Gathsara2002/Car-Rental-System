@@ -225,6 +225,10 @@ function loadAllCars() {
         url: BaseUrl + 'car',
         dataType: "json",
         success: function (response) {
+
+            /*before append remove existing elements*/
+            $("#allCars").empty();
+
             let cars = response.data;
             for (let i in cars) {
                 let car = cars[i];
@@ -244,7 +248,7 @@ function loadAllCars() {
 
                 /*set car detail*/
                 $("#allCars").append(
-                    ` <div class="col position-relative mt-5" id="rentCard1" style="border: 1px solid black;">
+                    ` <div class="col position-relative mt-5"  style="border: 1px solid black;">
                     <div class="carBrand">${brand}</div>
                     <div class="carImages d-flex mt-3 mb-3 justify-content-between">
                         <div class="img1"></div>
