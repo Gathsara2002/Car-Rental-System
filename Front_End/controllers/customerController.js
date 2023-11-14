@@ -251,10 +251,10 @@ function loadAllCars() {
                     ` <div class="col position-relative mt-5"  style="border: 1px solid black;">
                     <div class="carBrand">${brand}</div>
                     <div class="carImages d-flex mt-3 mb-3 justify-content-between">
-                        <div class="img1"></div>
-                        <div class="img2"></div>
-                        <div class="img3"></div>
-                        <div class="img4"></div>
+                        <div class="img1" style="background-image: url(../${car.frontView})"></div>
+                        <div class="img2" style="background-image: url(../${car.backView})"></div>
+                        <div class="img3" style="background-image: url(../${car.interior})"></div>
+                        <div class="img4" style="background-image: url(../${car.sideView})"></div>
 
                     </div>
                     <div class="carDetails">
@@ -287,28 +287,28 @@ function loadAllCars() {
                 /*set car images*/
 
                 $(".img1").css({
-                    'background': `url("../${car.frontView}")`,
+                    /*'background': `url("../${car.frontView}")`,*/
                     'background-size': "contain",
                     ' background-position': "center",
                     'background-repeat': " no-repeat "
                 });
 
                 $(".img2").css({
-                    'background': `url("../${car.backView}")`,
+                    /*'background': `url("../${car.backView}")`,*/
                     'background-size': "contain",
                     ' background-position': "center",
                     'background-repeat': " no-repeat "
                 });
 
                 $(".img3").css({
-                    'background': `url("../${car.interior}")`,
+                   /* 'background': `url("../${car.interior}")`,*/
                     'background-size': "contain",
                     ' background-position': "center",
                     'background-repeat': " no-repeat "
                 });
 
                 $(".img4").css({
-                    'background': `url("../${car.sideView}")`,
+                    /*'background': `url("../${car.sideView}")`,*/
                     'background-size': "contain",
                     ' background-position': "center",
                     'background-repeat': " no-repeat "
