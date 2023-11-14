@@ -22,4 +22,6 @@ public interface CarService {
     void updateCar(CarDTO dto);
 
     String getLastCusId();
+
+    ArrayList<Car> filterByTransmissionType(String transmissionType);
 }
