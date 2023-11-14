@@ -58,22 +58,21 @@ public class CarController {
 
     @GetMapping(path = "/search", params = {"transmission"})
     public ResponseUtil searchedByTransmissionType(@RequestParam String transmission) {
-        System.out.println("Req received");
-        System.out.println(service.filterByTransmissionType(transmission));
         return new ResponseUtil("OK", "Successfully Searched", service.filterByTransmissionType(transmission));
     }
 
     @GetMapping(path = "/search/type", params = {"type"})
     public ResponseUtil searchedByVehicleType(@RequestParam String type) {
-        System.out.println("Req received");
-        System.out.println(service.filterByVehicleType(type));
         return new ResponseUtil("OK", "Successfully Searched", service.filterByVehicleType(type));
     }
 
     @GetMapping(path = "/search/fuel", params = {"fuelType"})
     public ResponseUtil searchedByFuelType(@RequestParam String fuelType) {
-        System.out.println("Req received");
-        System.out.println(service.filterByFuelType(fuelType));
         return new ResponseUtil("OK", "Successfully Searched", service.filterByFuelType(fuelType));
+    }
+
+    @GetMapping(path = "/search/brand", params = {"brand"})
+    public ResponseUtil searchedByBrand(@RequestParam String brand) {
+        return new ResponseUtil("OK", "Successfully Searched", service.filterByBrand(brand));
     }
 }
