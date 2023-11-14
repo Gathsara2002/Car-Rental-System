@@ -48,6 +48,7 @@ $("#btn-customer").click(function () {
 $("#btn-car").click(function () {
     clearDashboard();
     $("#rentCar").css('display', 'block');
+    loadAllCars();
 });
 
 $("#btn-logOut").click(function () {
