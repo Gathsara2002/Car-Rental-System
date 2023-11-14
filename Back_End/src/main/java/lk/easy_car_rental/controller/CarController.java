@@ -57,7 +57,9 @@ public class CarController {
     }
 
     @GetMapping(path = "/search", params = {"transmission"})
-    public ResponseUtil searchedByTransmissionType(String transmission) {
+    public ResponseUtil searchedByTransmissionType(@RequestParam String transmission) {
+        System.out.println("Req received");
+        System.out.println(service.filterByTransmissionType(transmission));
         return new ResponseUtil("OK", "Successfully Searched", service.filterByTransmissionType(transmission));
     }
 }

@@ -16,4 +16,7 @@ public interface CarRepo extends JpaRepository<Car, String> {
 
     @Query(value = "SELECT * FROM Car WHERE transmissionType =?1 and availability='AVAILABLE'", nativeQuery = true)
     ArrayList<Car> filterByTransmissionType(String transmissionType);
+
+    @Query(value = "SELECT * FROM Car WHERE type =?1 and availability='AVAILABLE'", nativeQuery = true)
+    ArrayList<Car> filterByVehicleType(String type);
 }
