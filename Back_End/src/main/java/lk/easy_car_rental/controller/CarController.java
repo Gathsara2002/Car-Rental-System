@@ -69,4 +69,11 @@ public class CarController {
         System.out.println(service.filterByVehicleType(type));
         return new ResponseUtil("OK", "Successfully Searched", service.filterByVehicleType(type));
     }
+
+    @GetMapping(path = "/search/fuel", params = {"fuelType"})
+    public ResponseUtil searchedByFuelType(@RequestParam String fuelType) {
+        System.out.println("Req received");
+        System.out.println(service.filterByFuelType(fuelType));
+        return new ResponseUtil("OK", "Successfully Searched", service.filterByFuelType(fuelType));
+    }
 }

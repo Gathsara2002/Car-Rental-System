@@ -26,4 +26,6 @@ public interface CarService {
     ArrayList<CarDTO> filterByTransmissionType(String transmissionType);
 
     ArrayList<CarDTO> filterByVehicleType(String type);
+
+    ArrayList<CarDTO> filterByFuelType(String fuelType);
 }
