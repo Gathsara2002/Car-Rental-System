@@ -24,4 +24,6 @@ public interface CarService {
     String getLastCusId();
 
     ArrayList<CarDTO> filterByTransmissionType(String transmissionType);
+
+    ArrayList<CarDTO> filterByVehicleType(String type);
 }
