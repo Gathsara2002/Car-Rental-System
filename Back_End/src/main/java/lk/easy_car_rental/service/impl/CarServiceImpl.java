@@ -128,4 +128,11 @@ public class CarServiceImpl implements CarService {
     public String getLastCusId() {
         return repo.getLastIndex();
     }
+
+    @Override
+    public ArrayList<CarDTO> filterByTransmissionType(String transmissionType) {
+        ArrayList<Car> cars = repo.filterByTransmissionType(transmissionType);
+        return mapper.map(cars, new TypeToken<ArrayList<Car>>() {
+        }.getType());
+    }
 }
