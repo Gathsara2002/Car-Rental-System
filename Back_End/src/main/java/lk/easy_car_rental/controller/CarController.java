@@ -55,4 +55,9 @@ public class CarController {
     public ResponseUtil generateNewCusId() {
         return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastCusId());
     }
+
+    @GetMapping(path = "/search", params = {"transmission"})
+    public ResponseUtil searchedByTransmissionType(String transmission) {
+        return new ResponseUtil("OK", "Successfully Searched", service.filterByTransmissionType(transmission));
+    }
 }
