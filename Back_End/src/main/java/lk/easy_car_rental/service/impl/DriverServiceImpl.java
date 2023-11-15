@@ -7,6 +7,7 @@ import lk.easy_car_rental.entity.Login;
 import lk.easy_car_rental.repo.DriverRepo;
 import lk.easy_car_rental.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -89,5 +90,12 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public String getLastIndex() {
         return repo.getLastIndex();
+    }
+
+    @Override
+    public ArrayList<DriverDTO> getAllAvailableDriver() {
+        ArrayList<Driver> drivers = repo.getAllAvailableDrivers();
+        return mapper.map(drivers, new TypeToken<ArrayList<DriverDTO>>() {
+        }.getType());
     }
 }
