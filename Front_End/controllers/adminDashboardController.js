@@ -1,5 +1,6 @@
 initUi();
-//loadDriverIds();
+loadDriverIds();
+loadAllRents();
 
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
@@ -85,40 +86,6 @@ function loadDriverIds() {
 
 
 function loadAllRents() {
-    $.ajax({
-        url: BaseUrl + "rent",
-        method: "get",
-        dataType: "json",
-        contentType: "application/json",
-        success: function (resp) {
-            let reqs = resp.data;
-            console.log(reqs);
-            for (let i in reqs) {
-                let req = reqs[i];
-                let rentID = req.rentID;
-                let driverID = req.rentDetails.driverID;
-                let cusId = req.customer.cusId;
-                let date = req.requestDate;
-
-                $("#requestRentId").val(rentID);
-                $("#driverId").val(driverID);
-                $("#cusID").val(cusId);
-                $("#date").val(date);
-            }
-        },
-        error: function (error) {
-            errorAlert(JSON.parse(error.responseText).message);
-        }
-    });
-}
-
-/*load pending rents*/
-function loadPendingRents() {
-
-}
-
-/*accept request*/
-$("#btnAccept").click(function () {
     $("#tblRent").empty();
     $.ajax({
         url: BaseUrl + "rent",
@@ -130,7 +97,7 @@ $("#btnAccept").click(function () {
             console.log(reqs);
             let tRow;
             for (let i in reqs) {
-                let req = reqs[reqs.length - 1];
+                let req = reqs[i];
                 let rentID = req.rentID;
                 let driverID = $("#driverId").val();
                 let cusId = req.customer.cusId;
@@ -149,6 +116,38 @@ $("#btnAccept").click(function () {
             errorAlert(JSON.parse(error.responseText).message);
         }
     });
+}
+
+/*load pending rents*/
+function loadPendingRents() {
+    $.ajax({
+        url: BaseUrl + "rent/pending",
+        method: "get",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (resp) {
+            let reqs = resp.data;
+            console.log(reqs);
+            for (let i in reqs) {
+                let req = reqs[i];
+                let rentID = req.rentID;
+                let driverID = req.rentDetails.driverID;
+                let cusId = req.customer.cusId;
+                let status = req.status;
+
+
+
+            }
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
+}
+
+/*accept request*/
+$("#btnAccept").click(function () {
+
 });
 
 /*decline request*/
