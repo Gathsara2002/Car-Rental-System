@@ -115,4 +115,11 @@ public class RentServiceImpl implements RentService {
         /*delete rent from table*/
         repo.deleteById(id);
     }
+
+    @Override
+    public ArrayList<Rent> getAllPendingRents() {
+        List<Rent> all = repo.getAllPendingRents();
+        return mapper.map(all, new TypeToken<ArrayList<RentDTO>>() {
+        }.getType());
+    }
 }

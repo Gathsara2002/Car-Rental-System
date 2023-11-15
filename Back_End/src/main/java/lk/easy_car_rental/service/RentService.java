@@ -1,6 +1,7 @@
 package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.RentDTO;
+import lk.easy_car_rental.entity.Rent;
 
 import java.util.ArrayList;
 
@@ -17,4 +18,6 @@ public interface RentService {
     ArrayList<RentDTO> getAllRents();
 
     void deleteRent(String id);
+
+    ArrayList<Rent> getAllPendingRents();
 }
