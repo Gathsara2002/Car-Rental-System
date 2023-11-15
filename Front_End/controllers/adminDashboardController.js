@@ -135,7 +135,10 @@ function loadPendingRents() {
                 let cusId = req.customer.cusId;
                 let status = req.status;
 
-
+                $("#requestRentId").val(rentID);
+                $("#driverId").val(driverID);
+                $("#cusID").val(rentID);
+                $("#status").val(status);
 
             }
         },
