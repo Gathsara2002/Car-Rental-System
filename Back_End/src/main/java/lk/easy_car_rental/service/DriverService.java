@@ -2,6 +2,7 @@ package lk.easy_car_rental.service;
 
 import lk.easy_car_rental.dto.DriverDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,4 +22,6 @@ public interface DriverService {
     void updateDriver(DriverDTO dto);
 
     String getLastIndex();
+
+    ArrayList<DriverDTO> getAllAvailableDriver();
 }
