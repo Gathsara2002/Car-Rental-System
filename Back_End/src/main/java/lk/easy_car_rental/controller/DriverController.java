@@ -74,8 +74,9 @@ public class DriverController {
         return new ResponseUtil("Ok", "Successfully Id Generated", service.getLastIndex());
     }
 
-    @GetMapping(path = "/newId")
+    @GetMapping(path = "/availableDrivers")
     public ResponseUtil getAllAvailableDrivers() {
+        System.out.println(service.getAllDrivers());
         return new ResponseUtil("Ok", "Successfully Id Generated", service.getAllAvailableDriver());
     }
 
