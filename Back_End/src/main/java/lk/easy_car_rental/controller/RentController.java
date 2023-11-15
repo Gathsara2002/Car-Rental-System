@@ -55,4 +55,10 @@ public class RentController {
         return new ResponseUtil("OK", "Successfully Loaded", service1.getAllPendingRents());
     }
 
+    @PutMapping
+    public ResponseUtil updateRent(@RequestBody RentDTO dto){
+        service1.updateRent(dto);
+        return new ResponseUtil("OK", "Successfully Updated", dto.getRentID());
+    }
+
 }
