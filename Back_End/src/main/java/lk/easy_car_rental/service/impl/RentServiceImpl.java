@@ -122,4 +122,13 @@ public class RentServiceImpl implements RentService {
         return mapper.map(all, new TypeToken<ArrayList<RentDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void updateRent(RentDTO dto) {
+        if (!repo.existsById(dto.getRentID())) {
+            throw new RuntimeException(dto.getRentID() + " Rent request is not available, please check the ID before update.!");
+        }
+        Rent map = mapper.map(dto, Rent.class);
+        repo.save(map);
+    }
 }

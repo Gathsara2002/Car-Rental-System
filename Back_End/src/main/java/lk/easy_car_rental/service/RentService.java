@@ -20,4 +20,6 @@ public interface RentService {
     void deleteRent(String id);
 
     ArrayList<Rent> getAllPendingRents();
+
+    void updateRent(RentDTO dto);
 }
