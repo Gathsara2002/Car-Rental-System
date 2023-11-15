@@ -80,7 +80,7 @@ function getCarDetail(id) {
 /*load all drivers ids*/
 function loadDriverIds() {
     $.ajax({
-        url: BaseUrl + 'driver',
+        url: BaseUrl + 'driver/availableDrivers',
         dataType: "json",
         method: "get",
         success: function (response) {
@@ -101,83 +101,6 @@ function loadDriverIds() {
 
 $("#rentCard1 .rentButton").click(function () {
     val = $("#rentCard1 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard2 .rentButton").click(function () {
-    val = $("#rentCard2 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard3 .rentButton").click(function () {
-    val = $("#rentCard3 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard4 .rentButton").click(function () {
-    val = $("#rentCard4 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard5 .rentButton").click(function () {
-    val = $("#rentCard5 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard6 .rentButton").click(function () {
-    val = $("#rentCard6 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard7 .rentButton").click(function () {
-    val = $("#rentCard7 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard8 .rentButton").click(function () {
-    val = $("#rentCard8 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard9 .rentButton").click(function () {
-    val = $("#rentCard9 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard10 .rentButton").click(function () {
-    val = $("#rentCard10 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard11 .rentButton").click(function () {
-    val = $("#rentCard11 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
-$("#rentCard12 .rentButton").click(function () {
-    val = $("#rentCard12 .carId").text();
     console.log(val);
     $("#carId").val(val);
     getCarDetail(val);
