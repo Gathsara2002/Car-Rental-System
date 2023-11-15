@@ -1,5 +1,5 @@
 initUi();
-loadDriverIds();
+//loadDriverIds();
 
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
@@ -64,7 +64,7 @@ $("#btn-logOut").click(function () {
 
 function loadDriverIds() {
     $.ajax({
-        url: BaseUrl + 'driver',
+        url: BaseUrl + 'driver/availableDrivers',
         dataType: "json",
         method: "get",
         success: function (response) {
@@ -82,6 +82,7 @@ function loadDriverIds() {
         }
     });
 }
+
 
 function loadAllRents() {
     $.ajax({
@@ -109,6 +110,11 @@ function loadAllRents() {
             errorAlert(JSON.parse(error.responseText).message);
         }
     });
+}
+
+/*load pending rents*/
+function loadPendingRents() {
+
 }
 
 /*accept request*/
