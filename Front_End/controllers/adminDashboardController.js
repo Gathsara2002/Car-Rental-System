@@ -1,6 +1,7 @@
 initUi();
 loadDriverIds();
 loadAllRents();
+loadPendingRents();
 
 /*sidebar operation*/
 let sidebar = document.querySelector(".sidebar");
@@ -84,7 +85,7 @@ function loadDriverIds() {
     });
 }
 
-
+/*load all rent requests to tables*/
 function loadAllRents() {
     $("#tblRent").empty();
     $.ajax({
@@ -105,8 +106,9 @@ function loadAllRents() {
                 let pickUpTime = req.pickUpTime;
                 let pickUpDate = req.pickUpDate;
                 let returnDate = req.returnDate;
+                let status = req.status;
                 tRow = `<tr><td>${rentID}</td><td>${cusId}</td><td>${driverID}</td><td>${pickUpDate}</td><td>${pickUpTime}</td>
-                            <td>${returnDate}</td><td>${date}</td></tr>`
+                            <td>${returnDate}</td><td>${date}</td><td>${status}</td></tr>`
 
             }
 
@@ -162,6 +164,7 @@ $("#btnReject").click(function () {
         method: "delete",
         success: function (resp) {
             successAlert(resp.message);
+            loadAllRents();
         },
         error: function (error) {
             errorAlert(JSON.parse(error.responseText).message);
