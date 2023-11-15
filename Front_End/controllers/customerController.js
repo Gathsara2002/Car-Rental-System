@@ -314,6 +314,8 @@ function loadAllCars() {
                     'background-repeat': " no-repeat "
                 });
 
+                rentFormDisplayAndExit();
+
             }
         },
         error: function (error) {
@@ -521,6 +523,8 @@ function filterCarsByVehicleType(type) {
                     'background-repeat': " no-repeat "
                 });
 
+                rentFormDisplayAndExit();
+
             }
         },
         error: function (error) {
@@ -623,6 +627,8 @@ function filterCarsByFuelType(fuel) {
                     ' background-position': "center",
                     'background-repeat': " no-repeat "
                 });
+
+                rentFormDisplayAndExit();
 
             }
         },
@@ -727,6 +733,8 @@ function filterCarsByBrand(brand) {
                     'background-repeat': " no-repeat "
                 });
 
+                rentFormDisplayAndExit();
+
             }
         },
         error: function (error) {
@@ -785,5 +793,24 @@ $("#btnSearchCars").click(function () {
     let brand = $("#txtCarBrand").val();
     filterCarsByBrand(brand);
 });
+
+/*btn rent car action*/
+function rentFormDisplayAndExit() {
+    $(".rentButton").click(function () {
+        let form = document.getElementsByClassName("rentForm");
+        for (let i = 0; i < form.length; i++) {
+            form[i].classList.add("open-popup");
+            $("#carSection").css('opacity', '30%');
+        }
+    });
+
+    $("#btnClose").click(function () {
+        let form = document.getElementsByClassName("rentForm");
+        for (let i = 0; i < form.length; i++) {
+            form[i].classList.remove("open-popup");
+            $("#carSection").css('opacity', '100%');
+        }
+    });
+}
 
 
