@@ -5,8 +5,6 @@ loadDriverIds();
 /*store  detail*/
 let customerDetail;
 let carDetail;
-let val;
-
 
 /*set date */
 function setDate() {
@@ -99,13 +97,6 @@ function loadDriverIds() {
     });
 }
 
-$("#rentCard1 .rentButton").click(function () {
-    val = $("#rentCard1 .carId").text();
-    console.log(val);
-    $("#carId").val(val);
-    getCarDetail(val);
-});
-
 /*send rent */
 $("#btnRentReq").click(function () {
 
@@ -114,12 +105,13 @@ $("#btnRentReq").click(function () {
     let customerOb = customerDetail;
     let cusId = customerDetail.cusId;
     let rentId = $("#rentId").val();
-    let carId = val;
+    let carId = "CAR-001";
     let pickingUpDate = $("#pickUpDate").val();
     let pickingUpTime = $("#pickUpTime").val();
     let returningDate = $("#returnUpDate").val();
     let date = $("#clock").text();
     let driverId = $("#driverID").val();
+    let status = "Pending";
 
     let rentDetailsOb = {
         carID: carId,
@@ -135,6 +127,7 @@ $("#btnRentReq").click(function () {
         pickUpTime: pickingUpTime,
         returnDate: returningDate,
         requestDate: date,
+        status: status,
         customer: {cusId: cusId},
         rentDetails: rentDetailsArr
     }
