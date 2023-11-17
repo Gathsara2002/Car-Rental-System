@@ -50,7 +50,7 @@ public class RentController {
         return new ResponseUtil("Ok", "Successfully Deleted", rentId);
     }
 
-    @GetMapping(params = "/pending")
+    @GetMapping(params = "/request/pending")
     public ResponseUtil getAllPendingRents() {
         return new ResponseUtil("OK", "Successfully Loaded", service1.getAllPendingRents());
     }
