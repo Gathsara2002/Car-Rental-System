@@ -123,7 +123,7 @@ function loadAllRents() {
 /*load pending rents*/
 function loadPendingRents() {
     $.ajax({
-        url: BaseUrl + "rent/pending",
+        url: BaseUrl + "rent/request/pending",
         method: "get",
         dataType: "json",
         contentType: "application/json",
