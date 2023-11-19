@@ -1,5 +1,5 @@
-getAllCustomers();
-bindTrEventsToCustomer();
+//getAllCustomers();
+//bindTrEventsToCustomer();
 newCustomerId();
 loadAllCars();
 
@@ -29,7 +29,7 @@ $("#btnCusRegister").click(function () {
     });
 });
 
-/*delete customer*/
+/*/!*delete customer*!/
 function deleteCustomer() {
     $.ajax({
         url: BaseUrl + 'customer?cusId=' + cusId,
@@ -42,7 +42,7 @@ function deleteCustomer() {
             errorAlert(error.message);
         }
     });
-}
+}*/
 
 /*updated customer*/
 function updatedCustomer() {
@@ -68,7 +68,7 @@ function updatedCustomer() {
     });
 }
 
-/*bind event to table*/
+/*/!*bind event to table*!/
 function bindTrEventsToCustomer() {
     $('#tblCustomer>tr').click(function () {
         console.log("hi");
@@ -76,9 +76,9 @@ function bindTrEventsToCustomer() {
         console.log(id);
         cusId = id;
     });
-}
+}*/
 
-/*getAllCustomer*/
+/*/!*getAllCustomer*!/
 function getAllCustomers() {
 
     $("#tblCustomer").empty();
@@ -112,7 +112,7 @@ function getAllCustomers() {
             errorAlert(error.message);
         }
     });
-}
+}*/
 
 /*generate new customer id*/
 function newCustomerId() {
@@ -144,9 +144,9 @@ function newCustomerId() {
     });
 }
 
-$("#btnDeleteCustomer").click(function () {
+/*$("#btnDeleteCustomer").click(function () {
     deleteCustomer();
-});
+});*/
 
 /*get user id from url*/
 function getIdFromUrl() {
