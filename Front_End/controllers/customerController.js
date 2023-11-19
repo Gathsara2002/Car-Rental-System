@@ -224,6 +224,7 @@ function loadAllCars() {
     $.ajax({
         url: BaseUrl + 'car',
         dataType: "json",
+        async: false,
         success: function (response) {
 
             /*before append remove existing elements*/
@@ -279,7 +280,7 @@ function loadAllCars() {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton"> Rent Car</button>
+                        <button class="rentButton" data-carID=${id}> Rent Car</button>
                     </div>
                 </div>`
                 );
@@ -812,6 +813,7 @@ function rentFormDisplayAndExit() {
         }
     });
 }
+
 
 
 
