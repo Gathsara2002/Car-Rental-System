@@ -1,5 +1,4 @@
 newCustomerId();
-loadAllCars();
 
 /*to store values temporary*/
 let cusId;
@@ -26,21 +25,6 @@ $("#btnCusRegister").click(function () {
         }
     });
 });
-
-/*/!*delete customer*!/
-function deleteCustomer() {
-    $.ajax({
-        url: BaseUrl + 'customer?cusId=' + cusId,
-        method: 'delete',
-        success: function (resp) {
-            successAlert(resp.message);
-            getAllCustomers();
-        },
-        error: function (error) {
-            errorAlert(error.message);
-        }
-    });
-}*/
 
 /*updated customer*/
 function updatedCustomer() {

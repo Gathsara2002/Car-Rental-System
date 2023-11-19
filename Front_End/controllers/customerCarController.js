@@ -1,3 +1,5 @@
+loadAllCars();
+
 /*load cars to customer dashboard*/
 function loadAllCars() {
 
