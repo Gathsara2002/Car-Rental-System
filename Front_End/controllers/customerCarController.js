@@ -62,7 +62,7 @@ function loadAllCars() {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton" data-carID=${id}> Rent Car</button>
+                        <button class="rentButton" data-carID="${id}"> Rent Car</button>
                     </div>
                 </div>`
                 );
@@ -98,6 +98,7 @@ function loadAllCars() {
                 });
 
                 rentFormDisplayAndExit();
+                getCarIdFromCustomAttribute();
 
             }
         },
@@ -168,7 +169,7 @@ function filterCarsByTransmissionType(transmission) {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton"> Rent Car</button>
+                        <button class="rentButton" data-carID="${id}"> Rent Car</button>
                     </div>
                 </div>`
                 );
@@ -595,3 +596,11 @@ function rentFormDisplayAndExit() {
         }
     });
 }
+
+function getCarIdFromCustomAttribute() {
+    $(".rentButton").click(function () {
+        let attr = $(".rentButton").attr('data-carID');
+        console.log(attr);
+    });
+}
+
