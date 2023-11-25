@@ -598,9 +598,10 @@ function rentFormDisplayAndExit() {
 }
 
 function getCarIdFromCustomAttribute() {
-    $(".rentButton").click(function () {
-        let attr = $(".rentButton").attr('data-carID');
-        console.log(attr);
+    $('.rentButton').click((event) => {
+        let id = $(event.target).attr('data-carID');
+        console.log(id);
+        return id;
     });
 }
 
