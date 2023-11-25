@@ -204,6 +204,9 @@ function filterCarsByTransmissionType(transmission) {
                     'background-repeat': " no-repeat "
                 });
 
+                rentFormDisplayAndExit();
+                getCarIdFromCustomAttribute();
+
             }
         },
         error: function (error) {
@@ -308,7 +311,7 @@ function filterCarsByVehicleType(type) {
                 });
 
                 rentFormDisplayAndExit();
-
+                getCarIdFromCustomAttribute();
             }
         },
         error: function (error) {
@@ -413,6 +416,7 @@ function filterCarsByFuelType(fuel) {
                 });
 
                 rentFormDisplayAndExit();
+                getCarIdFromCustomAttribute();
 
             }
         },
@@ -518,6 +522,7 @@ function filterCarsByBrand(brand) {
                 });
 
                 rentFormDisplayAndExit();
+                getCarIdFromCustomAttribute();
 
             }
         },
@@ -601,7 +606,7 @@ function getCarIdFromCustomAttribute() {
     $('.rentButton').click((event) => {
         let id = $(event.target).attr('data-carID');
         console.log(id);
-        return id;
+        $("#carId").val(id);
     });
 }
 
