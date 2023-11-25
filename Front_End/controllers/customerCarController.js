@@ -275,7 +275,7 @@ function filterCarsByVehicleType(type) {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton"> Rent Car</button>
+                        <button class="rentButton" data-carID="${id}"> Rent Car</button>
                     </div>
                 </div>`
                 );
@@ -380,7 +380,7 @@ function filterCarsByFuelType(fuel) {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton"> Rent Car</button>
+                        <button class="rentButton" data-carID="${id}"> Rent Car</button>
                     </div>
                 </div>`
                 );
@@ -486,7 +486,7 @@ function filterCarsByBrand(brand) {
                         </div>
                     </div>
                     <div style="margin-top: 25px;">
-                        <button class="rentButton"> Rent Car</button>
+                       <button class="rentButton" data-carID="${id}"> Rent Car</button>
                     </div>
                 </div>`
                 );
