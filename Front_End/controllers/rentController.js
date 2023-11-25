@@ -105,7 +105,7 @@ $("#btnRentReq").click(function () {
     let customerOb = customerDetail;
     let cusId = customerDetail.cusId;
     let rentId = $("#rentId").val();
-    let carId = "CAR-001";
+    let carId = $("#carId").val();
     let pickingUpDate = $("#pickUpDate").val();
     let pickingUpTime = $("#pickUpTime").val();
     let returningDate = $("#returnUpDate").val();
