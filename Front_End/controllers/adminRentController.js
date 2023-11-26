@@ -72,11 +72,11 @@ function loadPendingRents() {
                 let req = reqs[i];
                 let rentID = req.rentID;
                 let driverID = req.rentDetails.driverID;
-                let cusId = req.customer.cusId;
+                let cusId = req.customer.cusID;
                 let status = req.status;
 
                 $("#requestRentId").val(rentID);
-                $("#driverId").val(driverID);
+                $("#driverId").append(`<option value="${driverID}"> ${driverID} </option>`);
                 $("#cusID").val(rentID);
                 $("#status").val(status);
 

@@ -50,6 +50,7 @@ $("#btn-request").click(function () {
     clearDashboard();
     $("#manageRent").css('display', 'block');
     loadAllRents();
+    loadPendingRents();
 });
 
 $("#btn-payment").click(function () {
