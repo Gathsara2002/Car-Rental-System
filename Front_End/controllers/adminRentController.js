@@ -38,7 +38,7 @@ function loadAllRents() {
             for (let i in reqs) {
                 let req = reqs[i];
                 let rentID = req.rentID;
-                let driverID = $("#driverId").val();
+                let driverID = req.rentDetails[0].driverID;
                 let cusId = req.customer.cusId;
                 let date = req.requestDate;
                 let pickUpTime = req.pickUpTime;
@@ -71,13 +71,14 @@ function loadPendingRents() {
             for (let i in reqs) {
                 let req = reqs[i];
                 let rentID = req.rentID;
-                let driverID = req.rentDetails.driverID;
-                let cusId = req.rentDetails.cusId;
+                let driverID = req.rentDetails[0].driverID;
+                let cusId = req.customer.cusId;
                 let status = req.status;
 
                 $("#requestRentId").val(rentID);
-                $("#cusID").val(rentID);
+                $("#cusID").val(cusId);
                 $("#status").val(status);
+                $("#driverId").append()
 
             }
         },
@@ -102,6 +103,7 @@ $("#btnReject").click(function () {
         success: function (resp) {
             successAlert(resp.message);
             loadAllRents();
+            loadPendingRents();
         },
         error: function (error) {
             errorAlert(JSON.parse(error.responseText).message);
