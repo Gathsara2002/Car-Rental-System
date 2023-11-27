@@ -1,6 +1,5 @@
 loadDriverIds();
 loadAllRents();
-loadPendingRents();
 
 function loadDriverIds() {
     $.ajax({
@@ -68,8 +67,9 @@ function loadPendingRents() {
         success: function (resp) {
             let reqs = resp.data;
             console.log(reqs);
+            console.log(reqs.length-1);
             for (let i in reqs) {
-                let req = reqs[i];
+                let req = reqs[reqs.length-1];
                 let rentID = req.rentID;
                 let driverID = req.rentDetails[0].driverID;
                 let cusId = req.customer.cusId;
@@ -78,7 +78,7 @@ function loadPendingRents() {
                 $("#requestRentId").val(rentID);
                 $("#cusID").val(cusId);
                 $("#status").val(status);
-                $("#driverId").append()
+                $("#driverId").append(`<option selected value="${driverID}">${driverID}</option>>`);
 
             }
         },
