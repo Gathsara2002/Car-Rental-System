@@ -64,7 +64,7 @@ public class RentController {
 
     @GetMapping(params = {"id"})
     public ResponseUtil searchRent(String id) {
-        Rent rent = service1.findRent(id);
+        RentDTO rent = service1.findRent(id);
         return new ResponseUtil("OK", "Successfully Loaded", rent);
     }
 
