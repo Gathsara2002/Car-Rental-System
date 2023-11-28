@@ -23,5 +23,5 @@ public interface RentService {
 
     void updateRent(RentDTO dto);
 
-    Rent findRent(String id);
+    RentDTO findRent(String id);
 }

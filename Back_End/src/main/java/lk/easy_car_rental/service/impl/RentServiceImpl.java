@@ -133,7 +133,8 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
-    public Rent findRent(String id) {
-        return repo.findById(id).get();
+    public RentDTO findRent(String id) {
+        Rent rent = repo.findById(id).get();
+        return mapper.map(rent, RentDTO.class);
     }
 }
