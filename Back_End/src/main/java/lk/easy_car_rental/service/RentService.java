@@ -22,4 +22,6 @@ public interface RentService {
     ArrayList<Rent> getAllPendingRents();
 
     void updateRent(RentDTO dto);
+
+    Rent findRent(String id);
 }
