@@ -67,9 +67,9 @@ function loadPendingRents() {
         success: function (resp) {
             let reqs = resp.data;
             console.log(reqs);
-            console.log(reqs.length-1);
+            console.log(reqs.length - 1);
             for (let i in reqs) {
-                let req = reqs[reqs.length-1];
+                let req = reqs[reqs.length - 1];
                 let rentID = req.rentID;
                 let driverID = req.rentDetails[0].driverID;
                 let cusId = req.customer.cusId;
@@ -91,6 +91,47 @@ function loadPendingRents() {
 /*accept request*/
 $("#btnAccept").click(function () {
 
+    let id = $("#requestRentId").val();
+    let dId = $("#driverId").val();
+
+    //get specific rent
+    $.ajax({
+        url: BaseUrl + "rent?id=" + id,
+        method: "get",
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (resp) {
+            let reqs = resp.data;
+            console.log(reqs);
+
+            /*update object*/
+            reqs.status = "Accepted";
+            reqs.driverID = dId;
+            console.log(reqs);
+
+            $.ajax({
+                url: BaseUrl + "rent",
+                method: "put",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(reqs),
+                success: function (resp) {
+                    loadAllRents();
+                    clearRequests();
+                    loadPendingRents();
+                    successAlert(resp.message);
+                },
+                error: function (error) {
+                    errorAlert(JSON.parse(error.responseText).message);
+                }
+            });
+        },
+        error: function (error) {
+            errorAlert(JSON.parse(error.responseText).message);
+        }
+    });
+
 });
 
 /*decline request*/
@@ -103,6 +144,7 @@ $("#btnReject").click(function () {
         success: function (resp) {
             successAlert(resp.message);
             loadAllRents();
+            clearRequests();
             loadPendingRents();
         },
         error: function (error) {
@@ -110,3 +152,10 @@ $("#btnReject").click(function () {
         }
     });
 });
+
+function clearRequests() {
+    $("#requestRentId").val("");
+    $("#cusID").val("");
+    $("#status").val("");
+    loadDriverIds();
+}
